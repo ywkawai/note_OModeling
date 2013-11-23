@@ -1,0 +1,319 @@
+\section{熱力学の関係式}
+\markright{\arabic{chapter}.\arabic{section} 熱力学の関係式 } %  節の題名を書き込むこと
+
+\subsection{熱力学の基礎}
+熱力学の基本の仮定において, 
+平衡状態にある系の内部エネルギーは, 示量変数である体積・エントロピー・様々な成分の質量の関数である. 
+(示量とは, 変数の値が存在する物質の量に比例することを意味する. 
+反対に, 温度のような示強変数は, 物質の量に依存しない.) 
+今の目的には, これらの全て量を存在する流体の質量で割るとより便利である. 
+したがって, 比容$\alpha=\rho^{-1}$の関数としての単位質量あたりの内部エネルギー$I$, 
+比エントロピー$\eta$, さまざまな成分の質量分率をここでは用いる. 
+今, 二成分流体(「乾燥空気と水蒸気」あるいは「水と塩分」)に関心があるので, 
+その成分を一つのパラメータ$S$で表しても良いだろう. 
+よって, 内部エネルギーは
+\begin{subequations} 
+\begin{equation}
+  I = I(\alpha, \eta, S),  
+\label{eq:general_EOS_internalEnergy}
+\end{equation}
+またエントロピーに対する同等の方程式は
+\begin{equation}
+  \eta = \eta(I,\alpha,S)
+\label{eq:general_EOS_entropy}
+\end{equation}
+\label{eq:general_EOS}
+\end{subequations}
+と書ける. 
+右辺の関数形が与えられたならば, これらの式のどちらかによって, 
+平衡状態にある形の巨視的な状態を完全に記述することができる. 
+ここでは, これらの式を基本的な状態方程式と呼ぶことにする. 
+
+従来の状態方程式は, (\ref{eq:general_EOS})から導くことができるが, その逆はできない. 
+(\ref{eq:general_EOS_internalEnergy})の一次微分は, 形式的に, 
+\begin{equation}
+  dI = \DPext{I}{\alpha}{\eta,S} d\alpha + \DPext{I}{\eta}{\alpha,S} d\eta + \DPext{I}{S}{\alpha,\eta} dS 
+  \label{eq:internalEnergy_firstDeriv}
+\end{equation}
+を与える. 
+この後, これらの微分に物理的な与えることにする. 
+
+エネルギー保存則は, 物体の内部エネルギーが, 
+物体がなす(あるいは物体になされる)仕事, あるいは熱の注入, 化学成分の変化によって変化できるをことを言っている. 
+このことは, 
+\begin{equation}
+  dI = {d}^\prime Q - d^\prime W + d^\prime C
+\label{eq:thermodyn_first_law}
+\end{equation}
+と書かれる. 
+ここで, $d^\prime W$は物体がなす仕事, 
+$d^\prime Q$は物体へ注入される熱, 
+$d^\prime C$は物体の化学成分(例えば, 塩分や水蒸気)の変化によって発生する内部エネルギーの変化を考慮している. 
+右辺の量は, 不完全微分あるいは無限小である. 
+つまり, $Q,W,C$は物体の状態の関数ではなく, 物体の内部エネルギーは「熱」や「仕事」の和とみなすことはできない. 
+熱と仕事は, エネルギーのフラックスあるいはエネルギーの注入率としてのみ意味を持つと考えるべきであり, 
+エネルギーの量として意味を持つと考えてはならない. 
+熱と仕事の和は, 物体の内部エネルギー(これは物体の状態関数\textbf{である})を変化させる. 
+(\ref{eq:thermodyn_first_law})は, しばしば「熱力学第一法則」と呼ばれる. 
+以下では, 右辺の量が変化する原因について考えることにしよう. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{description}
+ \item[熱の注入:] 
+熱力学は, 加熱と物体のエントロピーの変化の間の関係を与える. 
+特に, 化学成分が一定に保たれる, (無限小の)準静的あるいは可逆過程において,
+\begin{equation}
+  Td\eta = d^\prime Q. 
+\label{eq:entropy_heat_relation_quasiStaticProc}
+\end{equation}
+ここで、 $\eta$は物体の比エントロピーである. 
+エントロピーは, 物体の状態関数であり, 定義により断熱不変量である. 
+(\ref{eq:thermodyn_first_law})は, エネルギー保存則経由で加熱$d^\prime Q$を定義するとみなして良い. 
+このとき, (\ref{eq:entropy_heat_relation_quasiStaticProc})は, 
+加熱を温度で割ったものと同じ量だけ変化する状態関数, エントロピーが存在すると言う. 
+ \item[物体になされる仕事:] 
+物体によってなされる仕事は, 圧力に物体の体積の変化掛けたものに等しい. 
+よって, 単位質量当たり, 
+\begin{equation}
+  d^\prime W = pd\alpha. 
+\end{equation}
+ここで, $\alpha$は流体の比容, $p$は圧力である. 
+ \item[成分の変化:] 
+化学成分の変化に伴う内部エネルギーの変化は, 
+\begin{equation}
+  d^\prime C = \mu dS. 
+\label{eq:chemical_work}
+\end{equation}
+ここで, $\mu$は融解の\textbf{化学ポテンシャル}, $S$は成分の質量分率である. 
+海洋において, 化学成分の変化(すなわち塩分の変化)は, 
+海面での降水と蒸発, および分子拡散を通して発生する. 
+塩分がそのようにして変化するとき, 
+流体流氏の内部エネルギーは(\ref{eq:chemical_work})によって変化するが, 
+その変化は他の変化に比べてふつう小さい. 
+塩分の最も重要な効果は, 海水の密度を変化させることである. 
+大気では, 空気塊の成分はその内部にある水蒸気や液体の水によって変化する. 
+これらの変化は対応分の内部エネルギーの変化を引き起こすが, 
+相変化がなければ内部エネルギーの変化はわずかである. 
+水蒸気の最も重要な効果は, 凝結や蒸発が起きるときに熱を開放(あるいは取り込む)ことである. 
+これは, (\ref{eq:entropy_heat_relation_quasiStaticProc})においてエントロピーのソースを与える. 
+\end{description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+(\ref{eq:thermodyn_first_law})-(\ref{eq:chemical_work})から, 
+ \begin{equation}
+ \boxed{
+  dI = Td\eta - pd\alpha + \mu dS
+   \label{eq:fundamental_thermodyn_relation}
+ }
+ \end{equation}
+が得られ, これを\textbf{基本的な熱力学的関係式}と呼ぶことにする. 
+基本的な状態方程式(\ref{eq:general_EOS})は特定の流体の性質を記述し, 
+(\ref{eq:fundamental_thermodyn_relation})はエネルギー保存則である. 
+多くの古典的な熱力学はこの二式に従う. 
+
+\subsection{熱力学的関係式}
+(\ref{eq:fundamental_thermodyn_relation})から, 
+\begin{equation}
+ T=\DPext{I}{\eta}{\alpha,S}, \;\;\;
+ p=-\DPext{I}{\alpha}{\eta,S}, \;\;\;
+ \nu=\DPext{I}{S}{\eta,\alpha}
+ \label{eq:intensiveVarsDef_by_InternalEnergy}
+\end{equation}
+を得る. 
+これらの式は, これらの変数を定義する関係式とみなしてよい. 
+なぜならば, (\ref{eq:fundamental_thermodyn_relation})を用いたからである. 
+これらの式は単なる形式的な表現(\ref{eq:internalEnergy_firstDeriv})ではなく, 
+このように定義される圧力や温度は, 流体を構成する分子の運動の内部運動と関係づけられる. 
+\begin{equation}
+ d\eta = \dfrac{1}{T}dI + \dfrac{p}{T}d\alpha - \dfrac{\mu}{T}dS
+\end{equation}
+と書くならば, 
+\begin{equation}
+ p = T\DPext{\eta}{\alpha}{I,S}, \;\;\;
+ T^{-1} = \DPext{\eta}{I}{\alpha,S}, \;\;\;
+ \mu = -T\DPext{\eta}{S}{I,\alpha}
+  \label{eq:intensiveVarsDef_by_Entropy}
+\end{equation}
+となることもまた明らかである. 
+なお, 以下の導出では, とくに断らない限り流体粒子の成分を固定することにし, 
+曖昧さが生じない限り偏微分の添字$S$を省略する. 
+
+\subsubsection*{マクスウェルの関係式}
+(\ref{eq:fundamental_thermodyn_relation})の右辺は完全微分と等しいので, 
+内部エネルギーの二階微分は微分の順序に依存しない. 
+故に, (\ref{eq:intensiveVarsDef_by_InternalEnergy})より, 
+\begin{equation}
+ \DPext{T}{\alpha}{\eta} = - \DPext{p}{\eta}{\alpha}
+\end{equation}
+を得る. 
+これは, \textbf{マクスウェルの関係式}の一つである. 
+マクスウェルの関係式は, 基本的な熱力学的関係式(\ref{eq:fundamental_thermodyn_relation})と
+熱力学関数の二階微分が可換であることから, 
+直接的に導かれる四つのよく似た関係である. 
+他の熱力学的関数の組み合わせも役に立つ. 
+
+流体の\textbf{エンタルピー}を
+\begin{equation}
+ h \equiv  I + p\alpha
+\end{equation}
+によって定義する. 
+成分一定の粒子に対して, (\ref{eq:fundamental_thermodyn_relation})は
+\begin{equation}
+ dh = Td\eta + \alpha dp
+\end{equation}
+となる. 
+しかし, $h$は$\eta$と$p$のみの関数なので, 一般に
+\begin{equation}
+ dh = \DPext{h}{\eta}{p}d\eta + \DPext{h}{p}{\eta}dp. 
+  \label{eq:fundamental_thermodyn_relation_byenthalpy}
+\end{equation}
+よって, 最後の二式を比較すれば, 
+\begin{equation}
+ T=\DPext{h}{\eta}{p} \;\;\;\; {\rm and} \;\;\;\;
+ \alpha = \DPext{h}{p}{\eta}
+\end{equation}
+を得る. 
+$h$の$\eta,p$による二階微分が可換であることに注意すれば, 
+\begin{equation}
+ \DPext{T}{p}{\eta} = \DPext{\alpha}{\eta}{p}
+\end{equation}
+を得る. 
+これは, 二つ目のマクスウェルの関係式である. 
+
+三つ目の関係式を得るために, (\ref{eq:fundamental_thermodyn_relation})を
+\begin{equation}
+ dI = Td\eta - pd\alpha =d(T\eta - p\alpha) - \eta dT +\alpha dp
+\end{equation}
+と書き, さらに\textbf{ギブス関数}(あるいは,ギブスの自由エネルギー, ギブスポテンシャル)
+\begin{equation}
+ G \equiv I - T\eta + p\alpha
+\end{equation}
+を導入することによって, 
+\begin{equation}
+ dG = - \eta dT + \alpha dp
+ \label{eq:fundamental_thermodyn_relation_byGibbsEn}
+\end{equation}
+を得る. 
+後は, 先に導いた方法と同様の手順によって, 
+三つ目のマクスウェルの関係式
+\begin{equation}
+ \DPext{\eta}{p}{T} = -\DPext{\alpha}{T}{p}
+ \label{eq:Maxwell_third_relation}
+\end{equation}
+を得る. 
+
+最後に四つ目の関係式を得るために, (\ref{eq:fundamental_thermodyn_relation})を
+\begin{equation}
+ dI = Td\eta - pd\alpha =d(T\eta) - \eta dT - pd\alpha
+\end{equation}
+と書き,さらに\textbf{ヘルムホルツの自由エネルギー}
+\begin{equation}
+ F \equiv I - T\eta \; (= G - p\alpha)
+ \label{eq:fundamental_thermodyn_relation_byHelmEn}
+\end{equation}
+を導入すれば, 
+\begin{equation}
+ dF = - \eta dT - pd\alpha
+\end{equation}
+を得る. 
+したがって, 同様の手順により, 
+四つ目のマクスウェルの関係式
+\begin{equation}
+ \DPext{\eta}{\alpha}{T} = \DPext{p}{T}{\alpha}
+  \label{eq:Maxwell_fourth_relation}
+\end{equation}
+を得る. 
+
+\subsubsection*{基本的な状態方程式}
+基本的な状態方程式(\ref{eq:general_EOS})は, 熱力学的平衡状態にある流体についての完全な情報を与える. 
+もしこの状態方程式が与えられたならば, (\ref{eq:intensiveVarsDef_by_InternalEnergy})を使って, 
+温度・圧力・化学ポテンシャルに対する表現を得ることができる. 
+それらもまた状態方程式であるが, 
+三式全部では基本的な状態方程式と同じ情報を持つ一方で, 
+それら各々は微分がとられているために, 基本的な状態方程式よりも少ない情報しか持たない. 
+(\ref{eq:fundamental_thermodyn_relation_byenthalpy})を用いた圧力・エントロピー・成分の関数としてのエンタルピーの式, 
+(\ref{eq:fundamental_thermodyn_relation_byGibbsEn})を用いた圧力・温度・成分の関数としてのギブス関数の式, 
+(\ref{eq:fundamental_thermodyn_relation_byHelmEn})を用いた温度・体積・成分の関数としてのヘルムホルツの自由エネルギーの式は, 
+いずれも基本的な状態方程式と等価である. 
+圧力・温度・成分はすべて実験室で計測しやすいので, これらのうち, ギブス関数が最も実用的に便利である. 
+基本的な状態方程式が与えられたならば, 物体の熱力学的状態は, $\{p,\rho,T,\eta,I\}$の中の二個と成分の情報によって完全に指定される. 
+習慣的な状態方程式は,　(\ref{eq:intensiveVarsDef_by_InternalEnergy})の前二式からエントロピーを消去するために, 
+(\ref{eq:general_EOS_internalEnergy})を用いることによって得られる. 
+
+簡単な基本的な状態方程式の例として, 内部エネルギーがエントロピーに依存せず密度だけの関数である場合を考えよう. 
+すなわち, $I=I(\alpha)$. 
+このような特性を持つ物体は, 一様エントロピー(\textbf{homentropic})と言われる. 
+(\ref{eq:intensiveVarsDef_by_InternalEnergy})から温度や化学ポテンシャルは何の役割も持たず, 
+密度は圧力のみの関数である. 
+これは, まさに順圧流体の定義である. 
+一般には水と空気どちらも一様エントロピーではないが, 
+いくつかの条件下では, 流れは断熱的かつ$p=p(\rho)$であって良い. 
+
+理想気体において, 分子は弾性衝突を除けば相互作用しない. 
+分子の体積は, それらが占める全体積に比べて無視できると仮定される. 
+このとき, 気体の内部エネルギーは温度のみに依存し, 密度に依存しない. 
+熱容量が一定であるような, \textbf{簡単な}理想気体を考えることにすれば, 
+\begin{equation}
+ I = cT. 
+ \label{eq:internalEn_idealGas_constCv}
+\end{equation} 
+ここで, $c$は定数である. 
+基本的な熱力学的関係(\ref{eq:fundamental_thermodyn_relation})とともに
+この式と慣習的な理想気体の式$p=\rho R T$($R$もまた定数)を用いれば, 
+基本的な状態方程式を推定することができる. 
+このことは, 次節で温位を議論したのちに確認することにする. 
+\textbf{一般的な}理想気体もまた$p=\rho R T$に従うが, 
+その熱容量は温度\textbf{のみ}の関数である %
+\footnote{
+
+}. 
+
+\subsubsection*{内部エネルギーと比熱}
+ここでは, 基本的な熱力学的関係式を簡単に操作することによって, 
+内部エネルギーと比熱容量の間の便利な関係式を導き, また比熱容量の値を推定することにする. 
+流体の化学成分は一定であると仮定すれば, 
+(\ref{eq:fundamental_thermodyn_relation})は
+\begin{equation}
+ Td\eta = dI + pd\alpha. 
+\end{equation}
+よって, $I$を$\alpha$と$T$の関数とすれば, 
+\begin{equation}
+ Td\eta = \DPext{I}{T}{\alpha}dT + \left[\DPext{I}{\alpha}{T} + p\right]
+\end{equation}
+を得る. 
+これより, 一定の体積(すなわち一定の$\alpha$)における熱容量, 定積比熱$c_v$が以下のように与えられる. 
+\begin{equation}
+ c_v \equiv T\DPext{\eta}{T}{\alpha} = \DPext{I}{T}{\alpha}.
+\end{equation}
+よって, (\ref{eq:internalEn_idealGas_constCv})の$c$は$c_v$に等しい. 
+
+同様に, (\ref{eq:fundamental_thermodyn_relation_byenthalpy})を用いれば, 
+\begin{equation}
+ Td\eta = dh - \alpha dp 
+ = \DPext{h}{T}{p} dT + \left[\DPext{h}{p}{T} - \alpha \right] dp. 
+\end{equation}
+このとき, 定圧比熱$c_p$は, 
+\begin{equation}
+ c_p \equiv T \DPext{h}{T}{p} = \DPext{h}{T}{p}
+\end{equation}
+によって与えられる. 
+後ほど使用するために, 比熱比$\gamma \equiv c_p/c_v$と$\kappa　\equiv　R/c_p$をここで定義しておく. 
+
+理想気体に対して, $h=I+RT=T(c_v + R)$である. 
+しかし, $c_p = (\partial h/\partial T)_p$であるので, 
+\textbf{マイヤーの関係式}
+\begin{equation}
+ c_p = c_v + R, 
+\end{equation}
+そして$(\gamma - 1)/\gamma = \kappa$が得られる. 
+統計力学によれば, 簡単な(比熱一定の)理想気体に対する内部エネルギーは,
+励起されるそれぞれの自由度に対して, 一分子あたり$kT/2$あるいは単位質量あたり$RT/2$である. 
+ここで, $k$はボルツマン定数, $R$は気体定数である. 
+地球大気の大部分を占める二原子分子 N$_2$ と O$_2$ は, 回転運動に対して自由度を 2, 
+並進運動に対して自由度を 3　もつ. 
+よって, 地球大気組成の理想気体において$I \approx 5RT/2$となる, 
+したがって, $c_v \approx 5R/2$, $c_p \approx 7R/2$であり, ともに定数である. 
+実際, これらは地球大気で計測される値に対して大変良い近似になっていて, 
+$c_p \approx 10^3$ J kg$^{-1}$ K$^{-1}$ を与える. 
+その内部エネルギーは簡単に$c_v T$, エンタルピーは$c_p T$である. 
+一方, 液体, 特に不溶解な塩を含む海水のようなものに対しては, 
+このような簡単な関係は存在しない. 
+その熱容量は流体の状態の関数であり, 内部エネルギーは温度とともに圧力(あるいは密度)の関数である. 

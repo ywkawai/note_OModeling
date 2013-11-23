@@ -1,0 +1,115 @@
+\section{液体に対する熱力学:後半}
+\markright{\arabic{chapter}.\arabic{section} 液体に対する熱力学2} %  節の題名を書き込むこと
+
+\subsection{温位, ポテンシャル密度, エントロピー}
+理想気体に対しては, 変数一つだけ, すなわち温位に対する簡単な熱力学の方程式を導くことができた. 
+また温位は簡単に温度と圧力と簡単に結びつけられ, 故にエントロピーと密接に関係付けられた. 
+実際これから見るように, 温位はより一般の流体に対するエントロピーと密接に関係付けられる. 
+
+\subsubsection*{温位}
+温位は, 流体粒子を断熱的にある参照圧力$p_R$(近似的な海面の圧力である 10$^5$ Pa がしばしば取られる)まで移動させたならば, 
+流体粒子がもつ温度として定義される. 
+したがって, 少なくとも原理的には, 温位は積分
+\begin{equation}
+　\theta(S,T,p,p_R)
+　= T + \int_p^{p_R} \Gamma^\prime_{\rm ad} (S,T,p) dp 
+\end{equation}
+によって計算される. 
+ここで, $\Gamma^\prime_{\rm ad} = (\partial T/\partial p)_\eta$. 
+このような積分を計算するのは難しい. 
+もし$\eta=\eta(S,T,p)$の形式の状態方程式が既知ならば,温位をより直接的に計算することができる. 
+なぜならば, 定義による温位は
+\begin{equation}
+ \eta(S,T,p) = \eta(S,\theta,p_R)
+\label{eq:knownEntropFunc_apply_ptempDef}
+\end{equation}
+を満たすからである. 
+この式を$\theta$に対して解けば, 原理的には
+$\theta=\theta\left(\eta(S,T,p),S,p_R \right)=\theta\left(T(\eta,p,S),S,p_R \right)$
+を与える. 
+
+一定の成分に対して, (\ref{eq:knownEntropFunc_apply_ptempDef})の右辺から
+\begin{equation}
+  d\eta = \DP{\eta(S,\theta,p_R)}{\theta} d\theta
+\end{equation}
+なので, エントロピーの変化は温位と直接関係付けられる. 
+よって, もし流体粒子が断熱的かつ一定の成分のまま移動すれば, 
+このとき$d\eta=0$そして$d\theta =0$である. 
+さらに, エントロピーを温度と圧力の関数として表すならば, 
+$c_p$の定義を用いて, 
+\begin{equation}
+ Td\eta = T\DP[][p,S]{\eta}{T} dT + T\DP[][T,S]{\eta}{p} dp
+  = c_p dT + T\DP[][T,S]{\eta}{p} dp. 
+\end{equation}
+もしこの式を参照圧力で評価すれば, その場合$T=\theta, dp=0$であり, 
+よって$\theta d\eta = c_p(p_R,\theta) d\theta$. 
+故に, 
+\begin{equation}
+  \boxed{
+   d\eta = c_p(p_R,\theta) \dfrac{d\theta}{\theta}, 
+   \label{eq:ptemp_entropy_relation_ingeneral}
+  }
+\end{equation}
+そして, $d\eta/d\theta = c_p(p_R,\theta) /\theta$を得る. 
+$c_p$が一定の特別な場合には, この式の積分は
+\begin{equation}
+ \eta = c_p \ln{\theta} + \text{constant}
+\end{equation}
+を与える. 
+これは, 理想気体に対する(\ref{eq:ptemp_entropy_relation_constSpecHeat})と同じである. 
+(\ref{eq:ptemp_entropy_relation_ingeneral})を与えられたならば, 
+熱力学の方程式は一定の成分の場に対して, 
+\begin{equation}
+ c_p \DD{\theta}{t} = \dfrac{\theta}{T} \dot{Q}
+ \label{eq:thermodynEq_with_ptemp_variableCp}
+\end{equation}
+と書くことができる. 
+ここで, 右辺は加熱を表す. 
+成分が一定でなければ, 右辺に塩分のソースと塩分の拡散もまた含めるべきである. 
+しかし, 海洋では, そのような項の効果はふつうとても小さい. 
+今$\eta$の代わりに$\theta$を他の熱力学変数と状態方程式を介して関連付けられなければならないが, 
+熱力学の方程式として(\ref{eq:entropy_forFluid})の代わりに
+(\ref{eq:thermodynEq_with_ptemp_variableCp})を用いることができる. 
+
+温位の概念は, 見慣れている実際の温度と結びつけられるので, 便利である. 
+大まかに言えば, 温位とは, 温度と圧縮の効果のための補正の和である. 
+他方, エントロピーは馴染みの無く, 不必要に新奇的に思われる. 
+しかし, 温位を利用しても, 
+熱力学変数としてエントロピーを用いることによって与えられる簡潔な運動の方程式を, 
+それ以上簡潔な形式にすることはない. 
+それどころか, 成分が変化する流体の場合には, 温位の時間発展式はエントロピーの式よりもより複雑になる. 
+
+\subsubsection*{ポテンシャル密度}
+ポテンシャル密度$\rho_\theta$は, 断熱的かつ成分を固定して, 流体粒子を参照圧力(しばしば 10$^5$ Paがとられる)まで移動させたときに
+得られる流体粒子の密度である. 
+もし, 状態方程式が$\rho=\rho(S,T,p)$の形式を持つならば, 定義により
+\begin{equation}
+ \rho_\theta = \rho(S,\theta, p_R)
+ \label{eq:potentialDens_ingeneral}
+\end{equation}
+を得る. 
+故に, 断熱的に(すなわち, 塩分と温位は一定のまま)移動する粒子に対して, 粒子のポテンシャル密度は保存される. 
+理想気体に対し, (\ref{eq:potentialDens_ingeneral}) は$\rho_\theta = p_R/(R\theta)$を与え, 
+ポテンシャル密度は温位以上の情報を与えない. 
+しかし, 海洋では, ポテンシャル密度は密度における塩分の効果を考慮する%
+\footnote{
+塩分の効果は, 温位を介して導入される. 
+}
+ので, 
+水のコラムの安定性のための指標としてポテンシャル密度は密度そのものよりはるかに良い. 
+$\rho_\theta$の近似形式は, (\ref{eq:entropyEq_withDens,P_goodapprox})の右辺の括弧内で与えられる. 
+ 
+海洋では密度がほとんど一定なので, 
+その値を示す前に 1000 kg m$^{-3}$　だけ引くのが一般的である. 
+現場密度かポテンシャル密度のどちらを言及するかに依存して, 
+それぞれ$\sigma_T$(`sigma-tee'), $\sigma_\theta$(`sigma-theta')と呼ばれる. 
+よって, 
+\begin{equation}
+ \sigma_T = \rho(p,T,S) - 1000, \;\;\;\;\;
+ \sigma_\sigma = \rho(p_R,\theta,S) - 1000. 
+\end{equation}
+ポテンシャル密度が特定の高度を参照するならば, $\sigma$に添字をつけることでそのことを示す. 
+よって, $\sigma_2$は, 圧力 200 bar(あるいは深度約 2 km)を参照圧力とするポテンシャル密度である. 
+
+\subsection{海水の熱力学的な特性}
+

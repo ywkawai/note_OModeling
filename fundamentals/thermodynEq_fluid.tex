@@ -1,0 +1,495 @@
+\section{流体に対する熱力学の方程式}
+\markright{\arabic{chapter}.\arabic{section} 流体に対する熱力学の方程式 } %  節の題名を書き込むこと
+熱力学の関係式(例えば, (\ref{eq:fundamental_thermodyn_relation})は, 識別可能な物体あるいは系に対して適用される. 
+よって, 熱の注入はそれが行われる流体粒子に影響を与え, 
+移動する流体に対する運動の方程式を得るために, 上の熱力学的関係式に物質微分を適用できる. 
+そのようなことを行う前に, 二つの仮定をおく. 
+% % % % % % % % % % % % % %
+\begin{description}
+\item[(i) 流体は局所的に熱力学的平衡状態にあるとする.] \mbox{} \\
+  これは, 温度・圧力・密度のような熱力学的量は空間・時間的に変化するが, 
+  局所的には状態方程式やマクスウェルの関係式のような熱力学的関係によってそれらが関係づけられることを意味する. 
+\item[(ii) 巨視的な流体運動は可逆的で, よってエントロピーを生成しないとする.] \mbox{} \\
+  したがって, エネルギーの粘性散逸・放射・凝結といった効果はエントロピーを生成してもよいが, 
+  巨視的な流体運動自身は断熱的である. 
+\end{description}
+% % % % % % % % % % % % % % %
+一つ目の仮定は,  
+流体粒子の体積が巨視的な変化のスケールに比べて小さい(温度が粒子の中で実効的に一定であるため)が, 
+十分な数の分子を含めるほどの大きさである(さもなければ温度のような巨視的な変数が適切な意味を持たない)ために,
+巨視的なスケールの温度変化は十分にゆっくりでなければならないことを要求する. 
+
+(\ref{eq:thermodyn_first_law})から無限小の流体粒子に対するエネルギー保存則は, 
+\begin{equation}
+ dI = -pd\alpha + d^\prime Q_T
+ \label{eq:thermodyn_first_law_brief}
+\end{equation}
+と書かれる. 
+ここで, $pd\alpha$は粒子によってなされる仕事, 
+$d^\prime Q_T$は, 熱フラックスの寄与と成分の変化の寄与を含めた, 粒子に注入される全エネルギーである. 
+一つ目の仮定を認めるならば, (\ref{eq:thermodyn_first_law_brief})の物質微分で書ける. 
+すなわち, 
+\begin{equation}
+ \DD{I}{t} + p\DD{\alpha}{t} = \dot{Q}_T. 
+  \label{eq:thermodyn_first_law_usingMaterialDeriv}
+\end{equation}
+ここで, $\dot{Q}_T$は, 熱フラックス(放射加熱・熱拡散・粘性散逸による加熱)と成分の拡散フラックスからの寄与による, 
+単位質量あたりの全エネルギーの注入率である %
+\footnote{
+多くの状況で, 熱フラックスは温度勾配に, 成分の拡散フラックスは成分の勾配によって近似的に決定されるが, 
+一般には熱フラックスと成分のフラックスは温度と成分の両方の勾配に依存する. 
+}. 
+連続の式
+\begin{equation*}
+ \DD{\alpha}{t} = \alpha \nabla \cdot \Dvect{v}
+\end{equation*}
+を用いれば, (\ref{eq:thermodyn_first_law_usingMaterialDeriv})は, 
+\begin{equation}
+ \boxed{
+ \DD{I}{t} + p\alpha \nabla \cdot \Dvect{v} = \dot{Q}_T
+ \label{eq:internalEn_forFluid}
+ }
+\end{equation}
+となる. 
+これは, 流体に対する\textbf{内部エネルギーの方程式}である. 
+
+$\dot{Q}_T$は一般には成分の変化によるエネルギーフラックスを含むので, その成分を知る必要がある. 
+流体粒子の成分は, 粒子の移動するとき一緒に運ばれ, 
+そこに非保存的なソースやシンク(例えば拡散フラックス)が存在する場合にのみ変化する. 
+故に, ラグランジュ形式の質量保存則と同様に, 成分の時間発展は
+\begin{equation}
+ \DD{S}{t} = \dot{S}
+ \label{eq:Composition}
+\end{equation}
+によって決定される. 
+ここで, $\dot{S}$は全ての非保存項を表す. 
+
+内部エネルギーの方程式を用いるよりむしろ, エントロピーの時間発展方程式を推定するために, 
+基本的な熱力学的関係式を用いてもよい. 
+よって, (\ref{eq:fundamental_thermodyn_relation})に物質微分を適用し, 
+さらに(\ref{eq:internalEn_forFluid})と(\ref{eq:Composition})を用れば, 
+\textbf{エントロピー}方程式
+\begin{equation}
+ \DD{\eta}{t} = \dfrac{1}{T}\dot{Q}_T - \dfrac{\mu}{T}\dot{S} \equiv \dfrac{1}{T}\dot{Q}
+  \label{eq:entropy_forFluid}
+\end{equation}
+を得る. 
+ここで, $\dot{Q}$は単位質量あたりの加熱%
+\footnote{
+$\dot{Q}_T$は熱フラックスと成分の拡散フラックスの寄与の両方を含めた加熱であるのに対し, 
+$\dot{Q}$は熱フラックスの寄与だけによる加熱であることに注意されたい. 
+}である. 
+(この方程式は, 上の仮定(ii) とともに (\ref{eq:entropy_heat_relation_quasiStaticProc})に物質微分を適用することによって, 同様に導かれる.)
+エントロピー方程式は内部エネルギーに独立でなく, 内部エネルギーから導かれることに気がつくことが重要である. 
+二つの方程式は, 状態方程式を介して等価に結びつけられる. 
+つまり, もし内部エネルギーの方程式を用いるならば, 原理的には, $\eta=\eta(I,\alpha,S)$の形式の状態方程式を用いてエントロピーを計算できる.  
+もしくは, エントロピー方程式を用いるならば, $I=I(\eta,\alpha,S)$を使って内部エネルギーを計算できる. 
+実際, 内部エネルギーの方程式とエントロピーの方程式はともに一般的に「熱力学の方程式」と呼ばれる. 
+多成分流体において, 不可逆な拡散過程はエントロピーのソースを与える. 
+それ故に, 内部エネルギーの方程式を用いる方が, エントロピーの方程式を用いるよりしばしば直接的である. 
+
+成分の時間発展式および内部エネルギーあるいはエントロピーの時間発展式が与えられ, 
+そして基本的な状態方程式が与えられたならば, 原理的には流体の方程式の完全系を得る. 
+実用的には, 方程式の形式は最も便利ではない. 
+なぜならば, 特に液体に対して, 状態方程式を, 圧力と温度を診断可能な簡単かつ有益な形式で書くことができないからである. 
+幸運にも, 理想気体に対する状態方程式は, これから見るようにそのような診断を可能にする. 
+
+\subsection{理想気体に対する熱力学の方程式}
+乾燥している(水蒸気を含まない)理想気体に対して, 内部エネルギーは温度だけの関数であり, $dI=c_v dT$である. 
+熱力学第一法則は, 
+\begin{equation}
+ d^\prime Q = c_v dT + pd\alpha \;\;\;\; \text{or} \;\;\;\;
+ d^\prime Q = c_p dT - \alpha dp. 
+ \label{eq:thermodyn_first_law_twoForms}
+\end{equation}
+上の二式に物質微分を適用すると, 理想気体の状態方程式を用いて, 
+内部エネルギーの方程式の二つ形式
+\begin{equation}
+ c_v \DD{T}{t} + p \DD{\alpha}{t} = \dot{Q} \;\;\;\; \text{or} \;\;\;\;
+ c_p \DD{T}{t} - \dfrac{RT}{p} \DD{p}{t} = \dot{Q}
+ \label{eq:internalEnEq_idealGas}
+\end{equation}
+を得る. 
+質量の連続の式を用いれば, (\ref{eq:internalEnEq_idealGas}) の前者の式は, 
+\begin{equation}
+ c_v \DD{T}{t} + p\alpha \nabla \cdot \Dvect{v} = \dot{Q}
+ \label{eq:thermodynEq_forIdealGas_usingTP}
+\end{equation}
+と書かれる. 
+別に, 理想気体の方程式を用いて$T$を消去して, $p,\alpha$を優先すれば, 
+\begin{equation}
+ \DD{p}{t} + \gamma p \nabla \cdot \Dvect{v} = \dot{Q} \dfrac{\rho R}{c_v}
+ \label{eq:thermodynEq_forIdealGas_usingPV}
+\end{equation}
+を得る. 
+
+地球の大気は, また混合比$w$をもつ水蒸気を含む. 
+水蒸気の時間発展式は,
+\begin{equation}
+ \DD{w}{t} = \dot{w}
+\end{equation}
+の形式をもつ. 
+ここで, $\dot{w}$は凝結と蒸発の効果を表す. 
+(もし雲量がモデル化されるならば, 液体の水に対する式もまた必要とされる. )
+水蒸気の主な熱力学的な効果は, 水蒸気が凝結するあるいは液体の水が蒸発するときに発生し,  
+潜熱が解放される. 
+この加熱は, 他の効果に加えて$\dot{Q}=-L_c \dot{w}$を用いて熱力学の方程式に現れる. 
+ここで, $L_c$は凝結の潜熱である. 
+
+\subsubsection*{温位, ポテンシャル密度, エントロピー}
+熱力学の方程式として, 温度の代わりにエントロピーを用いることができる. 
+これは, (\ref{eq:internalEn_forFluid})の代わりに, (\ref{eq:entropy_forFluid})を用いることに対応する. 
+エントロピーを温度のような量を使って表すと便利であることに気づくが, 
+エントロピーの方程式を用いることは, 理想気体に対する基本的な状態方程式を導いて用いることと実効的には同等である. 
+これを行うには, 初めに流体粒子が断熱的に圧力を変化させるとき, それが膨張あるいは圧縮して, 
+どの程度温度が変化するかに注意する必要がある. 
+この断熱的な温度変化は, (\ref{eq:thermodyn_first_law_twoForms})を使って, 
+\begin{equation}
+ c_p dT = \alpha dp
+\end{equation}
+によって決定される. 
+この温度変化は非断熱的な効果(たとえば, 加熱)によって引き起こされるわけではないので, 
+非断熱な効果が存在する場合に\textbf{のみ}変化する, 温度のような量を定義すると便利である. 
+そのために, \textbf{温位}(potential temperature) $\theta$を導入する. 
+温位は, 流体を断熱的に(より一般には一定の成分のまま)ある参照圧力(地球表面の気圧に近い 1000 hPa がしばしばとられる)まで移動させたときに, 
+流体がもつ温度として定義される. 
+よって, 断熱的な流れにおいて, 流体粒子の温位は定義によって本質的には保存される. 
+つまり, 
+\begin{equation}
+ \DD{\theta}{t} = 0. 
+\end{equation}
+この方程式を役立てるには, $\theta$が他の熱力学変数と関連付けられなければならない. 
+理想気体に対しては, 
+(\ref{eq:thermodyn_first_law_twoForms})と状態方程式を用いることによって, 
+基本的な熱力学的関係式は
+\begin{equation}
+ d\eta = c_p d\ln{T} -Rd\ln{p}
+\end{equation}
+と書かれる. 
+温位の定義は, 
+\begin{equation}
+ \int_{T}^\theta c_p d\ln{T} - \int_p^{p_R} R d\ln{p} = 0
+\end{equation}
+であることを示唆する. 
+この式は, 一定な$c_p$と$R$に対しては$\theta$について解くことができ, 
+\begin{equation}
+ \theta = T\left(\dfrac{p_R}{p}\right)^\kappa
+ \label{eq:ptemp_idealGas}
+\end{equation}
+を与える. 
+ここで, $p_R$は参照圧力, $\kappa = R/c_p$である. 
+
+温位の定義の結果として, 温位はエントロピーと次式によって関係付けられることに注意が必要である. 
+\begin{equation}
+ d\eta = c_p d\ln{\theta}. 
+\label{eq:ptemp_entropy_relation}
+\end{equation}
+もし, $c_p$が定数ならば, 
+\begin{equation}
+ \eta = c_p d\ln{\theta}. 
+ \label{eq:ptemp_entropy_relation_constSpecHeat}
+\end{equation}
+実際(\ref{eq:ptemp_entropy_relation})は流体粒子の温位に対する一般的な表現である.  
+しかし, (\ref{eq:ptemp_entropy_relation_constSpecHeat})は, 
+地球大気ではよい近似でそうであるように, $c_p$が定数である場合にのみ適用できる. 
+
+(\ref{eq:ptemp_entropy_relation_constSpecHeat})の物質微分をとりに, 
+また(\ref{eq:entropy_forFluid})を用いれば, 
+\begin{equation}
+ \boxed{
+  c_p \DD{\theta}{t} = \dfrac{\dot{\theta}}{T} \dot{Q}
+ }
+  \label{eq:thermodynEq_forIdealGas_usingPTemp}
+\end{equation}
+を得る. 
+ここで, $\theta$は(\ref{eq:ptemp_idealGas})によって与えられる. 
+(\ref{eq:thermodynEq_forIdealGas_usingTP}), 
+(\ref{eq:thermodynEq_forIdealGas_usingPV}), 
+(\ref{eq:thermodynEq_forIdealGas_usingPTemp})は, 理想気体に対する熱力学の方程式の等価な形式である. 
+
+ポテンシャル密度$\rho_\theta$とは, 断熱的かつ一定の成分で, 流体粒子を参照圧力$p_R$まで移動させたときに, 
+流体粒子がもつ密度である. 
+もし状態方程式が$\rho = f(p,T)$と書かれるならば, ポテンシャル密度は単に
+\begin{equation}
+ \rho_\theta = f(p_R,\theta)
+\end{equation}
+である. 
+したがって, 理想気体に対しては, 
+\begin{equation}
+ \rho_\theta = \dfrac{p_R}{R \theta}
+\end{equation}
+となり, 温位の逆数に比例する. 
+上式は, 
+\begin{equation}
+ \rho_\theta = \rho \left(\dfrac{p_R}{p}\right)^{1/\gamma}
+\end{equation}
+とも書ける. 
+
+最後に, 後ほど利用するために, 参照状態からの小さな変動にたいして, 
+理想気体の方程式から, 
+\begin{equation}
+ \dfrac{\delta \theta}{\theta} 
+   = \dfrac{\delta T}{T} - \kappa \dfrac{\delta p}{p}
+   = \dfrac{1}{\gamma}\dfrac{\delta p}{p} - \dfrac{\delta \rho}{\rho}
+\end{equation}
+が与えられることを注意しておく.
+
+\subsubsection*{理想気体に対する基本的な状態方程式}
+(\ref{eq:ptemp_entropy_relation_constSpecHeat})と(\ref{eq:ptemp_idealGas})は, 基本的な状態方程式と密接に関係がある. 
+そして, $I=c_v T$と状態方程式$p=\rho R T$を用いれば, 密度と内部エネルギーをによってエントロピーを陽に表すことができる. 
+すなわち, 
+\begin{equation}
+ \boxed{
+  \eta = c_v \ln I - R \ln \rho + \text{const}
+ }.
+\label{eq:entropy_forSimpleIdealGas}
+\end{equation}
+これは, \textbf{簡単な理想気体(比熱が一定の理想気体)に対する基本的な状態方程式}である. 
+この式を使って始めれば, 簡単な理想気体の関心のある熱力学的な量をすべて導くことができる. 
+例えば, (\ref{eq:intensiveVarsDef_by_Entropy})から, 
+$p=\rho R T$および$I=c_v T$がすみやかに再導出できる. 
+つまり, (\ref{eq:entropy_forSimpleIdealGas})は簡単な理想気体を定義するために使えるが, 
+そのような先見的な定義はあまり動機がないように思えるかもれない. 
+もちろん, 熱容量は依然として実験や運動学の理論によって決定されなければならない. 
+熱力学だけではこれらの量は与えられず, 
+また(\ref{eq:entropy_forSimpleIdealGas})は比熱が定数である場合にのみ成り立つ. 
+
+\subsection{液体に対する熱力学:前半}
+海水のような流体に対して, 簡単な厳密な状態方程式は存在しない. 
+よって, (\ref{eq:entropy_forFluid})は一般には成立するが, 
+エントロピーを他の熱力学的変数と関連付ける方程式が依然として必要である. 
+定量的なモデリングや観測的な研究に対しては, そのような状態方程式は正確でなければならないが, 
+このことは, 目で見ても情報を得られないような, 複雑な非線形の式を必要とする. 
+他方, 多くの理論的研究や理想化されたモデルでは, 主な定性的な効果を捉えた簡単化された状態方程式で事足りる. 
+この式からは, 発見的手法で進めて, エントロピーの方程式から始めてそれを簡単化するための情報を得ることができる. 
+
+\subsubsection*{(I) 圧力と密度を使ったエントロピーの方程式}
+$\eta$を圧力と密度と(必要なら塩分)の関数とみなせば, 
+\begin{equation}
+\begin{split}
+ Td\eta 
+ &= T \DP[][p,S]{\eta}{\rho} d\rho + T \DP[][\rho,S]{\eta}{p} dp + T \DP[][\rho,p]{\eta}{S} dS \\
+ &= T \DP[][p,S]{\eta}{\rho} d\rho - T \DP[][p,S]{\eta}{\rho} \DP[][\eta,S]{\rho}{p} dp + T \DP[][\rho,p]{\eta}{S} dS 
+\end{split}
+\end{equation}
+を得る. 
+これに, (\ref{eq:entropy_forFluid})と(\ref{eq:Composition})を用いれば, 
+運動する流体に対して
+\begin{equation}
+   T \DP[][p,S]{\eta}{\rho} \DD{\rho}{t} - T \DP[][p,S]{\eta}{\rho} \DP[][\eta,S]{\rho}{p} \DD{p}{t} 
+ = \dot{Q} - T \DP[][\rho,p]{\eta}{S} \dot{S}
+\end{equation}
+を得る. 
+$(\partial p/\partial \rho)_{\eta,S}$は音速$c_s$の二乗であることを思い出して欲しい. 
+音速は流体中で計測可能な量であり, しばしば定数に近いので, 式中に残しておくと便利である. 
+このとき, 熱力学の方程式は
+\begin{equation}
+ \boxed{
+ \DD{\rho}{t} - \dfrac{1}{c_s^2} \DD{p}{t} = Q[\rho]
+\label{eq:entropyEq_withDens,P}
+ }
+\end{equation}
+の形式で書くことができる. 
+ここで, 
+$Q[\rho] \equiv (\partial \rho/\partial \eta)_{p,S} \dot{Q}/T - (\partial \rho/\partial S)_{\rho,p} \dot{S}$
+はエントロピーと塩分のソース項の効果を表す. 
+熱力学の式のこの形式は, 液体と気体の両方で適切である. 
+
+\subsubsection*{圧力と密度を使ったエントロピーの式の近似形}
+流体中の音速は, その圧縮性と関係する. 
+流体の圧縮性が低いほど, 音速は大きくなる. 
+液体では, 音速はしばしば十分に大きいために, 
+(\ref{eq:entropyEq_withDens,P})の二項目は無視でき, 
+熱力学の方程式は簡単な形式
+\begin{equation}
+ \DD{\rho}{t} = Q[\rho]
+\label{eq:entropyEq_withDens,P_approx}
+\end{equation}
+をとる. 
+この方程式は, 液体に対するエネルギー保存則から生じた, 熱力学の方程式であることに注意が必要である. 
+この式は, 圧縮性流体の密度の時間発展式である質量保存則とは全く別の方程式である. 
+
+海洋における, 海水コラムが深さ km であることに起因する膨大な圧力は, 
+(\ref{eq:entropyEq_withDens,P_approx})の二番目の項は小さくてもよいが無視できないことを意味する, 
+もし圧力が上に存在する流体の重さによって与えられる(静水圧近似)ならば, より良い近似を行える. 
+この場合には$dp = -\rho gz$であり, (\ref{eq:entropyEq_withDens,P})は
+\begin{equation}
+ \DD{\rho}{t} + \dfrac{\rho g}{c_s^2}\DD{z}{t} = Q[\rho]
+\end{equation}
+となる. 
+二番目の項において, 高度場は密度場よりもはるかに変化するので, 
+この項においてのみ$\rho$を$\rho_0$によって良い近似で置き換えることができる. 
+音速もまた定数ととれば, 
+\begin{equation}
+ \DD{}{t} \left(\rho + \dfrac{\rho_0 z}{H_\rho} \right)
+ = Q[\rho]
+ \label{eq:entropyEq_withDens,P_goodapprox}
+\end{equation}
+を与える. 
+ここで, 
+\begin{equation}
+ H_\rho = c_s^2/g
+  \label{eq:dens_scale_height}
+\end{equation}
+は海洋の\textbf{密度スケールハイト}である. 
+水中では$c_s \approx 1500$ms$^{-1}$であるので, $H_\rho \approx 200$km である. 
+(\ref{eq:entropyEq_withDens,P_goodapprox})の左辺括弧内は, (この近似における)\textbf{ポテンシャル密度}である. 
+このポテンシャル密度は, 粒子を断熱的かつ一定の成分で参照高度$z=0 $まで動かしたときに, 
+粒子がもつ温度である. 
+密度の断熱減率は, 断熱的な変位に伴う粒子の密度の変化率である. 
+それは, (\ref{eq:entropyEq_withDens,P_goodapprox})から近似的に, 
+\begin{equation}
+ -\DP[][\eta]{\rho}{z} \approx \dfrac{\rho_0 g}{c_s^2}
+  \approx 5 \;\;\; \text{kgm$^{-3}$/km}
+\end{equation}
+である. 
+よって, もし流体粒子を海面から深海(深度 5 km)まで断熱的に移動させれば, 
+その密度は約 25 kg m$^{-3}$,  
+全密度に対する割合としては 1/40 (2.5 \%) 増加する. 
+ 
+\subsubsection*{(II) 圧力と温度を使ったエントロピーの方程式}
+$\eta$を圧力と温度と(必要なら塩分)の関数とみなせば, 
+\begin{equation}
+\begin{split}
+ Td\eta 
+ &= T \DP[][p,S]{\eta}{T} dT + T \DP[][T,S]{\eta}{p} dp + T \DP[][T,p]{\eta}{S} dS \\
+ &= c_p dT + T \DP[][T,S]{\eta}{p} dp + T \DP[][T,p]{\eta}{S} dS
+\end{split}
+\end{equation}
+を得る. 
+これに, (\ref{eq:entropy_forFluid})と(\ref{eq:Composition})を用いれば, 
+運動する流体に対して
+\begin{equation}
+ \DD{T}{t} + \dfrac{T}{C_p}\DP[][T,s]{\eta}{p}\DD{p}{t} = Q[T]
+\end{equation}
+を得る. 
+ここで, 
+$Q[T] \equiv \dot{Q}/c_p - T c_p^{-1} \dot{S} (\partial \eta/\partial S)_{T,p}$. 
+マクスウェルの関係式(\ref{eq:Maxwell_third_relation})を代入すれば, 
+\begin{subequations}
+\begin{equation}
+ \DD{T}{t} + \dfrac{T}{\rho^2 C_p}\DP[][p]{\rho}{T}\DD{p}{t} = Q[T]
+\end{equation}
+あるいは等価の
+\begin{equation}
+ \DD{T}{t} - \dfrac{T}{C_p}\DP[][p]{\alpha}{T}\DD{p}{t} = Q[T]
+\end{equation}
+\label{eq:entropyEq_with_T,p_noThermalExpans}
+\end{subequations}
+を得る. 
+密度と温度は, 計測可能な熱膨張係数$\beta_T$を介して関係付けられる. 
+ここで, 
+\begin{equation}
+ \DP[][p]{\rho}{T} = - \beta_T \rho. 
+\end{equation}
+このとき, (\ref{eq:entropyEq_with_T,p_noThermalExpans})は, 
+\begin{equation}
+ \boxed{
+  \DD{T}{t} - \dfrac{\beta_T T}{c_p \rho}\DD{p}{t} = Q[T]
+ }
+ \label{eq:entropyEq_with_T,p_ThermalExpans}
+\end{equation}
+となる. 
+この熱力学の式の形式は液体と気体の両方に対して適切であり, 
+理想気体では$\beta_T = 1/T$である. 
+
+\subsubsection*{圧力と温度を使ったエントロピーの式の近似形}
+液体の特徴は熱膨張係数が小さいことなので, 
+実験室の流体では(\ref{eq:entropyEq_with_T,p_ThermalExpans})の左辺二項目を無視することが許される. 
+このとき, (\ref{eq:entropyEq_withDens,P_approx})と同じよう, 
+\begin{equation}
+ \DD{T}{t} = Q[T]
+\end{equation} 
+を得る. 
+この近似は熱膨張係数が小さいことに依存している. 
+より良い近似を得るには, (\ref{eq:entropyEq_with_T,p_ThermalExpans})圧力を真上の流体の重さによってのみ変化すると, 
+再び仮定する. 
+このとき, $dp = -\rho gdz$であるので, (\ref{eq:entropyEq_with_T,p_ThermalExpans})は
+\begin{equation}
+ \dfrac{1}{T}\DD{T}{t} + \dfrac{\beta_T g}{c_p} \DD{z}{t} = \dfrac{Q[T]}{T}
+ \label{eq:entropyEq_with_T,p_approx_hydrostatic}
+\end{equation}
+となる. 
+$T$の変化が小さく, 特に$\beta_T$が定数であるならば, 
+この式は
+\begin{equation}
+ \DD{}{T} \left( T + \dfrac{T_0 z}{H_T} \right) = Q[T]
+\end{equation}
+と簡単になる. 
+ここで, 
+\begin{equation}
+ H_T = \dfrac{c_p}{\beta_T g}
+ \label{eq:temp_scale_height}
+\end{equation}
+は, 流体の\textbf{温度スケールハイト}である. 
+$T+T_0z/H_T$は, (この近似における)\textbf{温位}$\theta$である. 
+なぜならば, これは, 高さ$z$の流体が参照高度(ここでは$z=0$)まで断熱的に移動させたときにもつ温度だからである. 
+流体粒子が膨張(あるいは圧縮)するときにそれがする(あるいはなされる)仕事によって, 温度は変化する. 
+つまり, 
+\begin{equation}
+ \theta \approx T + \dfrac{\beta_T g T_0}{c_p} z. 
+ \label{eq:ptemp_approx_constBetaTAndCp}
+\end{equation}
+海水では, 膨張係数$\beta_T$や$c_p$は圧力の関数であるので, 
+(\ref{eq:ptemp_approx_constBetaTAndCp})は定量的な計算に対しては十分に良い近似ではない. 
+海洋における近似的な値, $\beta_T \approx 2\times 10^{-4}$K$^{-1}$と$c_p \approx 4 \times 10^3$J kg$^{-1}$ K$^{-1}$を用いれば, 
+$H_T \approx 2000$km となる. 
+
+温度の断熱減率は, 鉛直方向の断熱変位を経験する粒子の温度変化率である. 
+これは, (\ref{eq:entropyEq_with_T,p_approx_hydrostatic})から, 
+\begin{equation}
+ \Gamma_{\rm ad} = -\DP[][\eta]{T}{z} = \dfrac{T g \beta_T}{c_p}
+\label{eq:adiabatic_lapse_rate_general}
+\end{equation}
+である. 
+一般に温度の断熱減率は温度・塩分・圧力の関数であるが, 
+$\beta_T$が分かれば計算可能な量である. 
+上であげた海洋で典型的な値を用いれば, $\Gamma_{rm ad} \approx 0.15$K km$^{-1}$である. 
+熱膨張係数は圧力の関数であるので, 定量的な海洋学のためには(\ref{eq:adiabatic_lapse_rate_general})は精度が充分でない. 
+また, 塩分の効果のために, 安定度のための良い指標ともならない. 
+
+(\ref{eq:dens_scale_height})と(\ref{eq:temp_scale_height})によって与えられるスケールハイトはとても異なる. 
+前者で定義されるスケールハイトは, 海水の圧縮性にともなうものである(したがって, $c_s^2$と関係付けられる). 
+一方, 後者の定義は温度に伴う密度の変化($\beta_T$)によるものであり, 
+温度スケールハイトは, 温度と温位の差がそれ自身の温度(例えば, 273 K)に等しい量まで変化する距離(高度)である. 
+この二種類の高度は, 熱膨張係数が圧縮性と直接的に結びつかないために, かなり異なる. 
+例えば, 4$^\circ$C の淡水は熱膨張率がゼロであり, 
+よって温度スケールハイトが無限大となる. 
+しかし, 圧縮性の方は 2$^\circ$C の水とあまり変わらない. 
+
+大気においては, 理想気体の関係式により$\beta_T = 1/T$なので, 
+\begin{equation}
+ 　\Gamma_{\rm ad} = \dfrac{g}{c_p}
+\end{equation}
+となり, この値は近似的に 10 K km$^{-1}$ である.
+これを導く上で含まれる近似は, 静水圧平衡の関係だけである. 
+
+\subsubsection*{(III) 密度と温度を使ったエントロピーの方程式}
+$\eta$を密度と温度と(必要なら塩分)の関数とみなせば, 
+\begin{equation}
+\begin{split}
+ Td\eta 
+ &= T \DP[][\alpha,S]{\eta}{T} dT + T \DP[][T,S]{\eta}{\alpha} d\alpha + T \DP[][T,\alpha]{\eta}{S} dS \\
+ &= c_v dT + T \DP[][T,S]{\eta}{\alpha} d\alpha + T \DP[][T,p]{\eta}{S} dS
+\end{split}
+\end{equation}
+を得る. 
+運動する流体に対して, これは
+\begin{equation}
+ \DD{T}{t} + \dfrac{T}{C_v} \DP[][T,S]{\eta}{\alpha} \DD{\alpha}{t} = \hat{Q}[T]
+ \label{eq:entropyEq_withDens,Temp}
+\end{equation}
+となる. 
+ここで, 
+$\hat{Q}[T] \equiv \dot{Q}/c_v - T c_v^{-1} \dot{S} (\partial \eta/\partial S)_{T,\alpha}$. 
+
+理想気体に対しては, 
+マクスウェルの関係式(\ref{eq:Maxwell_fourth_relation})使って, 
+(\ref{eq:entropyEq_withDens,Temp})は
+\begin{equation}
+ c_v \DD{T}{t} + p\DD{\alpha}{t} = \dot{Q}
+\end{equation}
+と書かれる. 
+よって, (\ref{eq:internalEnEq_idealGas})が復元される. 
+他方, ほぼ一定の液体に対しては, (\ref{eq:entropyEq_withDens,Temp})の左辺二項目は小さく, 
+また$c_p \approx c_v$であり, 第一次近似として$dT/dt = \hat{Q}[T]$を得る. 
