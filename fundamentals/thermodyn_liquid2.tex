@@ -1,5 +1,5 @@
-\section{液体に対する熱力学:後半}
-\markright{\arabic{chapter}.\arabic{section} 液体に対する熱力学2} %  節の題名を書き込むこと
+\section{液体に対する熱力学:(後半)}
+\markright{\arabic{chapter}.\arabic{section} 液体に対する熱力学(後半)} %  節の題名を書き込むこと
 
 \subsection{温位, ポテンシャル密度, エントロピー}
 理想気体に対しては, 変数一つだけ, すなわち温位に対する簡単な熱力学の方程式を導くことができた. 
@@ -76,7 +76,7 @@ $c_p$が一定の特別な場合には, この式の積分は
 他方, エントロピーは馴染みの無く, 不必要に新奇的に思われる. 
 しかし, 温位を利用しても, 
 熱力学変数としてエントロピーを用いることによって与えられる簡潔な運動の方程式を, 
-それ以上簡潔な形式にすることはない. 
+それ以上簡潔な形式にすることはない. s
 それどころか, 成分が変化する流体の場合には, 温位の時間発展式はエントロピーの式よりもより複雑になる. 
 
 \subsubsection*{ポテンシャル密度}
@@ -95,8 +95,8 @@ $c_p$が一定の特別な場合には, この式の積分は
 \footnote{
 塩分の効果は, 温位を介して導入される. 
 }
-ので, 
-水のコラムの安定性のための指標としてポテンシャル密度は密度そのものよりはるかに良い. 
+ので, ポテンシャル密度は, 
+水のコラムの安定性のための指標として密度そのものよりはるかに良い. 
 $\rho_\theta$の近似形式は, (\ref{eq:entropyEq_withDens,P_goodapprox})の右辺の括弧内で与えられる. 
  
 海洋では密度がほとんど一定なので, 
@@ -109,7 +109,205 @@ $\rho_\theta$の近似形式は, (\ref{eq:entropyEq_withDens,P_goodapprox})の�
  \sigma_\sigma = \rho(p_R,\theta,S) - 1000. 
 \end{equation}
 ポテンシャル密度が特定の高度を参照するならば, $\sigma$に添字をつけることでそのことを示す. 
-よって, $\sigma_2$は, 圧力 200 bar(あるいは深度約 2 km)を参照圧力とするポテンシャル密度である. 
+よって, $\sigma_2$は, 圧力 200 bar(あるいは深度約 2 km)を参照圧力とするポテンシャル密度であ=sる. 
 
 \subsection{海水の熱力学的な特性}
+本節では, 海水の熱力学変数(習慣的な状態方程式, 温位の表現等)がどのように基本的な状態方程式から得られるかを示す. 
+$I=I(\eta,S,\alpha)$の形式の基本的な状態方程式を書くことは, その変数が実験において簡単に計測されないので, 
+実用的には便利でない. 
+しかし, ギブス関数$G=I - T\eta + p\alpha$を用いた基本的な状態方程式に注目すれば, 
+このとき$dG = -\eta dT + \alpha dp + \mu dS$であり, 
+独立変数$(T,S,p)$は馴染みのある, 計測可能な量である. 
 
+海洋学者は, 精度の良い状態方程式と他の海水の物理的性質を得るために, 労を惜しまない. 
+そして, 海水は, 弱いにもかかわらず重要な非線形な性質をいくつか持つ. 
+この性質を精度良く再現するギブス関数は複雑であるが, 
+モデル的なギブス関数を書き記すことができる. 
+このモデル的なギブス関数は, 参照状態の近傍の小さな変動に対して以外は精度は高くないが, 
+ある程度の経済性と透明性を保ちながら最も重要な特徴を捉えている. 
+このギブス関数は, 
+\begin{equation}
+\begin{split}
+  G =   G_0 - \eta_0 (T-T_0)& + \mu_0(S-S_0) 
+      - c_{p0} \left[\ln{(T/T_0)} - 1 \right]\left[1 + \beta_s^\star(S-S_0) \right] \\
+      + \alpha_0(p-p_0) \bigg[& 1 + \beta_T(T-T_0) - \beta_S (S-S_0) - \dfrac{\beta_p}{2} (p-p_0) \\
+                              &+ \dfrac{\beta_T \gamma^\star}{2} (p-p_0)(T-T_0) 
+                              + \dfrac{\beta_T^\star}{2} (T-T_0)^2
+                              \bigg]
+\end{split}
+\label{eq:modelGibssFunction}
+\end{equation}
+と書かれる. 
+この方程式において, $G,T,S,p$が変数である. 
+% % % % % % % % % % % % % % %
+\begin{table}[b]
+\begin{center}
+ \begin{tabular}{lll}
+ \hline \\
+ パラメーター\;\;\;\; & 内容 & 値 \\
+ && \\
+ $\rho_0$           & 参照密度        & 1.027 $\times 10^3$ kg m$^{-3} $ \\
+ $ \alpha_0 $       & 参照比容        & 9.738 $\times 10^{-4}$ m$^3$ kg$^{-1}$ \\
+ $ T_0 $            & 参照温度        & 283 K \\
+ $ S_0 $            & 参照塩分        & 35 psu $\approx$ 35 \permil \\
+ $ c_{s0} $         & 参照音速        & 1490 ms$^{-1}$ \\
+ $ \beta_T $        & 第一熱膨張係数   & 1.67 $ \times 10^{-4} $K$^{-1}$ \\
+ $ \beta_T^\star $  & 第二熱膨張係数   & 1.00 $ \times 10^{-5} $K$^{-2}$ \\
+ $ \beta_S $        & 塩分収縮係数     & 0.78 $ \times 10^{-3} $psu$^{-1}$ \\
+ $ \beta_p $        & 圧縮率($ \alpha_0 /c_{s0} $)     & 4.39 $ \times 10^{-10} $m s$^{2}$ kg$^{-1}$ \\
+ $ \gamma^\star $   & 熱圧力パラメータ($ \gamma^{\prime \star} $) \;\;\; & 1.1 $ \times 10^{-8} $Pa$^{-1}$ \\
+ $ c_{p0} $         & 定圧比熱        & 3986 J kg$^{-1}$ K$^{-1}$ \\
+ $ \beta_S^\star $  & 塩分の熱容量係数  & 1.5 $ \times 10^{-3} $ psu$^{-1}$ \\
+ \hline
+ \end{tabular}
+ \label{table:modelGibsFunc_params}
+ \caption{\small{
+ (\ref{eq:modelGibssFunction})で用いられる, さまざまな熱力学的パラメータと状態方程式のパラメータ. 
+ `psu' あるいは実用塩分は, 近似的にパーミル(\permil)に等しい. 
+ }}
+ \end{center}
+\end{table}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+含まれるパラメータ(これら全てに添字や星印が付いている. 星印は非線形効果と関係することを示す)は全て定数であり, 
+原理的には, 熱容量のような派生的な量があれば実験的に決定できる. 
+これらのパラメータの近似的な値を図\ref{table:modelGibsFunc_params}に示す. 
+今, $p_0=0$, $\beta_p=\alpha_0/c_{s0}^2$と取ることにする. 
+ここで, $c_{s0}$は音速の参照値である. 
+(\ref{eq:modelGibssFunction})から, 興味がある次の量を導くことができる. 
+
+習慣的な状態方程式, あるいは状態の熱の式, 
+$\alpha = \left(\partial G/\partial p\right)_{T,S}$
+は, 
+\begin{equation}
+ \alpha = \alpha_0 \left[
+  1 + \beta_T(1+\gamma^\star p)(T-T_0) + \dfrac{\beta_T^\star}{2}(T-T_0)^2
+   - \beta_S(S-S_0) - \beta_p p
+ \right]
+ \label{eq:conventional_EOS_derivedFromMOdelGibbsFunc}
+\end{equation}
+となる. 
+エントロピー
+$\eta = - \left(\partial G/\partial T\right)_{p,S}$
+は, 
+\begin{equation}
+ \eta = \eta_0 + c_{p0} \ln{\dfrac{T}{T_0}} \left[1 + \beta_S^\star (S-S_0) \right]
+        -\alpha_0 p \left[ \beta_T + \beta_T \gamma^\star \dfrac{p}{2} + \beta_T^\star (T-T_0) \right]
+\label{eq:entropy_derivedFromModelGibbsFunc}
+\end{equation}
+となる. 
+また, 熱容量
+$c_p  = T \left(\partial \eta/\partial T\right)_{p,S}$
+は, 
+\begin{equation}
+ c_p = c_{p0} \left[1 + \beta_S^\star (S-S_0) \right]
+       - \alpha_0 p \beta_T^\star T
+\label{eq:Cp_derivedFromModelGibbsFunc}
+\end{equation}
+となる. 
+これは第一次近似の定圧比熱であり, 
+塩分に対して少々, 温度と圧力に対してはさらに弱く変化すする. 
+
+断熱減率$\Gamma = \left(\partial T/\partial p \right)_{\eta,S}$は, 
+\begin{equation}
+ \Gamma = \DP[][\eta,S]{T}{p} = \dfrac{T}{c_p}\DP[][p,S]{\;\alpha}{T}
+  = \dfrac{T}{c_p} \alpha_0 \left[ \beta_T (1+\gamma^\star p) + \beta_T^\star (T-T_0) \right]
+\end{equation}
+と与えられる%
+\footnote{
+一つ目の等号の関係は, 次のように得られる. 
+\begin{equation*}
+\begin{split}
+ \DP[][\eta,S]{T}{p} &= \dfrac{\partial (T,\eta,S)}{\partial (p,\eta,S)} \\
+  &= - \dfrac{\partial (\eta,T,S)}{\partial(p,T,S)} \cdot \dfrac{\partial (T,p,S)}{\partial (\eta,p,S)}
+   = - \DP[][T,S]{\eta}{p} \cdot \left[ \DP[][p,S]{\eta}{T} \right]^{-1} 
+\end{split}
+\end{equation*}
+さらに, マクスウェルの関係式と定圧比熱の定義を用いれば, 
+\begin{equation*}
+ \DP[][\eta,S]{T}{p} = \DP[][p,S]{\alpha}{T} \cdot \dfrac{T}{c_p} 
+\end{equation*}
+となる. 
+}. 
+ここで, $c_p$は(\ref{eq:Cp_derivedFromModelGibbsFunc})によって与えられる. 
+
+\subsubsection*{数値モデルにおける温位と簡単化された状態方程式}
+温位$ \theta $の表現は, (\ref{eq:knownEntropFunc_apply_ptempDef})を$ \theta $に対して解くことによって得られる. 
+一般には, そのような方程式は数値的に解かれなければならないが, 
+今の状態方程式に対して, (\ref{eq:entropy_derivedFromModelGibbsFunc})を用い, また$p_R=0$とすれば, 
+\begin{equation}
+ \theta = T \; \exp{ \left\{ - \dfrac{\alpha_0 \beta_T p}{c_p^\prime}
+              \left[1 + \dfrac{1}{2}\gamma^\star p + \dfrac{\beta_T^\star}{\beta_T} (T-T_0) \right] 
+          \right\} }
+ \label{eq:ptemp_derivedFromModelGibbsFunc}          
+\end{equation}
+を得る%
+\footnote{
+(\ref{eq:ptemp_entropy_relation_ingeneral})から(\ref{eq:ptemp_derivedFromModelGibbsFunc})を導く. 
+モデルのギブス関数から導かれる定圧比熱(\ref{eq:Cp_derivedFromModelGibbsFunc})は$p_R=0$とおくとき, 
+$$
+c_p(p_R, \theta) = c_p(0, \theta) =　c_{p0}\;[1+\beta^\star_S(S-S_0)] 
+                 \equiv c_p^\prime
+$$
+となり, $p,T$について定数である. 
+このとき, (\ref{eq:ptemp_entropy_relation_ingeneral}) の両辺を積分すれば, 
+$$
+ \theta = \theta_c \exp{\left[ \dfrac{\eta - \eta_c}{c_p^\prime}\right]}
+$$
+を得る. 
+ここで, $\theta_c, \eta_c$は任意定数である. 
+右辺の$\eta$に(\ref{eq:entropy_derivedFromModelGibbsFunc})を適用するときに, 
+$(\theta_c, \eta_c)=(T_0, \eta_0)$ととれば, (\ref{eq:ptemp_derivedFromModelGibbsFunc})が得られる. 
+}. 
+ここで, $c_p^\prime = c_{p0} [1+\beta^\star_S(S-S_0)]$である. 
+(\ref{eq:ptemp_derivedFromModelGibbsFunc})は, 理想気体に対する(\ref{eq:ptemp_idealGas})と類似した, 
+$T,\theta,p$の間の関係である. 
+指数関数の部分自体は小さく, 中括弧内の二・三項目は 1 に比べて小さい. 
+また, $T,\theta$の両方の$T_0$からの偏差もまた小さいと仮定され, $c_p^\prime$は定数に近い. 
+これらの全てを用いれば, (\ref{eq:ptemp_derivedFromModelGibbsFunc})は, 近似の程度が増えるにつれて, 
+\begin{equation}
+\begin{split}
+  T^\prime 
+  \approx & \dfrac{T_0 \alpha_0 \beta_T}{c_{p0}} \left(1 + \dfrac{1}{2}\gamma^\star p + T_0\dfrac{\alpha_0 \beta_T^\star}{c_{p0}}p \right)
+               + \theta^\prime \left(1 + T_0\dfrac{\alpha_0 \beta_T^\star}{c_{p0}}p \right) \\
+  \approx& \dfrac{T_0 \alpha_0 \beta_T}{c_{p0}} \left(1 + \dfrac{1}{2}\gamma^\star p \right)
+                 + \theta^\prime \left(1 + T_0\dfrac{\alpha_0 \beta_T^\star}{c_{p0}}p \right) \\
+  \approx& \dfrac{T_0 \alpha_0 \beta_T}{c_{p0}}  + \theta^\prime 
+\end{split}
+\label{eq:ptemp_temp_diff_derivedFromModelGibbsFunc}
+\end{equation}
+となる. ここで, $T^\prime = T-T_0$, $\theta^\prime = \theta - T_0$である. 
+最後の式は線形の状態方程式に対して成立し, 
+温度と温位の近似的な差を計算するのに便利である. 
+静水圧平衡近似を用いれば, 最後の式が(\ref{eq:ptemp_approx_constBetaTAndCp})と本質的に同じであることが分かる. 
+
+数値モデルは, しばしば熱力学変数として温位を使う. 
+このとき, 温位を使って密度を与える状態方程式を必要とする. 
+状態方程式(\ref{eq:conventional_EOS_derivedFromMOdelGibbsFunc})に
+(\ref{eq:ptemp_temp_diff_derivedFromModelGibbsFunc})の中段の近似形式を用いれば, 
+\begin{equation}
+ \alpha \approx \alpha_0 \left[
+   1 - d\dfrac{\alpha_0 p}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} p)\theta^\prime
+   + \dfrac{1}{2} \beta_T^\star \theta^{\prime 2} - \beta_S(S-S_0)
+  \right]
+\label{eq:conventional_EOS_usingPtemp_derivedFromMOdelGibbsFunc}
+\end{equation}
+ここで, 
+$\gamma^{\prime \star} = \gamma^\star + T_0 \beta_T^\star \alpha_0 /c_{p0} \approx \gamma^\star$, 
+$s_{s0}^{\prime -2} = c_{s0}^{-2} \beta_T^2 T_0/c_p \approx c_{s0}^{-2}$である 
+($\gamma^\star$と$\gamma^{\prime \star}$は数\%の違いがある一方で,  
+$c_{s0}^2$と$c_{s0}^{2 \prime}$は数$\permil$の違いしかない).
+実際の圧力のかわりに静水圧を用いれば, (\ref{eq:conventional_EOS_usingPtemp_derivedFromMOdelGibbsFunc})はさらに近似できる.
+よって, $p=-g(z-z_0)/\alpha_0$ (ここで, $z_0$は$p=0$となる$z$の基準値)とすれば, 
+\begin{equation}
+ \alpha \approx \alpha_0 \left[
+   1 - d\dfrac{g(z - z_0)}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} \dfrac{g(z-z_0)}{\alpha_0})\theta^\prime
+   + \dfrac{1}{2} \beta_T^\star \theta^{\prime 2} - \beta_S(S-S_0)
+  \right]
+\label{eq:conventional_EOS_usingPtempHydroStatic_derivedFromMOdelGibbsFunc}
+\end{equation}
+を得る. 
+状態方程式において$p$のかわりに$z$を用いることは, わずかな精度の悪化を伴う. 
+しかし, ブシネスク方程式がエネルギーの保存性を良好に維持するためには, この近似が必要である%
+\footnote{
+??? 節参照. 
+}. 

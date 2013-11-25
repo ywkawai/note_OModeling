@@ -18,6 +18,7 @@
 \usepackage{amsmath}
 \usepackage{mathrsfs}
 \usepackage{framed}
+\usepackage{wasysym}
 \usepackage{Dennou6}		% 電脳スタイル ver 6
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%            PageStyle Setting           %%%%%%%%
@@ -36,8 +37,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%   Set Counter (chapter, section etc. ) %%%%%%%%
-\setcounter{chapter}{1}    % 章番号
-\setcounter{section}{1}    % 節番号
+\setcounter{chapter}{0}    % 章番号
+\setcounter{section}{0}    % 節番号
 \setcounter{subsection}{1}    % 節番号
 \setcounter{equation}{1}   % 式番号
 \setcounter{page}{1}     % 必ず開始ページは明記する
@@ -50,7 +51,7 @@
 %%%%%%%%        Counter Output Format           %%%%%%%%
 \def\thechapter{\arabic{chapter}}
 \def\thesection{\arabic{chapter}.\arabic{section}}
-\def\thesubsection{\arabic{chapter}.\arabic{section}.\alph{subsection}}
+\def\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
 \def\theequation{\arabic{chapter}.\arabic{section}.\arabic{equation}}
 \def\thepage{\arabic{page}}
 \def\thefigure{\arabic{chapter}.\arabic{section}.\arabic{figure}}
@@ -80,6 +81,12 @@
 %\section{順圧不安定}      % 節の始めからの場合はこのコマンドを使用する
 \markright{\arabic{chapter}  海洋モデリング基礎 } %  節の題名を書き込むこと
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{mass_continuityEq}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{momentumEq}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{equation_of_state}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,2 +1,107 @@
 \section{状態方程式}
 \markright{\arabic{chapter}.\arabic{section} 状態方程式 } %  節の題名を書き込むこと
+三次元において, 運動量方程式と連続の式は四本の方程式を与えるが, 五個の未知変数(速度の三成分, 密度, 圧力)を含む. 
+明らかに他の方程式が必要とされる. 
+そして, \textbf{状態方程式}(equation of state)が, 診断的にさまざまな熱力学変数を互いに関係付ける式である. 
+\textbf{習慣的な}状態方程式(熱的状態方程式(thermal equation of state)とも呼ばれる)は, 
+温度,圧力,成分(さまざま構成物質の質量分率), 密度を関係付ける. 
+これは, 一般的には
+\begin{equation}
+ p = p(\rho, T, \mu_n)
+\end{equation}
+と書かれる. 
+ここで, $\mu_n$は$n$番目の構成物質の質量分率である. 
+この形式の方程式は, 熱力学的な観点からは最も基本的な状態方程式ではない. 
+しかし, 習慣的な状態方程式は, 簡単に計測できる量を結びつける. 
+
+理想気体(地球大気は理想気体にとても近い)に対する習慣的な状態方程式は, 
+\begin{equation}
+ p = \rho R T 
+ \label{eq:conventionalEOS_forIdealGas}
+\end{equation}
+である. 
+ここで, $R$は考えれる気体の気体定数, $T$は温度である. 
+($R$は, 万有気体定数$R_u$と$R = R_u/m$によって関係付けられる. ここで, $m$は気体成分の平均分子量である. 
+また, $R=nk$でもある. ここで, $k$はボルツマン定数, $n$は単位質量あたりの分子数である.)
+乾燥空気に対して, $R=287$J kg$^{-1}$ K$^{-1}$である. 
+空気は, 水蒸気量の変化を除けば, 仮想的に一定の成分を持つ. 
+水蒸気量の指標は, 水蒸気混合比$w=\rho_w/\rho_d$である. 
+ここで, $\rho_w, \rho_d$はそれぞれ水蒸気と乾燥空気の密度である. 
+大気では, $w$は 0 から　0.03 の間を変化する. 
+この変化は, 状態方程式中の気体定数を, 水蒸気混合比の弱い関数にする. 
+つまり, $p = \rho R_{\rm eff} T$、 
+ここで, $R_{\rm eff}=R_d ( 1+ w R_v/R_d)/(1+w)$であり, 
+$R_d$, $R_v$はそれぞれ乾燥空気, 水蒸気に対する気体定数である. 
+$w \sim 0.01$なので, $R_{\rm eff}$の変化は極めて小さく, 理論的研究ではしばしば無視される. 
+
+海水のような流体に対しては, (\ref{eq:conventionalEOS_forIdealGas})と類似した簡潔な表現は簡単には導けない. 
+そのため, 半経験則的な方程式がふつう用いられる. 
+実験室の設定における純粋では, 状態方程式の妥当な近似は, $\rho = \rho_0 [1 - \beta_T(T-T_0)]$である. 
+ここで, $\beta_T$は熱膨張係数, $\rho_0,T_0$は定数である. 
+海洋では, 密度は, 圧力と溶解した塩によって重要な影響を受ける. 
+海水は, 水の中にたくさんのイオンが溶解している溶液であり, 
+塩化物(質量で$\approx 1.9\%$), ナトリウム($1\%$), 硫化物($0.26\%$), マグネシウム($0.13\%$), その他が含まれ,  
+これらの全平均的な濃度は$35 \permil$である. 
+これらの塩の割合は, 海洋を通して多かれ少なかれ一定であり, 
+全濃度は一つの指標, \textbf{塩分}(salinity)$S$によってパラーメタ化される. 
+これにより, 海水の密度は三個の変数(圧力, 温度, 塩分)の関数である. 
+そして, 海水の習慣的な状態方程式は, 
+\begin{equation}
+ \alpha = \alpha (T,S,p)
+\end{equation}
+と書かれる. 
+ここで, $\alpha=\rho^{-1}$は比容で, 密度の逆数である. 
+参照値付近の小さな変動に対し, 
+\begin{equation}
+\begin{split}
+ d\alpha &= \DP[][S,p]{\alpha}{T} dT + \DP[][T,p]{\alpha}{S} dS + \DP[][T,S]{\alpha}{p} dp \\
+         &= \alpha (\beta_T dT - \beta_S dS - \beta_p dp)
+\end{split}
+\end{equation}
+ここで, 最後の式は, 熱膨張率$\beta_T$, 塩分圧縮係数$\beta_S$,  
+圧縮係数(体積弾性係数の逆数)$\beta_p$を定義する. 
+一般には, これらの量は定数でないが, 参照値の周りの小さな変化に対しては, 
+定数と取り扱ってよいだろう. 
+このとき, 
+\begin{equation}
+ \alpha = \alpha_0 \left[ 1 + \beta_T(T-T_0) - \beta_S(S-S_0) - \beta_p (p-p_0) \right]
+ \label{eq:conventionLinearEOS_specVol_forSeaWater}
+\end{equation}
+を得る. 
+これらのパラメータの典型的な値は, 海洋でよく見かける変動量も含めて, 
+$\beta_T \approx 2(\pm 1.5) \times 10^{-4} $ K$^{-1}$(値は温度・圧力ともに一緒に増加する), 
+$\beta_S \approx 7.6(\pm 0.2) \times 10^{-4}$ ppt$^{-1}$, 
+$\beta_p \approx 4.1(\pm 0.5) \times 10^{-10}$ Pa$^{-1}$である. 
+平均的な密度近傍の変化は小さいので, (\ref{eq:conventionLinearEOS_specVol_forSeaWater})から, 
+\begin{equation}
+ \rho = \rho_0 \left[ 1 - \beta_T(T-T_0) + \beta_S(S-S_0) + \beta_p (p-p_0) \right]
+ \label{eq:conventionLinearEOS_dens_forSeaWater}
+\end{equation}
+を得る. 
+
+線形の状態方程式は, 定量的な海洋学のためには全く十分な精度\textbf{でない}. 
+(\ref{eq:conventionLinearEOS_specVol_forSeaWater})内のパラメータ$\beta$自身, 
+圧力・温度・(より弱く)塩分とともに変化する. 
+そのため, 方程式に非線形性を導入する. 
+これらの最も重要な部分は, 次の形式の状態方程式によって捉えれる. 
+\begin{equation}
+ \alpha = \alpha_0 \left[
+  1 + \beta_T (1 + \gamma^\star p)(T-T_0)
+    + \dfrac{\beta_T^\star}{2}(T-T_0)^2 - \beta_S (S-S_0) - \beta_p(p-p_0)
+ \right]. 
+\end{equation}
+星印の付いた定数$\beta^\star_T \gamma^\star$は, 主要な非線形性を捉える. 
+$\gamma^\star$は\textbf{熱圧パラメータ}(thermobaric parameter)であり, 
+熱膨張が圧力に依存する程度を決定する. 
+$\beta_T^\star$は第二熱膨張係数である. 
+この状態方程式でさえも, 定量的な欠点が存在する. 
+そのため, 高い精度を要する場合には, より複雑な半経験的な公式がしばしば用いられる. 
+温度・塩分・圧力に伴う海水密度の変化の詳細な議論は, 次節以降に行う. 
+
+明らかに, 状態方程式の導入は, 六個目の未知変数を一般には導入する. 
+したがって, 完全な方程式系を得るには, 他の物理法則(熱力学第一法則あるいはエネルギーの保存則)を導入しなければならない. 
+しかし, 状態方程式が他の変数を導入せずに密度と圧力のみを結びつけるならば, このとき方程式は完全となるだろう. 
+この最も簡単な場合は, 状態方程式が単に$\rho=\text{(定数)}$となる, 密度一定な流体である. 
+密度が圧力のみの関数である流体は, \textbf{順圧流体}(barotropic fluid)と呼ばれる. 
+$p=C\rho^\gamma$($\gamma$は定数)の形式の状態方程式は, しばしば「ポリトロピック」と呼ばれる. 
+一方, 密度が温度・圧力の両方に依存する流体は, \textbf{傾圧流体}(baroclinic fluid)である. 
