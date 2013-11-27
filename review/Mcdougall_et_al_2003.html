@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>Mcdougall et al (2003) ノート</title>
+<!-- 2013-11-26 火 19:10 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="KAWAI Yuta" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Mcdougall et al (2003) ノート</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#27425;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">イントロダクション</a>
+<ul>
+<li><a href="#sec-1-1">海洋モデルにおける状態方程式</a></li>
+<li><a href="#sec-1-2">国際状態方程式より精度の良い状態方程式</a></li>
+<li><a href="#sec-1-3">Mcdougall et al(2003) について</a>
+<ul>
+<li><a href="#sec-1-3-1">あらすじ</a></li>
+<li><a href="#sec-1-3-2">その他のこと</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="abstract">
+<p>
+Feistel and Hagen(FH) の状態方程式と良くフィットする, 25 項から成る海水の状態方程式を示す. 
+この状態方程式は, 効率的な海洋もデルの積分のために, (現場温度よりむしろ)温位を使ってかかれる. 
+FH とのフィッティングの最大誤差は, 海洋学的な温度・圧力・塩分範囲で, 3*10<sup>-3</sup> kgm-3 である. 
+対応する熱膨張率の最大誤差は, 4*10<sup>-7</sup> ℃-1 であり, FH の状態方程式と国際状態方程式間の最大差の 1/12 倍である. 
+</p>
+
+<p>
+FH のギブス関数に基づく比エントロピーを使った, 温位と現場温度の変換手法を示す. 
+それによって得られる温位の値は, 国際状態方程式から導かれる断熱減率に基づく温位よりずっと精度が良い. 
+</p>
+
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> イントロダクション</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 海洋モデルにおける状態方程式</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>海洋モデルは塩分と温位の保存方程式を使うので, 状態方程式は温度・温位・圧力の関数である. 
+<ul class="org-ul">
+<li>Jackett and McDougall(1995) (JM95) の状態方程式 
+<ul class="org-ul">
+<li>国際状態方程式(Fofonoff and Millard, 1983) (FM83) と同じ係数の数(41個!)
+<ul class="org-ul">
+<li>対照的に, 国際状態方程式は温度・現場温度・圧力の関数
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Wright(1997) の状態方程式 (W97)
+<ul class="org-ul">
+<li>係数がたった 15 個のため, 計算効率は高い
+</li>
+<li>しかし, 国際状態方程式との偏差が JM95 よりも大きいので, 
+大部分のモデルグループが JM 95 の式を使う. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 国際状態方程式より精度の良い状態方程式</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>国際状態方程式(FM83) は, もはや最も精度の良い状態方程式でない
+</li>
+<li>Feistel(1993) (F93) の状態方程式
+<ul class="org-ul">
+<li>ギブスポテンシャルを決定するために, さまざまな熱力学的量を使う方法を提案
+</li>
+<li>内部エネルギー, エンタルピー, 比熱, エントロピー, 比容, 化学ポテンシャル, 温位, 音速他は, 
+ギブスポテンシャルから導かれる. 
+</li>
+<li>導かれる量は, 全体的に self-consistent である. 
+</li>
+</ul>
+</li>
+<li>Feistel and Hagen (1995) (FH95) の状態方程式
+<ul class="org-ul">
+<li>F93 の方法に加え, 最大密度の温度と音速データを組み入れることで, 
+国際状態方程式より精度良い状態方程式になった.     
+</li>
+<li>計算負荷が大きいことが欠点である. 
+<ul class="org-ul">
+<li>Mcdougall et al(2003) の研究動機
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Mcdougall et al(2003) について</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> あらすじ</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>目的: FH95 のギブス関数による精度の向上を取り込みつつ, 計算効率の良い状態方程式を導く
+</li>
+<li>方法
+<ul class="org-ul">
+<li>計算効率のため W97 の有理関数の方法を使う. 
+</li>
+<li>精度改善のために項数を追加する. 
+</li>
+</ul>
+</li>
+<li>結果
+<ul class="org-ul">
+<li>最終的に全項数は 25 個 (&lt; JM95 の 41 個)のため計算効率が向上
+</li>
+<li>JM95 との相対的な誤差は, W97 の 1/15~1/20
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> その他のこと</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>提案する状態方程式は, 実験値よりむしろ FH95 にフィッティングした
+<ul class="org-ul">
+<li>十分な項数があるので, フィッティングの誤差は FH95 のギブス関数の
+フィッティングに使った実験値の不確実性である. 
+</li>
+</ul>
+</li>
+<li>海水の塩の組成の変化の考慮はここでは行わず, 今後の課題にしている. 
+</li>
+<li>現場温度と温位の変換は, FH95 のギブス関数の手法を介して一番精度良く関係付けられる
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#33879;&#32773;: KAWAI Yuta</p>
+<p class="date">Created: 2013-11-26 火 19:10</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.3c)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
