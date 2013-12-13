@@ -1,6 +1,7 @@
 #+TITLE: Mcdougall (2006) ノート
 #+AUTHOR: KAWAI Yuta
 #+LANGUAGE: ja
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css" />
 
 #+begin_abstract
 温位は, それが塩分のように保存変数かのように, 海洋学では用いられる. 

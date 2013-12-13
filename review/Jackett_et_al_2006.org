@@ -1,6 +1,7 @@
 #+TITLE: Jackett et al(2006) ノート
 #+AUTHOR: KAWAI Yuta
 #+LANGUAGE: ja
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css" />
 
 #+begin_abstract
  密度, 温位, 保存的な温度, 海水の凝結温度のアルゴリズムを示す. 
