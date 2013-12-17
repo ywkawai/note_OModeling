@@ -10,6 +10,8 @@
 #+LaTeX_CLASS_OPTIONS: [dvipdfmx]
 #+LaTeX_HEADER: \subtitle{Mean Climate and Variability of the Atmosphere and Ocean on an Aquaplanet}
 #+LaTeX_HEADER: \usepackage{mathrsfs}
+#+LaTeX_HEADER: \usepackage[round]{natbib}
+#+LaTeX_HEADER: \newcommand{\newblock}{}
 #+LaTeX_HEADER: \institute[神戸大]{神戸大学大学院理学研究科}
 #+BEAMER_THEME: Madrid
 #+OPTIONS: H:2 toc:t
@@ -54,14 +56,14 @@
 ** 「水惑星(aquaplanet)」設定を使った先行研究
 - 大気モデラーが言う「水惑星」: スラブオーシャンまたは指定した海水面温度分布を結合した大気のこと. 
 
-*** Hess(1993)
+*** \cite{hess1993maintenance}
 - 指定された SST を使う水惑星設定を用いて, さまざまな緯度依存の SST 分布に対する熱帯収束帯(ITCZ) の感度を調べた. 
-
-*** Kirtman and Schneider(2000), Barsugli et al.(2005)
+  
+*** \cite{kirtman2000spontaneously}, \cite{barsugli2005tropical}
 - 大気を熱力学的な海洋モデルと結合して, 熱帯の降水が熱帯の平均状態に鋭敏であることを示した. 
 
 
-** 先行研究と M07 の研究の間係
+** 先行研究と \cite{marshall2007mean} の研究の間係
 - 力学を表現し全球中に特性を輸送できる大気モデルと海洋モデルを, フルカップリングする. 
 - このような計算はこれなであまりなされていない. 少数の例は Smith et al.(2006) (S06). 
   - S06 は, 結合システムにおける海洋循環の役割, 
@@ -347,7 +349,8 @@
 * 解析: 力学的な解釈
 
 ** 方針
-- Marshall and Radiko(2003) (MR03) : ACC のような海洋の帯状流に対する簡単なモデルを開発. 
+
+- \cite{marshall2003residual} : ACC のような海洋の帯状流に対する簡単なモデルを開発. 
 - MR03 のモデルを適切に修正することによって, 水惑星の海洋の平均的な状態(平均子午面循環)を説明する. 
 
 ** 定式化1
@@ -459,6 +462,11 @@
   - 力学は MR03 の残差循環の理論で捉えられる. 
   - 温帯の循環は南極周回流とよく似た力学で説明される. 
 
-* 参考文献
 
-- 
+* 参考文献
+** 参考文献
+#+LaTeX: \bibliographystyle{abbrvnat}
+#+LaTeX: \bibliography{APE_reflist}
+
+
+
