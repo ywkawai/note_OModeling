@@ -10,12 +10,18 @@
 #+LaTeX_CLASS_OPTIONS: [dvipdfmx]
 #+LaTeX_HEADER: \subtitle{Mean Climate and Variability of the Atmosphere and Ocean on an Aquaplanet}
 #+LaTeX_HEADER: \usepackage{mathrsfs}
+#+LaTeX_HEADER: \usepackage[scriptsize]{caption}
 #+LaTeX_HEADER: \usepackage[round]{natbib}
 #+LaTeX_HEADER: \newcommand{\newblock}{}
 #+LaTeX_HEADER: \institute[神戸大]{神戸大学大学院理学研究科}
 #+BEAMER_THEME: Madrid
 #+OPTIONS: H:2 toc:t
 #+COLUMNS: %45ITEM %10BEAMER_ENV(Env) %10BEAMER_ACT(Act) %4BEAMER_COL(Col) %8BEAMER_OPT(Opt)
+
+#+LaTeX: \setlength\floatsep{0pt}
+#+LaTeX: \setlength\textfloatsep{0pt}
+#+LaTeX: \setlength\intextsep{0pt}
+#+LaTeX: \setlength\abovecaptionskip{0pt}
 
 #+BEGIN_BEAMER
 \AtBeginSection[]
@@ -26,6 +32,7 @@
 \end{frame}
 }
 #+END_BEAMER
+
 
 #+begin_abstract 
 - 現代の軌道と CO_2 強制により駆動される, 陸なしの大気・海洋・氷結合システムの気候の数値実験を行った. 
@@ -42,16 +49,16 @@
 #+end_abstract
 
 * イントロダクション
-** 研究の概要
+** 研究の目的・概要
 - 惑星の気候の決定における大気と海洋の相互作用の特性を理解するために, 大気・海洋・氷の結合システムの数値モデルを用いて,
   極めて理想化された GFD 的実験を行った. 
   - 目標は地球の現在気候や古気候を計算することではなく, 結合システムの詳細を調べることである. 
   - 地形や海陸分布の複雑性は簡単化して考える(実際陸を完全に取り除く:水惑星設定)が, 
     必要とされる流体の力学は十分に表現される. 
-- この実験では, 陸がないことを除けば, 全ての他の特徴は現在の地球であるような惑星の極限を調べる. 
+- この実験において, 陸がないことを除けば, 全ての他の特徴は現在の地球であるような惑星の極限を調べる. 
   - 惑星は 5.2 km の一様な水深をもつ海洋に全体が覆われている. 
-  - 海洋の上には大気が存在し, 入射する太陽放射によってエネルギーを与えられる. 
-  - 条件を満たせば, 氷が形成される. 
+  - 海洋の上にある大気は, 入射する太陽放射によってエネルギーを与えられる. 
+  - 条件を満たせば氷が形成される. 
 
 ** 「水惑星(aquaplanet)」設定を使った先行研究
 - 大気モデラーが言う「水惑星」: スラブオーシャンまたは指定した海水面温度分布を結合した大気のこと. 
@@ -63,12 +70,12 @@
 - 大気を熱力学的な海洋モデルと結合して, 熱帯の降水が熱帯の平均状態に鋭敏であることを示した. 
 
 
-** 先行研究と \cite{marshall2007mean} の研究の間係
-- 力学を表現し全球中に特性を輸送できる大気モデルと海洋モデルを, フルカップリングする. 
-- このような計算はこれなであまりなされていない. 少数の例は Smith et al.(2006) (S06). 
+** \cite{marshall2007mean} と \cite{smith2006global} の間係
+- M07 では, 力学を表現し全球中に特性を輸送できる大気モデルと海洋モデルを, フルカップリングする. 
+- このような計算はこれなであまりなされていない. 少数の例は \cite{smith2006global}. 
   - S06 は, 結合システムにおける海洋循環の役割, 
     特に全球に熱を輸送するための海洋の能力に対する地理的な制約の重要性を強調する. 
-- 本論文の純粋な水惑星設定は, S06 の参照実験の設定と同じものであるが, 
+- M07 の純粋な水惑星設定は, S06 の参照実験の設定と同じものであるが, 
   海洋モデルの定式化に重要な違いが存在する. 
   - その違いによって, S06 の気候状態と大変異なった気候状態が得られた. 
     
@@ -213,10 +220,10 @@
   :PROPERTIES:
   :BEAMER_col: 0.40
   :END:
-#+ATTR_LATEX: width=\textwidth
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: \scriptsize  大気の温位(実線), 相当温位(破線) $\theta_A$ [K], 海洋の温位 $\theta_O$ [C $^\circ$ ] (M07, Fig,2a). 
     [[file:./M07_Fig/M07_Fig2aL.eps]]
 
-# (左)実線:(大気の)温位, 破線:]
 
 ** 平均状態: 風
 
@@ -233,7 +240,8 @@
   :PROPERTIES:
   :BEAMER_col: 0.40
   :END:
-#+ATTR_LATEX: width=\textwidth
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: \scriptsize 大気の東西風速 $U_A$ [ms^{-1}], 海洋の東西流速 $U_O$ [ms^{-1}] (M07, Fig.2a)
     [[file:./M07_Fig/M07_Fig2aR.eps]]
 
 
@@ -252,7 +260,8 @@
   :PROPERTIES:
   :BEAMER_col: 0.40
   :END:
-#+ATTR_LATEX: width=\textwidth
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: \scriptsize 大気の東西風速 $U_A$ [ms^{-1}], 海洋の東西流速 $U_O$ [ms^{-1}] (M07, Fig.2a)
     [[file:./M07_Fig/M07_Fig2aR.eps]]
 
 
@@ -260,7 +269,7 @@
 
 *** 鉛直流速場 
   :PROPERTIES:
-  :BEAMER_col: 0.58
+  :BEAMER_col: 0.52
   :END:
   - 海面応力の回転により駆動されるエクマン・パンピングの場は, 温度躍層の下部表面のうねりを説明する. 
   - 赤道帯(応力の回転がゼロとなる緯度 20 度まで)では, 深部の冷水が上昇している.  
@@ -268,13 +277,17 @@
 
 *** 画像
   :PROPERTIES:
-  :BEAMER_col: 0.32
+  :BEAMER_col: 0.38
   :END:
-#+ATTR_LATEX: width=\textwidth :placement {b}{\textwidth}
-    [[file:./M07_Fig/M07_Fig2bR.eps]]
-   
-#+ATTR_LATEX: width=\textwidth :placement {b}{\textwidth}
-    [[file:./M07_Fig/M07_Fig2aL.eps]]
+#+ATTR_LATEX: :width \textwidth 
+#+CAPTION: \scriptsize 海洋のオイラー平均子午面循環 $\Psi_O$ [Sv] (M07, Fig.2b)
+    [[file:./M07_Fig/M07_Fig2bRB.eps]]
+
+#+LaTeX: \vspace{-.1\textheight}
+
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: \scriptsize 海洋の温位 $\theta_O$ [C $^\circ$ ] (M07, Fig,2a)
+    [[file:./M07_Fig/M07_Fig2aLB.eps]]
 
 ** 平均状態: 水蒸気, 塩分
 
@@ -283,7 +296,7 @@
   :BEAMER_col: 0.52
   :END:
   - 比湿は空気の暖かいところで大きい(赤道下層で, 15 g kg^{-1}, 高度や緯度が高くなるにつれ減少). 
-  - 水蒸気の「mirror imgae」である海洋の塩分場は, 舌状の分布をみせる. 
+  - 水蒸気の "mirror imgae'' である海洋の塩分場は, 舌状の分布をみせる. 
     - 亜熱帯では蒸発が降水を上回る. 熱帯・高緯度では, 降水が蒸発を上回る. 
   - 氷の下の塩分の低さは, 温度の逆転を安定化させている. 
     
@@ -291,10 +304,14 @@
   :PROPERTIES:
   :BEAMER_col: 0.35
   :END:
-#+ATTR_LATEX: :placement {t}{0.5\textwidth}
+#+ATTR_LATEX: :width \textwidth :height 0.35\textheight
+#+CAPTION: \scriptsize 比湿 $q$ [g kg^{-1}] , 塩分 $S$ [ psu ] (M07, Fig.2b)
     [[file:./M07_Fig/M07_Fig2bL.eps]]
 
-#+ATTR_LATEX: :placement {b}{0.5\textwidth}
+#+LaTeX: \vspace{-.1\textheight}
+
+#+ATTR_LATEX: :width 0.95\textwidth :height 0.3\textheight
+#+CAPTION: 正味の熱フラックス [W m^{-2}], 淡水フラックス [mm day^{-1}] (M07, Fig.3)
     [[file:./M07_Fig/M07_Fig3.eps]]
   
 ** 平均子午面循環
@@ -305,19 +322,20 @@
   :END:
 
 - 大気: 赤道の両側で対称なハドレーセル, 中・高緯度でフェレルセル. 
-- 海洋: 大気の子午面循環と同じパターン 
-- 大気・海洋の境界層内で大規模渦による水平渦運動量フラックスが無視できる限り, 両方の流線関数は同じになるだろう. 
+- 海洋: 大気と同パターン 
+- 大気・海洋の境界層内で大規模渦による水平渦運動量フラックスが無視できる限り, 
+  $\bar{\Psi}_A = \bar{\Psi}_O$ が予期される. 
   - ハドレーセルでは当てはまる. 
-  - 中緯度では大気の流線関数が 50 % ほど海洋を上回る(しかしオーダ的には同じ). 
+  - 中緯度では $\bar{\Psi}_A$ が 50 % ほど $\bar{\Psi}_O$ を上回る(オーダ的には同じ). 
      - 総観規模の渦と関係した渦運動量フラックスが無視できないため
-- しかし, 大気の渦が駆動する質量フラックスは海洋の子午面循環よりずっと強い
-  - 大気・海洋間の熱輸送の分配に関する重要な事実
+     - 大気の渦が駆動する質量フラックスは海洋の子午面循環よりずっと強い <= 大気・海洋間の熱輸送の分配に関する重要な事実
 
 *** 画像
   :PROPERTIES:
   :BEAMER_col: 0.40
   :END:
-#+ATTR_LATEX: width=\textwidth 
+#+ATTR_LATEX: :width \textwidth 
+#+CAPTION: \scriptsize 大気, 海洋のオイラー平均子午面循環 $\Psi_A, \Psi_O$ [Sv \equiv 10^9 kg s^{-1}] (M07, Fig.2b)
     [[file:./M07_Fig/M07_Fig2bR.eps]]
 
 
@@ -328,21 +346,22 @@
   :PROPERTIES:
   :BEAMER_col: 0.60
   :END:
-
+    
 - (残差循環) = (オイラー平均) + (渦で駆動される循環)
    - 渦で駆動される循環はオイラー平均と逆センスの傾向
    - 中・高緯度では, 完全にキャンセル 
-- なぜ逆センスなのか? (Gill et al, 1974)
+- なぜ逆センスなのか? (\cite{gill1974energy})
    - 海面応力のパターンは, 亜熱帯で海面の浮力分布を押し下げ, 熱帯と高緯度で深層の浮力を吸い上げる. 
    - 等密度面の傾きは, 傾圧不安定のための有効位置エネルギーを貯蓄する. 
-   - 傾圧不安定は平均的な浮力面を平坦にする <- これは海面の風の効果と相反する. 
-- 極域の海洋の成層は弱いが, 極の沈み込みによって駆動される熱塩循環は見られない.
+   - 傾圧不安定は平均的な浮力面を平坦にする <- 海面の風の効果と相反 
+- 極域の海洋の成層は弱いが, 極の沈み込みにより駆動される熱塩循環は見られない.
 
 *** 画像
   :PROPERTIES:
   :BEAMER_col: 0.38
   :END:
-#+ATTR_LATEX: width=\textwidth
+#+ATTR_LATEX: :width \textwidth :height 0.6\textheight
+#+CAPTION: \scriptsize 時間・帯状平均した海洋の子午面循環の成分. (上段)オイラー平均 $\bar{\psi}$, (中段) ボーラス輸送 $\psi^*$, (下段) 残差の輸送 $\psi_{res}$ と密度場 (M07, Fig.4).
     [[file:./M07_Fig/M07_Fig4.eps]]
     
 
@@ -350,8 +369,8 @@
 
 ** 方針
 
-- \cite{marshall2003residual} : ACC のような海洋の帯状流に対する簡単なモデルを開発. 
-- MR03 のモデルを適切に修正することによって, 水惑星の海洋の平均的な状態(平均子午面循環)を説明する. 
+- \cite{marshall2003residual} : 南極周回流のような海洋の帯状流に対する簡単なモデルを開発. 
+- MR03 のモデルを適切に修正することによって, 水惑星の海洋の平均的な状態を説明する. 
 
 ** 定式化1
 - 帯状平均, 残差平均された運動量方程式
@@ -393,6 +412,7 @@
     - Marshall(1997) では $\psi_{res} = - \mathscr{B}_s/\bar{b}_y$ と決まったが,
       今の場合, そのような簡単な関係は見つけられないので, モデル結果から与える.
 
+
 ** 残差循環の流線関数
 
 - 帯状平均, 残差平均された運動量方程式を海面から $z$ まで積分すれば, 
@@ -409,15 +429,25 @@
       \tilde{\tau} = \tau_s + \int^0_{-z} A_H \nabla^2 u \; dz
   \]
 
-  - 水平方向の運動量混合が無視できるならば, $\bar{\Psi}$ は深さに依存しない. 
+  - 水平方向の運動量混合が無視できるならば, $\bar{\psi}$ は深さに依存しない. 
     - このとき, 海面と海底のエクマン層の輸送は真反対になる.  
-  - しかし, 実際 $\bar{\Psi}$ は内部領域で深さに依存している. 
+  - しかし, 実際 $\bar{\psi}$ は内部領域で深さに依存している. 
     - 運動量バランスの中で粘性の役割は, 無視できない. 
+      
+** 海洋の残差循環(M07 Fig.4)
+
+*** 画像
+  :PROPERTIES:
+  :BEAMER_col: 0.50
+  :END:
+#+ATTR_LATEX: :width \textwidth :height 0.7\textheight
+#+CAPTION: \scriptsize 時間・帯状平均した海洋の子午面循環の成分. (上段)オイラー平均 $\bar{\psi}$, (中段) ボーラス輸送 $\psi^*$, (下段) 残差の輸送 $\psi_{res}$ と密度場 (M07, Fig.4).
+    [[file:./M07_Fig/M07_Fig4.eps]]
 
 
 ** 温度躍層の構造の決定
 
-- アルゴリズム
+- $\bar{b}$ の解を求めるアルゴリズム
 
   \(\eqref{BolusStreamFunc}\) を整理して, 
 
@@ -428,12 +458,27 @@
 
   - 表層の $\bar{b}$ 分布とモデルから得られる関数間係 $\Psi(\bar{b})$ を与えれば, 特性法(see MR03)を使って上の式を積分することにより, 
     $\bar{b}$ の解を得る(Fig. 5).  
-      
-- 得られた解とモデルの計算結果の比較(Fig.5)
+    
+** 得られた解とモデルの計算結果の比較
+
+*** 計算結果の比較
+  :PROPERTIES:
+  :BEAMER_col: 0.58
+  :END:
+
   - 両者は良く一致している. 
-  - MR03 の ACC とその子午面循環の理論の心である力学バランス \(\eqref{relattion_bSlope_resSF_eulerM}\) が, 水惑星の海洋に適切であることを示唆する. 
+  - MR03 の ACC とその子午面循環の理論の心である力学バランス \(\eqref{relattion_bSlope_resSF_eulerM}\) が, 水惑星の海洋に対して適切であることを示唆する. 
     - スベルドラップバランスとは, 根本的に違う点に注意
   - 温度躍層の深さは渦のプロセスによって根本的に制限される. 
+
+*** 画像
+  :PROPERTIES:
+  :BEAMER_col: 0.38
+  :END:
+#+ATTR_LATEX: :width \textwidth :height 0.6\textheight
+#+CAPTION: \scriptsize $\bar{b}$ の解(黒線) と 海洋モデルから得られた浮力場(灰色陰影) [kg m^{-3}] の比較 (M07, Fig.5).  
+    [[file:./M07_Fig/M07_Fig5.eps]]
+    
 
 
 * 解析: 結合システムの熱輸送
@@ -452,19 +497,32 @@
 
 ** 結論 1
 
-- 水惑星の数値実験から発見された気候と変動性を説明した. 
+- 水惑星の数値実験から発見された気候を説明した. 
 
-- 大気: 現在気候の大気を連想させる.  
-  - 傾圧的に不安定な亜熱帯ジェット, ハドレー循環, 中緯度における地表の西風, 熱帯の貿易風. 
+- 平均状態
+  - 大気: 現代の大気を連想させる.  
+    - 傾圧的に不安定な亜熱帯ジェット, ハドレー循環, 中緯度における地表の西風, 熱帯の貿易風. 
+  - 海洋: 現代と大きく異なる. 
+    - 卓越した海面風と同じ向きの帯状ジェット
+    - 海洋の力学は \cite{marshall2003residual} の残差循環の理論で捉えられる. 
 
-- 海洋: 現在気候と大きく異なる. 
-  - 卓越した海面風と同じ向きの帯状ジェット
-  - 力学は MR03 の残差循環の理論で捉えられる. 
-  - 温帯の循環は南極周回流とよく似た力学で説明される. 
+** 結論 2
+
+- 海洋の力学は MR03 の残差循環の理論で捉えられる. 
+ - 温帯: 循環は南極周回流とよく似た力学で説明される. 
+   - 中緯度のオイラー平均流は渦のボーラス輸送によってほぼ完全に打ち消される. 
+ - 高緯度: 等密度面は内部領域の深くまで潜り込む. 
+   - 混合プロセスは弱い内部領域の成層に対し働く =>  明瞭な残差循環を維持できない. 
+ - 低緯度: 中・高緯度で沈み込んだ等密度面が海面に向かい, 温度躍層を形成する. 
+   - 混合プロセスは強い成層に対し働く =>  明瞭な残差循環を維持できる. 
 
 
 * 参考文献
 ** 参考文献
+  :PROPERTIES:
+  :BEAMER_env: frame
+  :BEAMER_opt: allowframebreaks,label=
+  :END:
 #+LaTeX: \bibliographystyle{abbrvnat}
 #+LaTeX: \bibliography{APE_reflist}
 
