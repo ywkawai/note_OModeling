@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
 <title>Marshall et al(2007) のレビュー</title>
-<!-- 2013-12-17 火 16:25 -->
+<!-- 2013-12-19 木 14:10 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="河合 佑太" />
@@ -150,9 +150,9 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1">1. イントロダクション</a>
 <ul>
-<li><a href="#sec-1-1">1.1. 研究の概要</a></li>
+<li><a href="#sec-1-1">1.1. 研究の目的・概要</a></li>
 <li><a href="#sec-1-2">1.2. 「水惑星(aquaplanet)」設定を使った先行研究</a></li>
-<li><a href="#sec-1-3">1.3. 先行研究と M07 の研究の間係</a></li>
+<li><a href="#sec-1-3">1.3. \cite{marshall2007mean} と \cite{smith2006global} の間係</a></li>
 <li><a href="#sec-1-4">1.4. M07 の水惑星計算で得られる気候状態の特徴(概略)</a></li>
 <li><a href="#sec-1-5">1.5. 結合システムで見られる変動性について(概略)</a></li>
 </ul>
@@ -171,7 +171,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-3-3">3.3. 平均状態: 海流</a></li>
 <li><a href="#sec-3-4">3.4. 平均状態: 海洋の鉛直流</a></li>
 <li><a href="#sec-3-5">3.5. 平均状態: 水蒸気, 塩分</a></li>
-<li><a href="#sec-3-6">3.6. オイラー平均子午面循環</a></li>
+<li><a href="#sec-3-6">3.6. 平均子午面循環</a></li>
 <li><a href="#sec-3-7">3.7. 海洋の残差循環</a></li>
 </ul>
 </li>
@@ -181,12 +181,24 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-2">4.2. 定式化1</a></li>
 <li><a href="#sec-4-3">4.3. 定式化2</a></li>
 <li><a href="#sec-4-4">4.4. 残差循環の流線関数</a></li>
-<li><a href="#sec-4-5">4.5. 温度躍層の構造の決定</a></li>
+<li><a href="#sec-4-5">4.5. 海洋の残差循環(M07 Fig.4)</a></li>
+<li><a href="#sec-4-6">4.6. 温度躍層の構造の決定</a></li>
+<li><a href="#sec-4-7">4.7. 得られた解とモデルの計算結果の比較</a></li>
 </ul>
 </li>
 <li><a href="#sec-5">5. 解析: 結合システムの熱輸送</a></li>
 <li><a href="#sec-6">6. 解析: 結合システムの気候の変動性</a></li>
-<li><a href="#sec-7">7. 結論</a></li>
+<li><a href="#sec-7">7. 結論</a>
+<ul>
+<li><a href="#sec-7-1">7.1. 結論 1</a></li>
+<li><a href="#sec-7-2">7.2. 結論 2</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8. 参考文献</a>
+<ul>
+<li><a href="#sec-8-1">8.1. 参考文献</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -224,7 +236,7 @@ for the JavaScript code in this tag.
 <h2 id="sec-1"><span class="section-number-2">1</span> イントロダクション</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 研究の概要</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 研究の目的・概要</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>惑星の気候の決定における大気と海洋の相互作用の特性を理解するために, 大気・海洋・氷の結合システムの数値モデルを用いて,
@@ -237,13 +249,13 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li>この実験では, 陸がないことを除けば, 全ての他の特徴は現在の地球であるような惑星の極限を調べる. 
+<li>この実験において, 陸がないことを除けば全ての他の特徴は現在の地球であるような, 惑星の極限を調べる. 
 <ul class="org-ul">
 <li>惑星は 5.2 km の一様な水深をもつ海洋に全体が覆われている. 
 </li>
-<li>海洋の上には大気が存在し, 入射する太陽放射によってエネルギーを与えられる. 
+<li>海洋の上にある大気は, 入射する太陽放射によってエネルギーを与えられる. 
 </li>
-<li>条件を満たせば, 氷が形成される. 
+<li>条件を満たせば氷が形成される. 
 </li>
 </ul>
 </li>
@@ -259,14 +271,14 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 
-<ol class="org-ol"><li>Hess(1993)<br  /><div class="outline-text-4" id="text-1-2-1">
+<ol class="org-ol"><li>\cite{hess1993maintenance}<br  /><div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>指定された SST を使う水惑星設定を用いて, さまざまな緯度依存の SST 分布に対する熱帯収束帯(ITCZ) の感度を調べた. 
 </li>
 </ul>
 </div>
 </li>
-<li>Kirtman and Schneider(2000), Barsugli et al.(2005)<br  /><div class="outline-text-4" id="text-1-2-2">
+<li>\cite{kirtman2000spontaneously}, \cite{barsugli2005tropical}<br  /><div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
 <li>大気を熱力学的な海洋モデルと結合して, 熱帯の降水が熱帯の平均状態に鋭敏であることを示した. 
 </li>
@@ -276,22 +288,22 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 先行研究と M07 の研究の間係</h3>
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> \cite{marshall2007mean} と \cite{smith2006global} の間係</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>力学を表現し全球中に特性を輸送できる大気モデルと海洋モデルを, フルカップリングする. 
+<li>M07 では, 力学を表現し全球中に特性を輸送できる大気モデルと海洋モデルを, フルカップリングする. 
 </li>
-<li>このような計算はこれなであまりなされていない. 少数の例は Smith et al.(2006) (S06). 
+<li>このような計算はこれまであまりなされていない. 少数例は \cite{smith2006global}. 
 <ul class="org-ul">
-<li>S06 は, 結合システムにおける海洋循環の役割, 
-特に全球に熱を輸送するための海洋の能力に対する地理的な制約の重要性を強調する. 
+<li>結合システムにおける海洋循環の役割, 
+特に全球に熱を輸送するための海洋の能力に対する地理的な制約の重要性を強調した. 
 </li>
 </ul>
 </li>
-<li>本論文の純粋な水惑星設定は, S06 の参照実験の設定と同じものであるが, 
+<li>M07 の純粋な水惑星設定は, S06 の参照実験の設定と同じものであるが, 
 海洋モデルの定式化に重要な違いが存在する. 
 <ul class="org-ul">
-<li>その違いによって, S06 の気候状態と大変異なった気候状態が得られた. 
+<li>その違いにより, S06 と異なる気候状態が得られた(と主張している). 
 </li>
 </ul>
 </li>
@@ -301,7 +313,7 @@ for the JavaScript code in this tag.
 <div id="outline-container-sec-1-4" class="outline-3">
 <h3 id="sec-1-4"><span class="section-number-3">1.4</span> M07 の水惑星計算で得られる気候状態の特徴(概略)</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><ol class="org-ol"><li>大気: 現代地球とまずまず同じ<br  /><div class="outline-text-4" id="text-1-4-1">
+</div><ol class="org-ol"><li>大気: 現代地球と似ている<br  /><div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>加熱/冷却の差異によって, 大気の風系は駆動される. 
 <ul class="org-ul">
@@ -313,7 +325,7 @@ for the JavaScript code in this tag.
 </li>
 <li>総観システムの運動量輸送が, 中高緯度域の西風, 低緯度域の東風を維持する. 
 <ul class="org-ul">
-<li>海洋の真上で吹いた風は海洋の運動を励起する. 
+<li>海洋の真上で吹いた風は海洋の運動を励起 
 </li>
 </ul>
 </li>
@@ -322,19 +334,19 @@ for the JavaScript code in this tag.
 </li>
 
 
-<li>海洋: 現在地球と異なる循環<br  /><div class="outline-text-4" id="text-1-4-2">
+<li>海洋: 現代地球と異なる循環<br  /><div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
-<li>循環パターンは帯状ジェット. 方向は海面風と同じセンス. 
+<li>循環パターンは帯状ジェット. 方向は海面風と同センス. 
 <ul class="org-ul">
 <li>熱帯ベルト:西向き, 中緯度:東向き (&lt;- 現代の南極周回流の力学を連想させる) 
 </li>
 </ul>
 </li>
-<li>子午面循環は風と渦により駆動される沈み込みと関係 
+<li>子午面循環は風と渦により駆動される沈み込みと関係する.  
 <ul class="org-ul">
 <li>極域で対流的に駆動される「熱塩循環」は存在しない. 
 </li>
-<li>子午面循環は, 赤道から中緯度まで伸びる「亜熱帯」残差セルを含む. 
+<li>赤道から中緯度まで伸びる「亜熱帯」残差セルを含む. 
 </li>
 </ul>
 </li>
@@ -501,11 +513,11 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>大気・海洋モデル間の, 運動量, 熱, 淡水フラックスの交換は, 毎時間(海洋モデルの時間ステップ)で行う. 
 </li>
-<li>海洋モデルの初期条件: 静止状態. 温度と塩分は気候値の東西平均. 
+<li>海洋モデルの初期条件: 静止状態. 温度と塩分は気候値の東西平均 
 </li>
 <li>4000 年積分するとおおよそ準平衡状態に落ち着く. 
 <ul class="org-ul">
-<li>以後示す平均状態とは, 最後の 100 年間の場を平均したものである. 
+<li>以後示す平均状態とは, 最後の 100 年間の場を平均したもの. 
 </li>
 </ul>
 </li>
@@ -570,6 +582,7 @@ for the JavaScript code in this tag.
 </div>
 </li></ol>
 </div>
+
 <div id="outline-container-sec-3-2" class="outline-3">
 <h3 id="sec-3-2"><span class="section-number-3">3.2</span> 平均状態: 風</h3>
 <div class="outline-text-3" id="text-3-2">
@@ -625,6 +638,7 @@ for the JavaScript code in this tag.
 <div id="outline-container-sec-3-4" class="outline-3">
 <h3 id="sec-3-4"><span class="section-number-3">3.4</span> 平均状態: 海洋の鉛直流</h3>
 <div class="outline-text-3" id="text-3-4">
+</div><ol class="org-ol"><li>鉛直流速場<br  /><div class="outline-text-4" id="text-3-4-1">
 <ul class="org-ul">
 <li>海面応力の回転により駆動されるエクマン・パンピングの場は, 温度躍層の下部表面のうねりを説明する. 
 </li>
@@ -634,14 +648,26 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </div>
+</li>
+<li>画像<br  /><div class="outline-text-4" id="text-3-4-2">
+<p>
+<a href="./M07_Fig/M07_Fig2bRB.eps">./M07_Fig/M07_Fig2bRB.eps</a>
+</p>
+
+<p>
+<a href="./M07_Fig/M07_Fig2aLB.eps">./M07_Fig/M07_Fig2aLB.eps</a>
+</p>
+</div>
+</li></ol>
 </div>
 <div id="outline-container-sec-3-5" class="outline-3">
 <h3 id="sec-3-5"><span class="section-number-3">3.5</span> 平均状態: 水蒸気, 塩分</h3>
 <div class="outline-text-3" id="text-3-5">
+</div><ol class="org-ol"><li>水蒸気, 塩分場<br  /><div class="outline-text-4" id="text-3-5-1">
 <ul class="org-ul">
 <li>比湿は空気の暖かいところで大きい(赤道下層で, 15 g kg<sup>-1</sup>, 高度や緯度が高くなるにつれ減少). 
 </li>
-<li>水蒸気の「mirror imgae」である海洋の塩分場は, 舌状の分布をみせる. 
+<li>水蒸気の "mirror imgae'' である海洋の塩分場は, 舌状の分布をみせる. 
 <ul class="org-ul">
 <li>亜熱帯では蒸発が降水を上回る. 熱帯・高緯度では, 降水が蒸発を上回る. 
 </li>
@@ -651,63 +677,90 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </div>
-</div>
+</li>
+<li>画像<br  /><div class="outline-text-4" id="text-3-5-2">
+<p>
+<a href="./M07_Fig/M07_Fig2bL.eps">./M07_Fig/M07_Fig2bL.eps</a>
+</p>
 
+<p>
+<a href="./M07_Fig/M07_Fig3.eps">./M07_Fig/M07_Fig3.eps</a>
+</p>
+</div>
+</li></ol>
+</div>
 <div id="outline-container-sec-3-6" class="outline-3">
-<h3 id="sec-3-6"><span class="section-number-3">3.6</span> オイラー平均子午面循環</h3>
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> 平均子午面循環</h3>
 <div class="outline-text-3" id="text-3-6">
+</div><ol class="org-ol"><li>オイラー平均子午面循環<br  /><div class="outline-text-4" id="text-3-6-1">
+
 <ul class="org-ul">
 <li>大気: 赤道の両側で対称なハドレーセル, 中・高緯度でフェレルセル. 
 </li>
-<li>海洋: 大気の子午面循環と同じパターン 
+<li>海洋: 大気と同パターン 
 </li>
-<li>大気・海洋の境界層内で大規模渦による水平渦運動量フラックスが無視できる限り, 両方の流線関数は同じになるだろう. 
+<li>大気・海洋の境界層内で大規模渦による水平渦運動量フラックスが無視できる限り, 
+  \(\bar{\Psi}_A = \bar{\Psi}_O\) が予期される. 
 <ul class="org-ul">
-<li>熱帯域のハドレーセルでは当てはまる. 
+<li>ハドレーセルでは当てはまる. 
 </li>
-<li>中緯度では大気の流線関数が 50 % ほど海洋を上回る(しかしオーダ的には同じ). 
+<li>中緯度では \(\bar{\Psi}_A\) が 50 % ほど \(\bar{\Psi}_O\) を上回る(オーダ的には同じ). 
 <ul class="org-ul">
 <li>総観規模の渦と関係した渦運動量フラックスが無視できないため
 </li>
-</ul>
+<li>大気の渦が駆動する質量フラックスは海洋の子午面循環よりずっと強い &lt;= 大気・海洋間の熱輸送の分配に関する重要な事実
 </li>
 </ul>
-</li>
-<li>しかし, 大気の渦が駆動する質量フラックスは, 海洋の典型的な子午面循環の強度よりずっと強い
-<ul class="org-ul">
-<li>大気・海洋間の熱輸送の分配に関する重要な事実
 </li>
 </ul>
 </li>
 </ul>
 </div>
+</li>
+<li>画像<br  /><div class="outline-text-4" id="text-3-6-2">
+<p>
+<a href="./M07_Fig/M07_Fig2bR.eps">./M07_Fig/M07_Fig2bR.eps</a>
+</p>
 </div>
+</li></ol>
+</div>
+
+
 <div id="outline-container-sec-3-7" class="outline-3">
 <h3 id="sec-3-7"><span class="section-number-3">3.7</span> 海洋の残差循環</h3>
 <div class="outline-text-3" id="text-3-7">
+</div><ol class="org-ol"><li>海洋の残差循環<br  /><div class="outline-text-4" id="text-3-7-1">
+
 <ul class="org-ul">
 <li>(残差循環) = (オイラー平均) + (渦で駆動される循環)
 <ul class="org-ul">
-<li>渦で駆動される循環は,  オイラー平均と逆センスの傾向がある. 
+<li>渦で駆動される循環はオイラー平均と逆センスの傾向
 </li>
-<li>中・高緯度では, 完全にキャンセルする. 
+<li>中・高緯度では, 完全にキャンセル 
 </li>
 </ul>
 </li>
-<li>なぜ逆センスなのか? (Gill et al, 1974)
+<li>なぜ逆センスなのか? (\cite{gill1974energy})
 <ul class="org-ul">
 <li>海面応力のパターンは, 亜熱帯で海面の浮力分布を押し下げ, 熱帯と高緯度で深層の浮力を吸い上げる. 
 </li>
 <li>等密度面の傾きは, 傾圧不安定のための有効位置エネルギーを貯蓄する. 
 </li>
-<li>傾圧不安定は平均的な浮力面を平坦にする &lt;- これは海面の風の効果と相反する. 
+<li>傾圧不安定は平均的な浮力面を平坦にする &lt;- 海面の風の効果と相反 
 </li>
 </ul>
 </li>
-<li>極域の海洋の成層は弱いが, 極の沈み込みによって駆動される熱塩循環は見られない.
+<li>極域の海洋の成層は弱いが, 極の沈み込みにより駆動される熱塩循環は見られない.
 </li>
 </ul>
 </div>
+</li>
+<li>画像<br  /><div class="outline-text-4" id="text-3-7-2">
+<p>
+<a href="./M07_Fig/M07_Fig4.eps">./M07_Fig/M07_Fig4.eps</a>
+</p>
+</div>
+</li></ol>
 </div>
 </div>
 
@@ -718,9 +771,9 @@ for the JavaScript code in this tag.
 <h3 id="sec-4-1"><span class="section-number-3">4.1</span> 方針</h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
-<li>Marshall and Radiko(2003) (MR03) : ACC のような海洋の帯状流に対する簡単なモデルを開発. 
+<li>\cite{marshall2003residual} : 南極周回流のような海洋の帯状流に対する簡単なモデルを開発. 
 </li>
-<li>MR03 のモデルを適切に修正することによって, 水惑星の海洋の平均的な状態(平均子午面循環)を説明する. 
+<li>MR03 のモデルを適切に修正することによって, 水惑星の海洋の平均的な状態を説明する. 
 </li>
 </ul>
 </div>
@@ -798,6 +851,7 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-4-4" class="outline-3">
 <h3 id="sec-4-4"><span class="section-number-3">4.4</span> 残差循環の流線関数</h3>
 <div class="outline-text-3" id="text-4-4">
@@ -821,13 +875,13 @@ for the JavaScript code in this tag.
 </p>
 
 <ul class="org-ul">
-<li>水平方向の運動量混合が無視できるならば, \(\bar{\Psi}\) は深さに依存しない. 
+<li>水平方向の運動量混合が無視できるならば, \(\bar{\psi}\) は深さに依存しない. 
 <ul class="org-ul">
 <li>このとき, 海面と海底のエクマン層の輸送は真反対になる.  
 </li>
 </ul>
 </li>
-<li>しかし, 実際 \(\bar{\Psi}\) は内部領域で深さに依存している. 
+<li>しかし, 実際 \(\bar{\psi}\) は内部領域で深さに依存している. 
 <ul class="org-ul">
 <li>運動量バランスの中で粘性の役割は, 無視できない. 
 </li>
@@ -838,12 +892,22 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
 <div id="outline-container-sec-4-5" class="outline-3">
-<h3 id="sec-4-5"><span class="section-number-3">4.5</span> 温度躍層の構造の決定</h3>
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> 海洋の残差循環(M07 Fig.4)</h3>
 <div class="outline-text-3" id="text-4-5">
+</div><ol class="org-ol"><li>画像<br  /><div class="outline-text-4" id="text-4-5-1">
+<p>
+<a href="./M07_Fig/M07_Fig4.eps">./M07_Fig/M07_Fig4.eps</a>
+</p>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> 温度躍層の構造の決定</h3>
+<div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
-<li>アルゴリズム
+<li>\(\bar{b}\) の解を求めるアルゴリズム
 
 <p>
 \(\eqref{BolusStreamFunc}\) を整理して, 
@@ -860,12 +924,18 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> 得られた解とモデルの計算結果の比較</h3>
+<div class="outline-text-3" id="text-4-7">
+</div><ol class="org-ol"><li>計算結果の比較<br  /><div class="outline-text-4" id="text-4-7-1">
 
-<li>得られた解とモデルの計算結果の比較(Fig.5)
 <ul class="org-ul">
 <li>両者は良く一致している. 
 </li>
-<li>MR03 の ACC とその子午面循環の理論の心である力学バランス \(\eqref{relattion_bSlope_resSF_eulerM}\) が, 水惑星の海洋に適切であることを示唆する. 
+<li>MR03 の ACC とその子午面循環の理論の心である力学バランス \(\eqref{relattion_bSlope_resSF_eulerM}\) が, 水惑星の海洋に対して適切であることを示唆する. 
 <ul class="org-ul">
 <li>スベルドラップバランスとは, 根本的に違う点に注意
 </li>
@@ -874,16 +944,23 @@ for the JavaScript code in this tag.
 <li>温度躍層の深さは渦のプロセスによって根本的に制限される. 
 </li>
 </ul>
+</div>
 </li>
-</ul>
+<li>画像<br  /><div class="outline-text-4" id="text-4-7-2">
+<p>
+<a href="./M07_Fig/M07_Fig5.eps">./M07_Fig/M07_Fig5.eps</a>
+</p>
+</div>
+</li></ol>
 </div>
 </div>
-</div>
+
 
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5"><span class="section-number-2">5</span> 解析: 結合システムの熱輸送</h2>
+<div class="outline-text-2" id="text-5">
 </div>
-
+</div>
 
 <div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6"><span class="section-number-2">6</span> 解析: 結合システムの気候の変動性</h2>
@@ -893,12 +970,80 @@ for the JavaScript code in this tag.
 
 <div id="outline-container-sec-7" class="outline-2">
 <h2 id="sec-7"><span class="section-number-2">7</span> 結論</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> 結論 1</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>水惑星の数値実験から発見された気候を説明した. 
+</li>
+
+<li>平均状態
+<ul class="org-ul">
+<li>大気: 現代の大気を連想させる.  
+<ul class="org-ul">
+<li>傾圧的に不安定な亜熱帯ジェット, ハドレー循環, 中緯度における地表の西風, 熱帯の貿易風. 
+</li>
+</ul>
+</li>
+<li>海洋: 現代と大きく異なる. 
+<ul class="org-ul">
+<li>卓越した海面風と同じ向きの帯状ジェット
+</li>
+<li>海洋の力学は \cite{marshall2003residual} の残差循環の理論で捉えられる. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> 結論 2</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>海洋の力学は MR03 の残差循環の理論で捉えられる. 
+<ul class="org-ul">
+<li>温帯: 循環は南極周回流とよく似た力学で説明される. 
+<ul class="org-ul">
+<li>中緯度のオイラー平均流は渦のボーラス輸送によってほぼ完全に打ち消される. 
+</li>
+</ul>
+</li>
+<li>高緯度: 等密度面は内部領域の深くまで潜り込む. 
+<ul class="org-ul">
+<li>混合プロセスは弱い内部領域の成層に対し働く =&gt;  明瞭な残差循環を維持できない. 
+</li>
+</ul>
+</li>
+<li>低緯度: 中・高緯度で沈み込んだ等密度面が海面に向かい, 温度躍層を形成する. 
+<ul class="org-ul">
+<li>混合プロセスは強い成層に対し働く =&gt;  明瞭な残差循環を維持できる. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> 参考文献</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> 参考文献</h3>
+<div class="outline-text-3" id="text-8-1">
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">&#26085;&#20184;: 2013/12/19</p>
 <p class="author">&#33879;&#32773;: 河合 佑太</p>
-<p class="date">Created: 2013-12-17 火 16:25</p>
+<p class="date">Created: 2013-12-19 木 14:10</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
