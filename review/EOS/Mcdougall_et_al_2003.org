@@ -1,7 +1,7 @@
 #+TITLE: Mcdougall et al (2003) ノート
 #+AUTHOR: KAWAI Yuta
 #+LANGUAGE: ja
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./../org.css" />
 
 #+begin_abstract
 Feistel and Hagen(FH) の状態方程式と良くフィットする, 25 項から成る海水の状態方程式を示す. 

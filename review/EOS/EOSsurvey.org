@@ -1,0 +1,105 @@
+#+TITLE: 海洋モデルで用いられる状態方程式の調査
+#+AUTHOR: KAWAI Yuta
+#+LANGUAGE: ja
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./../org.css" />
+
+
+
+* 海洋モデルで使われている EOS の比較
+
+** 比較表
+
+
+   |         | EOS-80 の多項式近似(FM83, M91 他) | JM95       | MJWF03             | JMFWG06    | IOC10      |   |
+   |---------+-----------------------------------+------------+--------------------+------------+------------+---|
+   | POM     | $\bigcirc$                        |            |                    |            |            |   |
+   | POP     | $\bigcirc$                        | $\bigcirc$ | $\bigcirc$         |            |            |   |
+   | ROMS    |                                   | $\bigcirc$ |                    |            |            |   |
+   | MITgcm  | $\bigcirc$                        | $\bigcirc$ | $\bigcirc$         |            |            |   |
+   | MOM     |                                   |            | $(\bigtriangleup)$ | $\bigcirc$ | $\bigcirc$ |   |
+   | MRI.COM | $\bigcirc$                        |            |                    |            |            |   |
+   | COCO    | $\bigcirc$                        |            |                    |            |            |   |
+   | FVCOM   | $\bigcirc$                        | $\bigcirc$ |                    |            |            |   |
+   | HYCOM   | $\bigcirc$                        |            |                    |            |            |   |
+   | NEMO    |                                   | $\bigcirc$ |                    |            |            |   |
+
+
+** 補足1 海洋モデル([[http://chikyu-to-umi.com/earth/yo_code_ocean.htm][参考ページ1]], [[http://stommel.tamu.edu/~baum/ocean_models.html][参考ページ2]] )
+ - POM: Princeton Ocean Model
+ - ROMS: Regional OCean Modeling System
+   - Rundgers 大と ULCA のモデル
+ - MOM: Modular Ocean Model
+   - GFDL のモデル
+ - OFES: OGCM For Earth Simulator
+   - FRCGC/ESC が MOM3.1 を地球シミュレータ用に最適化
+ - COCO: CCSR Ocean Component Model
+ - MRI.COM: MRI Community Ocean Model
+   - 気象研究所のモデル
+ - MICOM: Miani Isopycnal Coordinate Ocean Model
+ - HYCOM: HYbrid Coordinate Ocean Model
+ - GOLD: Generalized Ocean Layered Dynamics ocean model
+ - MITgcm
+ - FVCOM: Finite Volume Coastal Ocean Model
+ - POP: Parallel Ocean Model
+   
+** 補足2 状態方程式
+
+*** EOS-80 (UNESCO(1981) の海水の国際状態方程式)
+- 過去 30 年間海洋学で使われてきた.
+- 多項式によって定義される 5 つの独立したアルゴリズムから構成される 
+  - 実用塩分スケール
+  - 実用塩分・(現場)温度・圧力の関数としての海水密度の式
+  - 海水の定圧比熱
+  - 海水の音速の式
+  - 海水の氷点の公式
+- 熱力学的特性は, 全体的には自己矛盾を含む. 
+- JPTOS に支持されたその他のアルゴリズム
+  - 静水圧と深さの変換
+  - 断熱減率の計算
+  - 温位の計算
+
+*** FM83
+- EOS-80 の Fortran による実装
+
+*** M91
+- 圧力の効果を含む. UNESCO の定式化における圧力項を簡単化.
+
+*** JM95
+- EOS-80 に基づくが, 現場温度の代わりに *温位* を使う. 
+- 適用範囲
+  - 塩分 0 ~ 42 [psu], (現場)温度 -2 ~ 40 [ $^\circ \rm C$ ], 圧力: 0 ~ 10000 [dbar]
+- fitting 誤差: RMS 5.8 \times 10^{-4} kg m^{-3}, 最大絶対誤差 6.7 \times 10^{-3} kg m^{-3}. 
+
+*** MJWF03
+- EOS-80 より精度の良い Feistel and Hagen の状態方程式と fitting
+  - FH の状態方程式は熱力学的ポテンシャルに基づき, 熱力学的に一貫性がある. 
+- 適用範囲
+  - 圧力: 0 ~ 8000 [dbar]
+  - 塩分: (海面) 0 ~ 40 [psu], (5500db より深部) 30 ~ 40 [psu]
+  - 温位
+    - 上限: (海面) 33 [ $^\circ \rm C$ ], (5500db より深部) 12 [ $^\circ \rm C$ ]
+    - 下限: -2.6 [ $^\circ \rm C$ ] 
+      - 500 db, 40 psu に対する氷点に対応. (500db より深部では氷棚はふつう見られない)
+- 誤差
+  - fitting 誤差: (密度) RMS 1 \times 10^{-3} [kg m^{-3}]
+
+
+- [[file:./Mcdougall_et_al_2003.html][詳細]]ページ
+
+*** JMFWG06
+- MJWF03 の更新
+- 「保存的」温度, 凝結温度のアルゴリズム
+- 適用範囲: MJWF03 よりも少しだけ広い
+  - 圧力: 0 ~ 8500 [dbar]
+  - 塩分: (海面) 0 ~ 40 [psu], (5500db より深部) 30 ~ 40 [psu]
+  - 温度
+    - 上限: (海面) 40 [ $^\circ \rm C$ ], (5500db より深部) 15 [ $^\circ \rm C$ ]
+    - 下限: -2 [ $^\circ \rm C$ ] 
+      - 500 db に対する氷点に対応.
+- 誤差
+  - F03 状態方程式の元データの誤差: (密度) RMS 3 \times 10^{-2} [kg m^{-3}], (熱膨張率) RMS 6.0 \times 10^{-7} [K^{-1}]
+  - F03 自体の fitting 誤差: (密度) RMS 10^{-2} [kg m^{-3}], (熱膨張率) RMS 7.3 \times 10^{-7} [K^{-1}] 
+  - 現実海洋の気候値を使った誤差評価: (密度) RMS 1.9 \times 10^{-3} [kg m^{-3}], (熱膨張率) RMS 2.9 \times 10^{-7} [K^{-1}]
+  - fitting 誤差: (密度) RMS 2.4 \times 10^{-3} [kg m^{-3}], (熱膨張率) RMS 2.8 \times 10^{-7} [K^{-1}]
+
+- [[file:./Jackett_et_al_2006.html][詳細]]ページ

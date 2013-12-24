@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>海洋モデルで用いられる状態方程式の調査</title>
+<!-- 2013-12-23 月 18:45 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="KAWAI Yuta" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./../org.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript"> </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">海洋モデルで用いられる状態方程式の調査</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#27425;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 海洋モデルで使われている EOS の比較</a>
+<ul>
+<li><a href="#sec-1-1">1.1. 比較表</a></li>
+<li><a href="#sec-1-2">1.2. 補足1 海洋モデル(参考ページ1, 参考ページ2 )</a></li>
+<li><a href="#sec-1-3">1.3. 補足2 状態方程式</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. EOS-80 (UNESCO(1981) の海水の国際状態方程式)</a></li>
+<li><a href="#sec-1-3-2">1.3.2. FM83</a></li>
+<li><a href="#sec-1-3-3">1.3.3. M91</a></li>
+<li><a href="#sec-1-3-4">1.3.4. JM95</a></li>
+<li><a href="#sec-1-3-5">1.3.5. MJWF03</a></li>
+<li><a href="#sec-1-3-6">1.3.6. JMFWG06</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 海洋モデルで使われている EOS の比較</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 比較表</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">&#xa0;</th>
+<th scope="col" class="left">EOS-80 の多項式近似(FM83, M91 他)</th>
+<th scope="col" class="left">JM95</th>
+<th scope="col" class="left">MJWF03</th>
+<th scope="col" class="left">JMFWG06</th>
+<th scope="col" class="left">IOC10</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">POM</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">POP</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ROMS</td>
+<td class="left">&#xa0;</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">MITgcm</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">MOM</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">\((\bigtriangleup)\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">MRI.COM</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">COCO</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">FVCOM</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">HYCOM</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">NEMO</td>
+<td class="left">&#xa0;</td>
+<td class="left">\(\bigcirc\)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 補足1 海洋モデル(<a href="http://chikyu-to-umi.com/earth/yo_code_ocean.htm">参考ページ1</a>, <a href="http://stommel.tamu.edu/~baum/ocean_models.html">参考ページ2</a> )</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>POM: Princeton Ocean Model
+</li>
+<li>ROMS: Regional OCean Modeling System
+<ul class="org-ul">
+<li>Rundgers 大と ULCA のモデル
+</li>
+</ul>
+</li>
+<li>MOM: Modular Ocean Model
+<ul class="org-ul">
+<li>GFDL のモデル
+</li>
+</ul>
+</li>
+<li>OFES: OGCM For Earth Simulator
+<ul class="org-ul">
+<li>FRCGC/ESC が MOM3.1 を地球シミュレータ用に最適化
+</li>
+</ul>
+</li>
+<li>COCO: CCSR Ocean Component Model
+</li>
+<li>MRI.COM: MRI Community Ocean Model
+<ul class="org-ul">
+<li>気象研究所のモデル
+</li>
+</ul>
+</li>
+<li>MICOM: Miani Isopycnal Coordinate Ocean Model
+</li>
+<li>HYCOM: HYbrid Coordinate Ocean Model
+</li>
+<li>GOLD: Generalized Ocean Layered Dynamics ocean model
+</li>
+<li>MITgcm
+</li>
+<li>FVCOM: Finite Volume Coastal Ocean Model
+</li>
+<li>POP: Parallel Ocean Model
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 補足2 状態方程式</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> EOS-80 (UNESCO(1981) の海水の国際状態方程式)</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>過去 30 年間海洋学で使われてきた.
+</li>
+<li>多項式によって定義される 5 つの独立したアルゴリズムから構成される 
+<ul class="org-ul">
+<li>実用塩分スケール
+</li>
+<li>実用塩分・(現場)温度・圧力の関数としての海水密度の式
+</li>
+<li>海水の定圧比熱
+</li>
+<li>海水の音速の式
+</li>
+<li>海水の氷点の公式
+</li>
+</ul>
+</li>
+<li>熱力学的特性は, 全体的には自己矛盾を含む. 
+</li>
+<li>JPTOS に支持されたその他のアルゴリズム
+<ul class="org-ul">
+<li>静水圧と深さの変換
+</li>
+<li>断熱減率の計算
+</li>
+<li>温位の計算
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> FM83</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>EOS-80 の Fortran による実装
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> M91</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li>圧力の効果を含む. UNESCO の定式化における圧力項を簡単化.
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> JM95</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li>EOS-80 に基づくが, 現場温度の代わりに <b>温位</b> を使う. 
+</li>
+<li>適用範囲
+<ul class="org-ul">
+<li>塩分 0 ~ 42 [psu], (現場)温度 -2 ~ 40 [ \(^\circ \rm C\) ], 圧力: 0 ~ 10000 [dbar]
+</li>
+</ul>
+</li>
+<li>fitting 誤差: RMS 5.8 &times; 10<sup>-4</sup> kg m<sup>-3</sup>, 最大絶対誤差 6.7 &times; 10<sup>-3</sup> kg m<sup>-3</sup>. 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-5" class="outline-4">
+<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> MJWF03</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<ul class="org-ul">
+<li>EOS-80 より精度の良い Feistel and Hagen の状態方程式と fitting
+<ul class="org-ul">
+<li>FH の状態方程式は熱力学的ポテンシャルに基づき, 熱力学的に一貫性がある. 
+</li>
+</ul>
+</li>
+<li>適用範囲
+<ul class="org-ul">
+<li>圧力: 0 ~ 8000 [dbar]
+</li>
+<li>塩分: (海面) 0 ~ 40 [psu], (5500db より深部) 30 ~ 40 [psu]
+</li>
+<li>温位
+<ul class="org-ul">
+<li>上限: (海面) 33 [ \(^\circ \rm C\) ], (5500db より深部) 12 [ \(^\circ \rm C\) ]
+</li>
+<li>下限: -2.6 [ \(^\circ \rm C\) ] 
+<ul class="org-ul">
+<li>500 db, 40 psu に対する氷点に対応. (500db より深部では氷棚はふつう見られない)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>誤差
+<ul class="org-ul">
+<li>元データの誤差: (密度) RMS 3 &times; 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 6.0 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
+</li>
+<li>fitting 誤差: (密度) RMS 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 7.3 &times; 10<sup>-7</sup> [K<sup>-1</sup>] 
+</li>
+</ul>
+</li>
+
+<li><a href="./Mcdougall_et_al_2003.html">詳細</a>ページ
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-3-6" class="outline-4">
+<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> JMFWG06</h4>
+<div class="outline-text-4" id="text-1-3-6">
+<ul class="org-ul">
+<li>MJWF03 の更新
+</li>
+<li>「保存的」温度, 凝結温度のアルゴリズム
+</li>
+<li>適用範囲: MJWF03 よりも少しだけ広い
+<ul class="org-ul">
+<li>圧力: 0 ~ 8500 [dbar]
+</li>
+<li>塩分: (海面) 0 ~ 40 [psu], (5500db より深部) 30 ~ 40 [psu]
+</li>
+<li>温度
+<ul class="org-ul">
+<li>上限: (海面) 40 [ \(^\circ \rm C\) ], (5500db より深部) 15 [ \(^\circ \rm C\) ]
+</li>
+<li>下限: -2 [ \(^\circ \rm C\) ] 
+<ul class="org-ul">
+<li>500 db に対する氷点に対応.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>誤差
+<ul class="org-ul">
+<li>現実海洋の気候値を使った誤差評価: (密度) RMS 1.9 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 2.9 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
+</li>
+<li>fitting 誤差: (密度) RMS 2.4 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 2.8 &times; 10<sup>-7</sup> [K<sup>-1</sup>] 
+</li>
+</ul>
+</li>
+<li><a href="./Jackett_et_al_2006.html">詳細</a>ページ
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#33879;&#32773;: KAWAI Yuta</p>
+<p class="date">Created: 2013-12-23 月 18:45</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
