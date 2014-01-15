@@ -1,0 +1,47 @@
+#+TITLE: ÃÏµå¤Î³¤ÍÎ¤Ë´Ø¤¹¤ë´ðËÜ¥Ç¡¼¥¿
+#+AUTHOR: KAWAI Yuta
+#+LANGUAGE: ja
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css" />
+
+* ³¤ÍÎ½Û´Ä
+** É½ÁØ
+** ¿¼ÁØ
+
+* ³¤¿å²¹
+** Ç¯Ê¿¶Ñ
+
+ #+CAPTION: Ç¯Ê¿¶Ñ¤Î³¤¿å²¹¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/temp_d0_annual.png][file:./fig/temp_d0_annual_thumb.png]] |[[file:./fig/temp_d100_annual.png][file:./fig/temp_d100_annual_thumb.png]] |[[file:./fig/temp_d500_annual.png][file:./fig/temp_d500_annual_thumb.png]] |[[file:./fig/temp_d1000_annual.png][file:./fig/temp_d1000_annual_thumb.png]] |[[file:./fig/temp_d2500_annual.png][file:./fig/temp_d2500_annual_thumb.png]] |
+
+** ²Æµ¨(6-9 ·î)
+
+ #+CAPTION: (ËÌÈ¾µå)²Æµ¨¤Î³¤¿å²¹¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/temp_d0_summer.png][file:./fig/temp_d0_summer_thumb.png]] |[[file:./fig/temp_d100_summer.png][file:./fig/temp_d100_summer_thumb.png]] |[[file:./fig/temp_d500_summer.png][file:./fig/temp_d500_summer_thumb.png]] |[[file:./fig/temp_d1000_summer.png][file:./fig/temp_d1000_summer_thumb.png]] |[[file:./fig/temp_d2500_summer.png][file:./fig/temp_d2500_summer_thumb.png]] |
+
+** Åßµ¨(1-3 ·î)
+
+ #+CAPTION: (ËÌÈ¾µå)Åßµ¨¤Î³¤¿å²¹¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/temp_d0_winter.png][file:./fig/temp_d0_winter_thumb.png]] |[[file:./fig/temp_d100_winter.png][file:./fig/temp_d100_winter_thumb.png]] |[[file:./fig/temp_d500_winter.png][file:./fig/temp_d500_winter_thumb.png]] |[[file:./fig/temp_d1000_winter.png][file:./fig/temp_d1000_winter_thumb.png]] |[[file:./fig/temp_d2500_winter.png][file:./fig/temp_d2500_winter_thumb.png]] |
+
+* ±öÊ¬
+
+** Ç¯Ê¿¶Ñ
+
+ #+CAPTION: Ç¯Ê¿¶Ñ¤Î±öÊ¬¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/sal_d0_annual.png][file:./fig/sal_d0_annual_thumb.png]] |[[file:./fig/sal_d100_annual.png][file:./fig/sal_d100_annual_thumb.png]] |[[file:./fig/sal_d500_annual.png][file:./fig/sal_d500_annual_thumb.png]] |[[file:./fig/sal_d1000_annual.png][file:./fig/sal_d1000_annual_thumb.png]] |[[file:./fig/sal_d2500_annual.png][file:./fig/sal_d2500_annual_thumb.png]] |
+
+** ²Æµ¨(6-9 ·î)
+
+ #+CAPTION: (ËÌÈ¾µå)²Æµ¨¤Î±öÊ¬¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/sal_d0_summer.png][file:./fig/sal_d0_summer_thumb.png]] |[[file:./fig/sal_d100_summer.png][file:./fig/sal_d100_summer_thumb.png]] |[[file:./fig/sal_d500_summer.png][file:./fig/sal_d500_summer_thumb.png]] |[[file:./fig/sal_d1000_summer.png][file:./fig/sal_d1000_summer_thumb.png]] |[[file:./fig/sal_d2500_summer.png][file:./fig/sal_d2500_summer_thumb.png]] |
+
+** Åßµ¨(1-3 ·î)
+
+ #+CAPTION: (ËÌÈ¾µå)Åßµ¨¤Î±öÊ¬¤Î¿åÊ¿Ê¬ÉÛ. º¸¤«¤é½ç¤Ë¿å¿¼ 0, 100, 500, 1000, 2500, 5000 m. 
+ |[[file:./fig/sal_d0_winter.png][file:./fig/sal_d0_winter_thumb.png]] |[[file:./fig/sal_d100_winter.png][file:./fig/sal_d100_winter_thumb.png]] |[[file:./fig/sal_d500_winter.png][file:./fig/sal_d500_winter_thumb.png]] |[[file:./fig/sal_d1000_winter.png][file:./fig/sal_d1000_winter_thumb.png]] |[[file:./fig/sal_d2500_winter.png][file:./fig/sal_d2500_winter_thumb.png]] |
+
+
+* ²¹ÅÙÌöÁØ
+
+ #+CAPTION: ÂÀÊ¿ÍÎ(lat=-150)¤Ë¤ª¤±¤ë³¤¿å²¹¤Î±ôÄ¾¹½Â¤. º¸¤«¤é½ç¤Ë lat=0, 20, 45, 55, 85  
+ |[[file:./fig/temp_lat0lon-150.png][file:./fig/temp_lat0lon-150_thumb.png]]|[[file:./fig/temp_lat20lon-150.png][file:./fig/temp_lat20lon-150_thumb.png]] |[[file:./fig/temp_lat45lon-150.png][file:./fig/temp_lat45lon-150_thumb.png]] |[[file:./fig/temp_lat55lon-150.png][file:./fig/temp_lat55lon-150_thumb.png]] |[[file:./fig/temp_lat85lon-150.png][file:./fig/temp_lat85lon-150_thumb.png]]   |

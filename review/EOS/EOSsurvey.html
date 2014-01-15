@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
 <title>海洋モデルで用いられる状態方程式の調査</title>
-<!-- 2013-12-23 月 18:45 -->
+<!-- 2014-01-14 火 21:10 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="KAWAI Yuta" />
@@ -160,6 +160,17 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-3-4">1.3.4. JM95</a></li>
 <li><a href="#sec-1-3-5">1.3.5. MJWF03</a></li>
 <li><a href="#sec-1-3-6">1.3.6. JMFWG06</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 補足 塩分の定義について</a>
+<ul>
+<li><a href="#sec-2-1">2.1. 塩分(絶対塩分)の定義</a></li>
+<li><a href="#sec-2-2">2.2. 塩分の概念・算定方法の変遷</a>
+<ul>
+<li><a href="#sec-2-2-1">2.2.1. 塩素量に基づく塩分</a></li>
+<li><a href="#sec-2-2-2">2.2.2. 実用塩分</a></li>
 </ul>
 </li>
 </ul>
@@ -462,13 +473,14 @@ for the JavaScript code in this tag.
 </li>
 <li>誤差
 <ul class="org-ul">
-<li>元データの誤差: (密度) RMS 3 &times; 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 6.0 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
-</li>
-<li>fitting 誤差: (密度) RMS 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 7.3 &times; 10<sup>-7</sup> [K<sup>-1</sup>] 
+<li>fitting 誤差: (密度) RMS 1 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>]
 </li>
 </ul>
 </li>
+</ul>
 
+
+<ul class="org-ul">
 <li><a href="./Mcdougall_et_al_2003.html">詳細</a>ページ
 </li>
 </ul>
@@ -504,13 +516,124 @@ for the JavaScript code in this tag.
 </li>
 <li>誤差
 <ul class="org-ul">
+<li>F03 状態方程式の元データの誤差: (密度) RMS 3 &times; 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 6.0 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
+</li>
+<li>F03 自体の fitting 誤差: (密度) RMS 10<sup>-2</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 7.3 &times; 10<sup>-7</sup> [K<sup>-1</sup>] 
+</li>
 <li>現実海洋の気候値を使った誤差評価: (密度) RMS 1.9 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 2.9 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
 </li>
-<li>fitting 誤差: (密度) RMS 2.4 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 2.8 &times; 10<sup>-7</sup> [K<sup>-1</sup>] 
+<li>fitting 誤差: (密度) RMS 2.4 &times; 10<sup>-3</sup> [kg m<sup>-3</sup>], (熱膨張率) RMS 2.8 &times; 10<sup>-7</sup> [K<sup>-1</sup>]
 </li>
 </ul>
 </li>
+
 <li><a href="./Jackett_et_al_2006.html">詳細</a>ページ
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 補足 塩分の定義について</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 塩分(絶対塩分)の定義</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>海水 1 kg に溶解している海塩の質量を塩分と定義する. 
+</li>
+<li>単位は g/kg あるいはパーミル. 
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 塩分の概念・算定方法の変遷</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1"><span class="section-number-4">2.2.1</span> 塩素量に基づく塩分</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li>塩素量の定義
+<ul class="org-ul">
+<li>海水 328.5234 g 中のハロゲンを完全に沈殿させるのに必要な純金の質量をグラム数で表したもの. 
+</li>
+</ul>
+</li>
+<li>モールの銀滴定法による塩素量の測定
+$$
+       {\rm Cl[‰]} = 0.3285234 {\rm Ag [‰]}
+     $$
+によって塩分量に換算される. 
+<ul class="org-ul">
+<li>"0.3285234" という値は, 原標準海水(塩素量 19.3810 ‰) 1kg に対して必要な銀が 58.99428 g であることによる. 
+</li>
+<li>塩分への換算: クヌーセンの式
+$$
+     {\rm S_c[‰]}=0.0305 + 1.805 {\rm Cl_s [‰]}
+     $$
+によって与えられる. 
+</li>
+</ul>
+</li>
+
+<li>電気伝導度計による塩素量の測定
+<ul class="org-ul">
+<li>Cox et al(1967): 海水サンプルと標準海水の間の電気伝導度比の関係式を作成
+</li>
+<li>Wooster et al(1969): 塩素量から塩分への新たな換算式
+$$
+     {\rm S_c[‰]}=1.80655 {\rm Cl_s [‰]}
+     $$
+を与えた
+</li>
+<li>Muller(1999): 一気圧下で, 10 から 30 ℃ の範囲で有効な塩分と電気伝導度比の関係式を導いた. 
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2"><span class="section-number-4">2.2.2</span> 実用塩分</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li>15 度, 1 気圧における塩化カリウムの標準溶液(32.4356‰)との電気伝導度の比 \(K_15\) を用いて, 
+実用塩分は, 
+$$
+   S_p = a_0 + a_1 K_{15}^{1/2} + a_2 K_{15} + a_3 K_{15}^{3/2} + a_4 K_{15}^2 + a_5 K_15^{5/2}
+  $$
+で表される.  
+<ul class="org-ul">
+<li>標準溶液は 15 度, 1 気圧において, 塩素量に基づく塩分が 35 ‰の標準海水と電気伝導度が等しくなるように決められている. 
+<ul class="org-ul">
+<li>そのため, \(K_{15}=1\) のとき,  \(S_p=35\) となる. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>この定義では, 成分が異なっていても電気伝導度が同じであれば, 塩分は同じとなる. 
+</li>
+<li>原則的には単位はないが, しばしば単位として psu をつけて表示する. 
+</li>
+<li>問題点
+<ul class="org-ul">
+<li>実用塩分と絶対塩分には差がある. 
+</li>
+<li>SI 単位系でない                                                                                                              
+</li>
+<li>電気伝導度に影響を与えない溶存物質は, 実用塩分に変化をもたらさない
+</li>
+</ul>
+<p>
+など
+</p>
+</li>
+<li>これらの問題のために, IOC2010 の状態方程式では絶対塩分が用いられる. 
 </li>
 </ul>
 </div>
@@ -520,7 +643,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">&#33879;&#32773;: KAWAI Yuta</p>
-<p class="date">Created: 2013-12-23 月 18:45</p>
+<p class="date">Created: 2014-01-14 火 21:10</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
