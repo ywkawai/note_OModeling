@@ -77,7 +77,7 @@ def create_horizontalfig(ncfiles, varname, figtitile, range, intrv, times)
 
 end
 
-def create_meriodinalfig(ncfiles, varname, figtitle, range, sint, times, clevels="")
+def create_meriodinalfig(ncfiles, varname, figtitle, range, sint, times, clevels="", lonOri0=false)
 
   gpopt = "--range #{range}  --sint #{sint}  --wsn 4"
   if clevels.length > 0 then
@@ -90,7 +90,8 @@ def create_meriodinalfig(ncfiles, varname, figtitle, range, sint, times, clevels
     period = Periods[i]
     MERIODFIG_SampLons.each{|lon|
 
-      `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{lon},time=#{times[i]} #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
+      gplon = (lonOri0 and lon<0) ? 360+lon : lon
+      `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{gplon},time=#{times[i]} #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
       `mv dcl_001.png #{varname}_lon#{lon}_#{period}.png`
     }
     `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},time=#{times[i]} --mean lon #{gpopt} --title "#{figtitle} (lon mean, #{period})"`
@@ -99,7 +100,7 @@ def create_meriodinalfig(ncfiles, varname, figtitle, range, sint, times, clevels
   }
 end
 
-def create_meriodinalupperfig(ncfiles, varname, figtitle, range, sint, times, clevels="")
+def create_meriodinalupperfig(ncfiles, varname, figtitle, range, sint, times, clevels="", lonOri0=false)
 
   gpopt = "--range #{range}  --sint #{sint}  --wsn 4"
   if clevels.length > 0 then
@@ -112,7 +113,9 @@ def create_meriodinalupperfig(ncfiles, varname, figtitle, range, sint, times, cl
     period = Periods[i]
 
     MERIODFIG_SampLons.each{|lon|
-      `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{lon},time=#{times[i]},depth=0:1000 #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
+
+      gplon = (lonOri0 and lon<0) ? 360+lon : lon
+      `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{gplon},time=#{times[i]},depth=0:1000 #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
       `mv dcl_001.png #{varname}_lon#{lon}_upper_#{period}.png`      
     }
 
@@ -166,10 +169,10 @@ FileUtils.chdir("./sal"){
 
 FileUtils.chdir("./oxy"){
   create_horizontalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES)
-  create_meriodinalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES)
+  create_meriodinalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES, "", true)
 
   create_horizontalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES)
-  create_meriodinalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES)
+  create_meriodinalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES, "", true)
 
   create_thumb
 }
