@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
 <head>
 <title>地球の海洋に関する基本データ</title>
-<!-- 2014-01-15 水 14:00 -->
+<!-- 2014-01-20 月 18:06 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="KAWAI Yuta" />
@@ -133,6 +133,13 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript"> </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+</script>
 </head>
 <body>
 <div id="content">
@@ -141,142 +148,128 @@ for the JavaScript code in this tag.
 <h2>&#30446;&#27425;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. 海洋循環</a>
+<li><a href="#sec-1">1. はじめに</a>
 <ul>
-<li><a href="#sec-1-1">1.1. 表層</a></li>
-<li><a href="#sec-1-2">1.2. 深層</a></li>
+<li><a href="#sec-1-1">1.1. 図に用いたデータについて</a></li>
+<li><a href="#sec-1-2">1.2. 図を見るときの注意点</a></li>
+<li><a href="#sec-1-3">1.3. 図の作成に用いた道具</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. 海水温</a>
+<li><a href="#sec-2">2. 海洋循環</a>
 <ul>
-<li><a href="#sec-2-1">2.1. 年平均</a></li>
-<li><a href="#sec-2-2">2.2. 夏季(6-9 月)</a></li>
-<li><a href="#sec-2-3">2.3. 冬季(1-3 月)</a></li>
+<li><a href="#sec-2-1">2.1. 表層</a></li>
+<li><a href="#sec-2-2">2.2. 深層</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">3. 塩分</a>
+<li><a href="#sec-3">3. 海水温</a>
 <ul>
-<li><a href="#sec-3-1">3.1. 年平均</a></li>
-<li><a href="#sec-3-2">3.2. 夏季(6-9 月)</a></li>
-<li><a href="#sec-3-3">3.3. 冬季(1-3 月)</a></li>
+<li><a href="#sec-3-1">3.1. 水平分布</a></li>
+<li><a href="#sec-3-2">3.2. 子午面分布</a></li>
 </ul>
 </li>
-<li><a href="#sec-4">4. 温度躍層</a></li>
+<li><a href="#sec-4">4. 塩分</a>
+<ul>
+<li><a href="#sec-4-1">4.1. 水平分布</a></li>
+<li><a href="#sec-4-2">4.2. 子午面分布</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. 溶存酸素量, 溶存酸素飽和度</a>
+<ul>
+<li><a href="#sec-5-1">5.1. 水平分布</a></li>
+<li><a href="#sec-5-2">5.2. 子午面分布</a></li>
+<li><a href="#sec-5-3">5.3. 特徴</a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6. 図の説明</a>
+<ul>
+<li><a href="#sec-6-1">6.1. 海水温分布について</a></li>
+<li><a href="#sec-6-2">6.2. 塩分分布について</a></li>
+<li><a href="#sec-6-3">6.3. 溶存酸素量, 溶存酸素飽和度の分布について</a></li>
+<li><a href="#sec-6-4">6.4. トレーサー分布から推測される熱塩循環について</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. 参考文献</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> 海洋循環</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> はじめに</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 表層</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 図に用いたデータについて</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>海水温度, 塩分の図に用いたデータ
+<ul class="org-ul">
+<li>国立海洋データセンター(アメリカ海洋大気庁(NOAA) の部門)が公開している気候値データ(WORLD OCEAN ATLAS 2013<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>)
+</li>
+</ul>
+</li>
+
+<li>溶存酸素の図に用いたデータ
+<ul class="org-ul">
+<li>国立海洋データセンター(アメリカ海洋大気庁(NOAA) の部門)が公開している気候値データ(WORLD OCEAN ATLAS 2009<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>)
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 深層</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 図を見るときの注意点</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>海水温度, 塩分の子午面分布の図について
+<ul class="org-ul">
+<li>物理量の分布の特徴を見やすくするために, コンターの間隔は一定でないことに注意が必要である. 
+</li>
+<li>コンター間隔は, [<a href="#marshall2007atmosphere">Marshall</a>] を参考にして設定した. 
+</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 図の作成に用いた道具</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>gpview<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>: ビューア
+</li>
+<li>dcmodel-thumb.rb<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>: サムネイル生成スクリプト
+</li>
+<li><a href="./fig/mkgraph.rb">mkgraph.rb</a>: gpview と dcmodel-thumb を使ってNetCDF データから図を生成するスクリプト
+</li>
+</ul>
+</div>
+</div>
+</div>
+
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 海水温</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> 海洋循環</h2>
 <div class="outline-text-2" id="text-2">
 </div><div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 年平均</h3>
-<div class="outline-text-3" id="text-2-1">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;1:</span> 年平均の海水温の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left"><a href="./fig/temp_d0_annual.png"><img src="./fig/temp_d0_annual_thumb.png" alt="temp_d0_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d100_annual.png"><img src="./fig/temp_d100_annual_thumb.png" alt="temp_d100_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d500_annual.png"><img src="./fig/temp_d500_annual_thumb.png" alt="temp_d500_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d1000_annual.png"><img src="./fig/temp_d1000_annual_thumb.png" alt="temp_d1000_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d2500_annual.png"><img src="./fig/temp_d2500_annual_thumb.png" alt="temp_d2500_annual_thumb.png" /></a></td>
-</tr>
-</tbody>
-</table>
-</div>
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 表層</h3>
 </div>
 <div id="outline-container-sec-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 夏季(6-9 月)</h3>
-<div class="outline-text-3" id="text-2-2">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;2:</span> (北半球)夏季の海水温の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left"><a href="./fig/temp_d0_summer.png"><img src="./fig/temp_d0_summer_thumb.png" alt="temp_d0_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d100_summer.png"><img src="./fig/temp_d100_summer_thumb.png" alt="temp_d100_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d500_summer.png"><img src="./fig/temp_d500_summer_thumb.png" alt="temp_d500_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d1000_summer.png"><img src="./fig/temp_d1000_summer_thumb.png" alt="temp_d1000_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d2500_summer.png"><img src="./fig/temp_d2500_summer_thumb.png" alt="temp_d2500_summer_thumb.png" /></a></td>
-</tr>
-</tbody>
-</table>
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 深層</h3>
 </div>
 </div>
-<div id="outline-container-sec-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 冬季(1-3 月)</h3>
-<div class="outline-text-3" id="text-2-3">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;3:</span> (北半球)冬季の海水温の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
 
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left"><a href="./fig/temp_d0_winter.png"><img src="./fig/temp_d0_winter_thumb.png" alt="temp_d0_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d100_winter.png"><img src="./fig/temp_d100_winter_thumb.png" alt="temp_d100_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d500_winter.png"><img src="./fig/temp_d500_winter_thumb.png" alt="temp_d500_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d1000_winter.png"><img src="./fig/temp_d1000_winter_thumb.png" alt="temp_d1000_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_d2500_winter.png"><img src="./fig/temp_d2500_winter_thumb.png" alt="temp_d2500_winter_thumb.png" /></a></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> 塩分</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> 海水温</h2>
 <div class="outline-text-2" id="text-3">
 </div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> 年平均</h3>
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> 水平分布</h3>
 <div class="outline-text-3" id="text-3-1">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-3-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;4:</span> 年平均の塩分の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
+<caption align="above"><span class="table-number">&#34920;1:</span> 年平均海水温の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
 
 <colgroup>
+<col  class="left" />
+
 <col  class="left" />
 
 <col  class="left" />
@@ -289,25 +282,86 @@ for the JavaScript code in this tag.
 </colgroup>
 <tbody>
 <tr>
-<td class="left"><a href="./fig/sal_d0_annual.png"><img src="./fig/sal_d0_annual_thumb.png" alt="sal_d0_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d100_annual.png"><img src="./fig/sal_d100_annual_thumb.png" alt="sal_d100_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d500_annual.png"><img src="./fig/sal_d500_annual_thumb.png" alt="sal_d500_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d1000_annual.png"><img src="./fig/sal_d1000_annual_thumb.png" alt="sal_d1000_annual_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d2500_annual.png"><img src="./fig/sal_d2500_annual_thumb.png" alt="sal_d2500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d0_annual.png"><img src="./fig/temp/t_an_d0_annual_thumb.png" alt="t_an_d0_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d100_annual.png"><img src="./fig/temp/t_an_d100_annual_thumb.png" alt="t_an_d100_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d500_annual.png"><img src="./fig/temp/t_an_d500_annual_thumb.png" alt="t_an_d500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d1000_annual.png"><img src="./fig/temp/t_an_d1000_annual_thumb.png" alt="t_an_d1000_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d2500_annual.png"><img src="./fig/temp/t_an_d2500_annual_thumb.png" alt="t_an_d2500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d5000_annual.png"><img src="./fig/temp/t_an_d5000_annual_thumb.png" alt="t_an_d5000_annual_thumb.png" /></a></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-3-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;2:</span> (北半球) 夏季の海水温の子午面分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_d0_summer.png"><img src="./fig/temp/t_an_d0_summer_thumb.png" alt="t_an_d0_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d100_summer.png"><img src="./fig/temp/t_an_d100_summer_thumb.png" alt="t_an_d100_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d500_summer.png"><img src="./fig/temp/t_an_d500_summer_thumb.png" alt="t_an_d500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d1000_summer.png"><img src="./fig/temp/t_an_d1000_summer_thumb.png" alt="t_an_d1000_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d2500_summer.png"><img src="./fig/temp/t_an_d2500_summer_thumb.png" alt="t_an_d2500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d5000_summer.png"><img src="./fig/temp/t_an_d5000_summer_thumb.png" alt="t_an_d5000_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-3-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;3:</span> (北半球) 冬季の海水温の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_d0_winter.png"><img src="./fig/temp/t_an_d0_winter_thumb.png" alt="t_an_d0_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d100_winter.png"><img src="./fig/temp/t_an_d100_winter_thumb.png" alt="t_an_d100_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d500_winter.png"><img src="./fig/temp/t_an_d500_winter_thumb.png" alt="t_an_d500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d1000_winter.png"><img src="./fig/temp/t_an_d1000_winter_thumb.png" alt="t_an_d1000_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d2500_winter.png"><img src="./fig/temp/t_an_d2500_winter_thumb.png" alt="t_an_d2500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_d5000_winter.png"><img src="./fig/temp/t_an_d5000_winter_thumb.png" alt="t_an_d5000_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
 </div>
 <div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 夏季(6-9 月)</h3>
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 子午面分布</h3>
 <div class="outline-text-3" id="text-3-2">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-3-2-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;5:</span> (北半球)夏季の塩分の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
+<caption align="above"><span class="table-number">&#34920;4:</span> 年平均海水温の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
 
 <colgroup>
-<col  class="left" />
-
 <col  class="left" />
 
 <col  class="left" />
@@ -318,25 +372,17 @@ for the JavaScript code in this tag.
 </colgroup>
 <tbody>
 <tr>
-<td class="left"><a href="./fig/sal_d0_summer.png"><img src="./fig/sal_d0_summer_thumb.png" alt="sal_d0_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d100_summer.png"><img src="./fig/sal_d100_summer_thumb.png" alt="sal_d100_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d500_summer.png"><img src="./fig/sal_d500_summer_thumb.png" alt="sal_d500_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d1000_summer.png"><img src="./fig/sal_d1000_summer_thumb.png" alt="sal_d1000_summer_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d2500_summer.png"><img src="./fig/sal_d2500_summer_thumb.png" alt="sal_d2500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lonmean_annual.png"><img src="./fig/temp/t_an_lonmean_annual_thumb.png" alt="t_an_lonmean_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_annual.png"><img src="./fig/temp/t_an_lon-170_annual_thumb.png" alt="t_an_lon-170_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_annual.png"><img src="./fig/temp/t_an_lon90_annual_thumb.png" alt="t_an_lon90_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_annual.png"><img src="./fig/temp/t_an_lon-25_annual_thumb.png" alt="t_an_lon-25_annual_thumb.png" /></a></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div id="outline-container-sec-3-3" class="outline-3">
-<h3 id="sec-3-3"><span class="section-number-3">3.3</span> 冬季(1-3 月)</h3>
-<div class="outline-text-3" id="text-3-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;6:</span> (北半球)冬季の塩分の水平分布. 左から順に水深 0, 100, 500, 1000, 2500, 5000 m.</caption>
+<caption align="above"><span class="table-number">&#34920;5:</span> 年平均海水温の子午面分布(表層) . 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
 
 <colgroup>
-<col  class="left" />
-
 <col  class="left" />
 
 <col  class="left" />
@@ -347,25 +393,121 @@ for the JavaScript code in this tag.
 </colgroup>
 <tbody>
 <tr>
-<td class="left"><a href="./fig/sal_d0_winter.png"><img src="./fig/sal_d0_winter_thumb.png" alt="sal_d0_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d100_winter.png"><img src="./fig/sal_d100_winter_thumb.png" alt="sal_d100_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d500_winter.png"><img src="./fig/sal_d500_winter_thumb.png" alt="sal_d500_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d1000_winter.png"><img src="./fig/sal_d1000_winter_thumb.png" alt="sal_d1000_winter_thumb.png" /></a></td>
-<td class="left"><a href="./fig/sal_d2500_winter.png"><img src="./fig/sal_d2500_winter_thumb.png" alt="sal_d2500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lonmean_upper_annual.png"><img src="./fig/temp/t_an_lonmean_upper_annual_thumb.png" alt="t_an_lonmean_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_upper_annual.png"><img src="./fig/temp/t_an_lon-170_upper_annual_thumb.png" alt="t_an_lon-170_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_upper_annual.png"><img src="./fig/temp/t_an_lon90_upper_annual_thumb.png" alt="t_an_lon90_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_upper_annual.png"><img src="./fig/temp/t_an_lon-25_upper_annual_thumb.png" alt="t_an_lon-25_upper_annual_thumb.png" /></a></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-3-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;6:</span> (北半球) 夏季の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_lonmean_summer.png"><img src="./fig/temp/t_an_lonmean_summer_thumb.png" alt="t_an_lonmean_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_summer.png"><img src="./fig/temp/t_an_lon-170_summer_thumb.png" alt="t_an_lon-170_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_summer.png"><img src="./fig/temp/t_an_lon90_summer_thumb.png" alt="t_an_lon90_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_summer.png"><img src="./fig/temp/t_an_lon-25_summer_thumb.png" alt="t_an_lon-25_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;7:</span> (北半球) 夏季の子午面分布(表層). 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_lonmean_upper_summer.png"><img src="./fig/temp/t_an_lonmean_upper_summer_thumb.png" alt="t_an_lonmean_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_upper_summer.png"><img src="./fig/temp/t_an_lon-170_upper_summer_thumb.png" alt="t_an_lon-170_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_upper_summer.png"><img src="./fig/temp/t_an_lon90_upper_summer_thumb.png" alt="t_an_lon90_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_upper_summer.png"><img src="./fig/temp/t_an_lon-25_upper_summer_thumb.png" alt="t_an_lon-25_upper_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-3-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;8:</span> (北半球) 冬季の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_lonmean_winter.png"><img src="./fig/temp/t_an_lonmean_winter_thumb.png" alt="t_an_lonmean_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_winter.png"><img src="./fig/temp/t_an_lon-170_winter_thumb.png" alt="t_an_lon-170_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_winter.png"><img src="./fig/temp/t_an_lon90_winter_thumb.png" alt="t_an_lon90_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_winter.png"><img src="./fig/temp/t_an_lon-25_winter_thumb.png" alt="t_an_lon-25_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;9:</span> (北半球) 冬季の子午面分布(表層). 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/temp/t_an_lonmean_upper_winter.png"><img src="./fig/temp/t_an_lonmean_upper_winter_thumb.png" alt="t_an_lonmean_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-170_upper_winter.png"><img src="./fig/temp/t_an_lon-170_upper_winter_thumb.png" alt="t_an_lon-170_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon90_upper_winter.png"><img src="./fig/temp/t_an_lon90_upper_winter_thumb.png" alt="t_an_lon90_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/temp/t_an_lon-25_upper_winter.png"><img src="./fig/temp/t_an_lon-25_upper_winter_thumb.png" alt="t_an_lon-25_upper_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 温度躍層</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> 塩分</h2>
 <div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> 水平分布</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-4-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption align="above"><span class="table-number">&#34920;7:</span> 太平洋(lat=-150)における海水温の鉛直構造. 左から順に lat=0, 20, 45, 55, 85</caption>
+<caption align="above"><span class="table-number">&#34920;10:</span> 年平均塩分の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
 
 <colgroup>
+<col  class="left" />
+
 <col  class="left" />
 
 <col  class="left" />
@@ -378,20 +520,668 @@ for the JavaScript code in this tag.
 </colgroup>
 <tbody>
 <tr>
-<td class="left"><a href="./fig/temp_lat0lon-150.png"><img src="./fig/temp_lat0lon-150_thumb.png" alt="temp_lat0lon-150_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_lat20lon-150.png"><img src="./fig/temp_lat20lon-150_thumb.png" alt="temp_lat20lon-150_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_lat45lon-150.png"><img src="./fig/temp_lat45lon-150_thumb.png" alt="temp_lat45lon-150_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_lat55lon-150.png"><img src="./fig/temp_lat55lon-150_thumb.png" alt="temp_lat55lon-150_thumb.png" /></a></td>
-<td class="left"><a href="./fig/temp_lat85lon-150.png"><img src="./fig/temp_lat85lon-150_thumb.png" alt="temp_lat85lon-150_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d0_annual.png"><img src="./fig/sal/s_an_d0_annual_thumb.png" alt="s_an_d0_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d100_annual.png"><img src="./fig/sal/s_an_d100_annual_thumb.png" alt="s_an_d100_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d500_annual.png"><img src="./fig/sal/s_an_d500_annual_thumb.png" alt="s_an_d500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d1000_annual.png"><img src="./fig/sal/s_an_d1000_annual_thumb.png" alt="s_an_d1000_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d2500_annual.png"><img src="./fig/sal/s_an_d2500_annual_thumb.png" alt="s_an_d2500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d5000_annual.png"><img src="./fig/sal/s_an_d5000_annual_thumb.png" alt="s_an_d5000_annual_thumb.png" /></a></td>
 </tr>
 </tbody>
 </table>
 </div>
+</li>
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-4-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;11:</span> (北半球) 夏季の塩分の子午面分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_d0_summer.png"><img src="./fig/sal/s_an_d0_summer_thumb.png" alt="s_an_d0_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d100_summer.png"><img src="./fig/sal/s_an_d100_summer_thumb.png" alt="s_an_d100_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d500_summer.png"><img src="./fig/sal/s_an_d500_summer_thumb.png" alt="s_an_d500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d1000_summer.png"><img src="./fig/sal/s_an_d1000_summer_thumb.png" alt="s_an_d1000_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d2500_summer.png"><img src="./fig/sal/s_an_d2500_summer_thumb.png" alt="s_an_d2500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d5000_summer.png"><img src="./fig/sal/s_an_d5000_summer_thumb.png" alt="s_an_d5000_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-4-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;12:</span> (北半球) 冬季の塩分の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_d0_winter.png"><img src="./fig/sal/s_an_d0_winter_thumb.png" alt="s_an_d0_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d100_winter.png"><img src="./fig/sal/s_an_d100_winter_thumb.png" alt="s_an_d100_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d500_winter.png"><img src="./fig/sal/s_an_d500_winter_thumb.png" alt="s_an_d500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d1000_winter.png"><img src="./fig/sal/s_an_d1000_winter_thumb.png" alt="s_an_d1000_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d2500_winter.png"><img src="./fig/sal/s_an_d2500_winter_thumb.png" alt="s_an_d2500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_d5000_winter.png"><img src="./fig/sal/s_an_d5000_winter_thumb.png" alt="s_an_d5000_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> 子午面分布</h3>
+<div class="outline-text-3" id="text-4-2">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-4-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;13:</span> 年平均塩分の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_annual.png"><img src="./fig/sal/s_an_lonmean_annual_thumb.png" alt="s_an_lonmean_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_annual.png"><img src="./fig/sal/s_an_lon-170_annual_thumb.png" alt="s_an_lon-170_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_annual.png"><img src="./fig/sal/s_an_lon90_annual_thumb.png" alt="s_an_lon90_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_annual.png"><img src="./fig/sal/s_an_lon-25_annual_thumb.png" alt="s_an_lon-25_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;14:</span> 年平均塩分の子午面分布(表層) . 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_upper_annual.png"><img src="./fig/sal/s_an_lonmean_upper_annual_thumb.png" alt="s_an_lonmean_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_upper_annual.png"><img src="./fig/sal/s_an_lon-170_upper_annual_thumb.png" alt="s_an_lon-170_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_upper_annual.png"><img src="./fig/sal/s_an_lon90_upper_annual_thumb.png" alt="s_an_lon90_upper_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_upper_annual.png"><img src="./fig/sal/s_an_lon-25_upper_annual_thumb.png" alt="s_an_lon-25_upper_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-4-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;15:</span> (北半球) 夏季の塩分の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_summer.png"><img src="./fig/sal/s_an_lonmean_summer_thumb.png" alt="s_an_lonmean_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_summer.png"><img src="./fig/sal/s_an_lon-170_summer_thumb.png" alt="s_an_lon-170_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_summer.png"><img src="./fig/sal/s_an_lon90_summer_thumb.png" alt="s_an_lon90_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_summer.png"><img src="./fig/sal/s_an_lon-25_summer_thumb.png" alt="s_an_lon-25_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;16:</span> (北半球) 夏季の塩分の子午面分布(表層). 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_upper_summer.png"><img src="./fig/sal/s_an_lonmean_upper_summer_thumb.png" alt="s_an_lonmean_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_upper_summer.png"><img src="./fig/sal/s_an_lon-170_upper_summer_thumb.png" alt="s_an_lon-170_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_upper_summer.png"><img src="./fig/sal/s_an_lon90_upper_summer_thumb.png" alt="s_an_lon90_upper_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_upper_summer.png"><img src="./fig/sal/s_an_lon-25_upper_summer_thumb.png" alt="s_an_lon-25_upper_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-4-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;17:</span> (北半球) 冬季の塩分の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_winter.png"><img src="./fig/sal/s_an_lonmean_winter_thumb.png" alt="s_an_lonmean_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_winter.png"><img src="./fig/sal/s_an_lon-170_winter_thumb.png" alt="s_an_lon-170_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_winter.png"><img src="./fig/sal/s_an_lon90_winter_thumb.png" alt="s_an_lon90_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_winter.png"><img src="./fig/sal/s_an_lon-25_winter_thumb.png" alt="s_an_lon-25_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;18:</span> (北半球) 冬季の塩分の子午面分布(表層). 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/sal/s_an_lonmean_upper_winter.png"><img src="./fig/sal/s_an_lonmean_upper_winter_thumb.png" alt="s_an_lonmean_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-170_upper_winter.png"><img src="./fig/sal/s_an_lon-170_upper_winter_thumb.png" alt="s_an_lon-170_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon90_upper_winter.png"><img src="./fig/sal/s_an_lon90_upper_winter_thumb.png" alt="s_an_lon90_upper_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/sal/s_an_lon-25_upper_winter.png"><img src="./fig/sal/s_an_lon-25_upper_winter_thumb.png" alt="s_an_lon-25_upper_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
 </div>
 </div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 溶存酸素量, 溶存酸素飽和度</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> 水平分布</h3>
+<div class="outline-text-3" id="text-5-1">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-5-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;19:</span> 年平均溶存酸素量(ml/l) の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_d0_annual.png"><img src="./fig/oxy/o_an_d0_annual_thumb.png" alt="o_an_d0_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d100_annual.png"><img src="./fig/oxy/o_an_d100_annual_thumb.png" alt="o_an_d100_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d500_annual.png"><img src="./fig/oxy/o_an_d500_annual_thumb.png" alt="o_an_d500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d1000_annual.png"><img src="./fig/oxy/o_an_d1000_annual_thumb.png" alt="o_an_d1000_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d2500_annual.png"><img src="./fig/oxy/o_an_d2500_annual_thumb.png" alt="o_an_d2500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d5000_annual.png"><img src="./fig/oxy/o_an_d5000_annual_thumb.png" alt="o_an_d5000_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;20:</span> 年平均溶存酸素飽和度(%) の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/O_an_d0_annual.png"><img src="./fig/oxy/O_an_d0_annual_thumb.png" alt="O_an_d0_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_d100_annual.png"><img src="./fig/oxy/O_an_d100_annual_thumb.png" alt="O_an_d100_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_d500_annual.png"><img src="./fig/oxy/O_an_d500_annual_thumb.png" alt="O_an_d500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_d1000_annual.png"><img src="./fig/oxy/O_an_d1000_annual_thumb.png" alt="O_an_d1000_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_d2500_annual.png"><img src="./fig/oxy/O_an_d2500_annual_thumb.png" alt="O_an_d2500_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_d5000_annual.png"><img src="./fig/oxy/O_an_d5000_annual_thumb.png" alt="O_an_d5000_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-5-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;21:</span> (北半球) 夏季の溶存酸素量(ml/l)の子午面分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_d0_summer.png"><img src="./fig/oxy/o_an_d0_summer_thumb.png" alt="o_an_d0_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d100_summer.png"><img src="./fig/oxy/o_an_d100_summer_thumb.png" alt="o_an_d100_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d500_summer.png"><img src="./fig/oxy/o_an_d500_summer_thumb.png" alt="o_an_d500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d1000_summer.png"><img src="./fig/oxy/o_an_d1000_summer_thumb.png" alt="o_an_d1000_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d2500_summer.png"><img src="./fig/oxy/o_an_d2500_summer_thumb.png" alt="o_an_d2500_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d5000_summer.png"><img src="./fig/oxy/o_an_d5000_summer_thumb.png" alt="o_an_d5000_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-5-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;22:</span> (北半球) 冬季の溶存酸素量(ml/l)の水平分布. 左から順に深さ 0, 100, 500, 1000, 2500, 5000m.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_d0_winter.png"><img src="./fig/oxy/o_an_d0_winter_thumb.png" alt="o_an_d0_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d100_winter.png"><img src="./fig/oxy/o_an_d100_winter_thumb.png" alt="o_an_d100_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d500_winter.png"><img src="./fig/oxy/o_an_d500_winter_thumb.png" alt="o_an_d500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d1000_winter.png"><img src="./fig/oxy/o_an_d1000_winter_thumb.png" alt="o_an_d1000_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d2500_winter.png"><img src="./fig/oxy/o_an_d2500_winter_thumb.png" alt="o_an_d2500_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_d5000_winter.png"><img src="./fig/oxy/o_an_d5000_winter_thumb.png" alt="o_an_d5000_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> 子午面分布</h3>
+<div class="outline-text-3" id="text-5-2">
+</div><ol class="org-ol"><li>年平均<br  /><div class="outline-text-4" id="text-5-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;23:</span> 年平均溶存酸素量(ml/l) の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_lonmean_annual.png"><img src="./fig/oxy/o_an_lonmean_annual_thumb.png" alt="o_an_lonmean_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-170_annual.png"><img src="./fig/oxy/o_an_lon-170_annual_thumb.png" alt="o_an_lon-170_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon90_annual.png"><img src="./fig/oxy/o_an_lon90_annual_thumb.png" alt="o_an_lon90_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-25_annual.png"><img src="./fig/oxy/o_an_lon-25_annual_thumb.png" alt="o_an_lon-25_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;24:</span> 年平均溶存酸素飽和度(%) の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/O_an_lonmean_annual.png"><img src="./fig/oxy/O_an_lonmean_annual_thumb.png" alt="O_an_lonmean_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_lon-170_annual.png"><img src="./fig/oxy/O_an_lon-170_annual_thumb.png" alt="O_an_lon-170_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_lon90_annual.png"><img src="./fig/oxy/O_an_lon90_annual_thumb.png" alt="O_an_lon90_annual_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/O_an_lon-25_annual.png"><img src="./fig/oxy/O_an_lon-25_annual_thumb.png" alt="O_an_lon-25_annual_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+
+<li>夏季(7-9月)<br  /><div class="outline-text-4" id="text-5-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;25:</span> (北半球) 夏季の溶存酸素量(ml/l)の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_lonmean_summer.png"><img src="./fig/oxy/o_an_lonmean_summer_thumb.png" alt="o_an_lonmean_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-170_summer.png"><img src="./fig/oxy/o_an_lon-170_summer_thumb.png" alt="o_an_lon-170_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon90_summer.png"><img src="./fig/oxy/o_an_lon90_summer_thumb.png" alt="o_an_lon90_summer_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-25_summer.png"><img src="./fig/oxy/o_an_lon-25_summer_thumb.png" alt="o_an_lon-25_summer_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>冬季(1-3月)<br  /><div class="outline-text-4" id="text-5-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption align="above"><span class="table-number">&#34920;26:</span> (北半球) 冬季の溶存酸素量(ml/l)の子午面分布. 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left"><a href="./fig/oxy/o_an_lonmean_winter.png"><img src="./fig/oxy/o_an_lonmean_winter_thumb.png" alt="o_an_lonmean_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-170_winter.png"><img src="./fig/oxy/o_an_lon-170_winter_thumb.png" alt="o_an_lon-170_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon90_winter.png"><img src="./fig/oxy/o_an_lon90_winter_thumb.png" alt="o_an_lon90_winter_thumb.png" /></a></td>
+<td class="left"><a href="./fig/oxy/o_an_lon-25_winter.png"><img src="./fig/oxy/o_an_lon-25_winter_thumb.png" alt="o_an_lon-25_winter_thumb.png" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li></ol>
+</div>
+
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> 特徴</h3>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 図の説明</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> 海水温分布について</h3>
+<div class="outline-text-3" id="text-6-1">
+</div><ol class="org-ol"><li>水平分布<br  /><div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>水のアルベドは小さいため, 太陽放射の南北差を反映して, 熱帯で最も温かく(約30度), 高緯度で最も冷たい(0度). 
+</li>
+<li>熱帯
+<ul class="org-ul">
+<li>最も高温な領域は太陽真下点の季節的な移動に従う. 
+</li>
+<li>大きな東西温度差もまた存在する. 
+<ul class="org-ul">
+<li>日付変更線の東側で相対的に冷たく, 西側で最も温かい. 
+</li>
+<li>西側の高温域(&gt;27 度)では大気の対流活動が活発. 熱帯太平洋は気候問題的に重要.  
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中緯度
+<ul class="org-ul">
+<li>極向きの温かい境界流と赤道向きの冷たい境界流が並行する緯度で, 大きな東西温度差が存在. 
+</li>
+<li>沿岸湧昇による低温域が存在(カリフォルニア, ペール, アフリカ沖の沿岸域)
+</li>
+</ul>
+</li>
+<li>高緯度
+<ul class="org-ul">
+<li>南極周回流と関係して, 南半球では南北温度勾配が強い. 
+</li>
+<li>最も低温な表層水は, 北大西洋の北側と南極大陸周辺で見られる. 
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li>子午面分布<br  /><div class="outline-text-4" id="text-6-1-2">
+<ul class="org-ul">
+<li>表層
+<ul class="org-ul">
+<li>鉛直勾配が強い. 
+</li>
+<li>温度躍層の厚さは, 中緯度で約 600 m, 低緯度で 100-200 m. 
+</li>
+</ul>
+</li>
+
+<li>深部
+<ul class="org-ul">
+<li>鉛直勾配は弱く, 水平勾配はほとんど存在しない. 
+</li>
+<li>低温(0-2度). 熱帯域は高緯度よりわずかに 1 度ほど温かい.  
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> 塩分分布について</h3>
+<div class="outline-text-3" id="text-6-2">
+</div><ol class="org-ol"><li>水平分布<br  /><div class="outline-text-4" id="text-6-2-1">
+<ul class="org-ul">
+<li>亜熱帯: (降水量)&lt;(蒸発量) のため, 表面近くの塩分は高い. 
+</li>
+<li>高緯度, 赤道付近: (降水量)&gt;(蒸発量) のため, 表面近くの海水は相対的に淡水化.
+</li>
+<li>地中海, ペルシャ湾で, 塩分は高い(&gt; 38 psu). 
+</li>
+<li>融解中の氷縁や河口の近傍で, 塩分は低い(&lt; 31 psu). 
+</li>
+<li>大西洋の表層における塩分は太平洋より高く, より対流が起こりやすい.  
+</li>
+</ul>
+</div>
+</li>
+<li>子午面分布<br  /><div class="outline-text-4" id="text-6-2-2">
+<ul class="org-ul">
+<li>表層
+<ul class="org-ul">
+<li>鉛直勾配が最も強い. 
+</li>
+<li>南極周辺で表層の塩分は低い(深部より表層の方が低温であることと逆傾向). 
+</li>
+</ul>
+</li>
+<li>深部
+<ul class="org-ul">
+<li>鉛直勾配は弱く, 水平勾配はほとんど存在しない. 
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> 溶存酸素量, 溶存酸素飽和度の分布について</h3>
+<div class="outline-text-3" id="text-6-3">
+<ul class="org-ul">
+<li>溶存酸素量は, 温度と生物活動に依存する. 
+<ul class="org-ul">
+<li>温度高いほど溶解できる酸素量は減少する. 
+</li>
+<li>水深200mまでは, 表面からの酸素供給と植物プランクトンの光合成によりわずかに過飽和にあるが, 
+それより深部では生物活動により酸素はゆっくりと消費される. 
+</li>
+</ul>
+</li>
+<li>大西洋
+<ul class="org-ul">
+<li>深層では北から南に向かうほど海水は古くなる. しかし, 全体的に太平洋より海水は若い. 
+</li>
+<li>南極沿岸, 南緯40-50度, 特に北半球高緯度で相対的に若く, そこで表層の海水とよく混合している証拠である. 
+</li>
+<li>低緯度の 1km より浅い所で極小(深部の海水がゆっくり湧昇するから? [<a href="#marshall2007atmosphere">Marshall</a>])
+</li>
+</ul>
+</li>
+<li>太平洋
+<ul class="org-ul">
+<li>南極周辺でのみ海水は若く, 大部分は大西洋より海水は古い. 
+</li>
+<li>特に北半球高緯度の深部で溶存酸素量はとても少ない. 
+<ul class="org-ul">
+<li>北極海を除いて, 北太平洋では表層の海水の沈み込みはない. 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> トレーサー分布から推測される熱塩循環について</h3>
+<div class="outline-text-3" id="text-6-4">
+<ul class="org-ul">
+<li>高緯度における温度・塩分の等値線の表面への上昇は, 高緯度の表層水と深海との重要なつながりを示唆. 
+</li>
+<li>溶存酸素量は海水年齢の指標となるため, それから熱塩循環の描像を推測できる. 
+<ul class="org-ul">
+<li>密度大な海水が表層で局所的に沈み込み, 水平に広がる多層パターンの描像を与える. 
+<ul class="org-ul">
+<li>南極中層水(AAIW), 北大西洋深層水(NADW), 南極底層水(AABW) 
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 参考文献</h2>
+<div class="outline-text-2" id="text-7">
+<div id="bibliography">
+<h2>References</h2>
+
+</div>
+<table>
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="marshall2007atmosphere">Marshall and Plumb(2007)</a>]
+</td>
+<td class="bibtexitem">
+J.&nbsp;Marshall and R.&nbsp;Plumb.
+ <em>Atmosphere, Ocean and Climate Dynamics: An Introductory Text</em>.
+ International Geophysics. Elsevier Science, 2007.
+ ISBN 9780080556703.
+ URL <a href="http://books.google.co.jp/books?id=KvJfvYBHiegC">http://books.google.co.jp/books?id=KvJfvYBHiegC</a>.
+[&nbsp;<a href="basic_data_bib.html#marshall2007atmosphere">bib</a>&nbsp;| 
+<a href="http://books.google.co.jp/books?id=KvJfvYBHiegC">http</a>&nbsp;]
+
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">&#33050;&#27880;: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="http://www.nodc.noaa.gov/OC5/woa13/">WORLD OCEAN ATLAS 2013</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<a href="http://www.nodc.noaa.gov/OC5/WOA09/pr_woa09.html">WORLD OCEAN ATLAS 2009</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<a href="http://ruby.gfd-dennou.org/products/gphys/">GPhys</a>が提供するコマンド群の一つ
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<a href="http://www.gfd-dennou.org/arch/dcmodel/doc/dcmodel-tools/dcmodel-thum-rdoc/files/dcmodel-tools/dcmodel-thum_rb.html">dcmodel 用お絵描きサムネイル作成スクリプト</a>
+</p></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">&#33879;&#32773;: KAWAI Yuta</p>
-<p class="date">Created: 2014-01-15 水 14:00</p>
+<p class="date">Created: 2014-01-20 月 18:06</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 23.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.4)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
