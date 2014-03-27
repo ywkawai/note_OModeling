@@ -18,7 +18,7 @@
 #+NAME: create_meriodinalfig
 #+BEGIN_SRC ruby :results value raw :exports none :var caption="ほげ ほげ" :var dir="temp" :var varName="t_an" :var period="annual"
     str = "#+CAPTION: #{caption} 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意. \n" << "|"
-    ["mean","-170","90","-25"].each{|lon|
+    ["mean","10","-90","155"].each{|lon|
       str << "[[file:./fig/#{dir}/#{varName}_lon#{lon}_#{period}.png][file:./fig/#{dir}/#{varName}_lon#{lon}_#{period}_thumb.png]] |"
     }
     return (str << "\n");
@@ -27,7 +27,7 @@
 #+NAME: create_meriodinalsurffig
 #+BEGIN_SRC ruby :results value raw :exports none :var caption="ほげ ほげ" :var dir="temp" :var varName="t_an" :var period="annual"
     str = "#+CAPTION: #{caption} 左から順に 帯状平均, 太平洋(西経170度), インド洋(東経90度), 大西洋(西経25度). コンター間隔は一定でないことに注意.\n" << "|"
-    ["mean","-170","90","-25"].each{|lon|
+    ["mean","10","-90","155"].each{|lon|
       str << "[[file:./fig/#{dir}/#{varName}_lon#{lon}_upper_#{period}.png][file:./fig/#{dir}/#{varName}_lon#{lon}_upper_#{period}_thumb.png]] |"
     }
     return (str << "\n");

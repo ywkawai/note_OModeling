@@ -291,21 +291,21 @@ $T,\theta,p$の間の関係である.
 (\ref{eq:ptemp_temp_diff_derivedFromModelGibbsFunc})の中段の近似形式を用いれば, 
 \begin{equation}
  \alpha \approx \alpha_0 \left[
-   1 - d\dfrac{\alpha_0 p}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} p)\theta^\prime
+   1 - \dfrac{\alpha_0 p}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} p)\theta^\prime
    + \dfrac{1}{2} \beta_T^\star \theta^{\prime 2} - \beta_S(S-S_0)
   \right]
 \label{eq:conventional_EOS_usingPtemp_derivedFromMOdelGibbsFunc}
 \end{equation}
 ここで, 
 $\gamma^{\prime \star} = \gamma^\star + T_0 \beta_T^\star \alpha_0 /c_{p0} \approx \gamma^\star$, 
-$s_{s0}^{\prime -2} = c_{s0}^{-2} \beta_T^2 T_0/c_p \approx c_{s0}^{-2}$である 
+$c_{s0}^{\prime -2} = c_{s0}^{-2} - \beta_T^2 T_0/c_p \approx c_{s0}^{-2}$である 
 ($\gamma^\star$と$\gamma^{\prime \star}$は数\%の違いがある一方で,  
 $c_{s0}^2$と$c_{s0}^{2 \prime}$は数$\permil$の違いしかない).
 実際の圧力のかわりに静水圧を用いれば, (\ref{eq:conventional_EOS_usingPtemp_derivedFromMOdelGibbsFunc})はさらに近似できる.
 よって, $p=-g(z-z_0)/\alpha_0$ (ここで, $z_0$は$p=0$となる$z$の基準値)とすれば, 
 \begin{equation}
  \alpha \approx \alpha_0 \left[
-   1 - d\dfrac{g(z - z_0)}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} \dfrac{g(z-z_0)}{\alpha_0})\theta^\prime
+   1 - \dfrac{g(z - z_0)}{c_{s0}^{\prime 2}} + \beta_T(1 + \gamma^{\prime \star} \dfrac{g(z-z_0)}{\alpha_0})\theta^\prime
    + \dfrac{1}{2} \beta_T^\star \theta^{\prime 2} - \beta_S(S-S_0)
   \right]
 \label{eq:conventional_EOS_usingPtempHydroStatic_derivedFromMOdelGibbsFunc}

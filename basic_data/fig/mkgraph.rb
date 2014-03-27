@@ -18,7 +18,7 @@ DCMODEL_THUM_ORIGIN = "/home/ykawai/dcmodel-thum.rb"
 TEMP_RANGE = "-3:32"
 TEMP_INT = 2.0
 TEMP_NCFILES = [
-  "woa13_decav_t00_01.nc", "woa13_decav_t15_01.nc", "woa13_decav_t13_01.nc"
+  "woa13_decav_t00_01_t_an.nc", "woa13_decav_t15_01_t_an.nc", "woa13_decav_t13_01_t_an.nc"
 ]
 TEMP_TIMES = ["0", "0", "0"]
 
@@ -26,7 +26,7 @@ TEMP_TIMES = ["0", "0", "0"]
 SAL_RANGE = "25:40"
 SAL_INT = 1.0
 SAL_NCFILES =  [
- "woa13_decav_s00_01.nc", "woa13_decav_s15_01.nc", "woa13_decav_s13_01.nc"
+ "woa13_decav_s00_01_s_an.nc", "woa13_decav_s15_01_s_an.nc", "woa13_decav_s13_01_s_an.nc"
 ]
 SAL_TIMES = ["0", "0", "0"]
 
@@ -52,7 +52,7 @@ SATOXY_TIMES = ["0"]
 Periods = [
  "annual", "summer", "winter"
 ]
-MERIODFIG_SampLons = [ -170, 90, -25 ]
+MERIODFIG_SampLons = [ 10, -90, 155 ]
 HORIFIG_SampDepths=[0,100,500,1000,2500,5000]
 
 ############################################
@@ -90,7 +90,8 @@ def create_meriodinalfig(ncfiles, varname, figtitle, range, sint, times, clevels
     period = Periods[i]
     MERIODFIG_SampLons.each{|lon|
 
-      gplon = (lonOri0 and lon<0) ? 360+lon : lon
+      gplon = (lonOri0) ? 180+lon : lon
+      p "gplon:#{gplon}"
       `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{gplon},time=#{times[i]} #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
       `mv dcl_001.png #{varname}_lon#{lon}_#{period}.png`
     }
@@ -114,7 +115,7 @@ def create_meriodinalupperfig(ncfiles, varname, figtitle, range, sint, times, cl
 
     MERIODFIG_SampLons.each{|lon|
 
-      gplon = (lonOri0 and lon<0) ? 360+lon : lon
+      gplon = (lonOri0) ? 180+lon : lon
       `#{GPVIEW_CMD} #{ncfiles[i]}@#{varname},lon=#{gplon},time=#{times[i]},depth=0:1000 #{gpopt} --title '#{figtitle} (lon=#{lon}, #{period})'`
       `mv dcl_001.png #{varname}_lon#{lon}_upper_#{period}.png`      
     }
@@ -154,26 +155,26 @@ end
 
 
 FileUtils.chdir("./temp"){
-  create_horizontalfig(TEMP_NCFILES, "t_an", "temperature", TEMP_RANGE, TEMP_INT, TEMP_TIMES)
+#  create_horizontalfig(TEMP_NCFILES, "t_an", "temperature", TEMP_RANGE, TEMP_INT, TEMP_TIMES)
   create_meriodinalfig(TEMP_NCFILES, "t_an", "temperature", TEMP_RANGE, TEMP_INT, TEMP_TIMES, "0,1,2,5,10,15,20,25,30")
   create_meriodinalupperfig(TEMP_NCFILES, "t_an", "temperature", TEMP_RANGE, TEMP_INT, TEMP_TIMES, "1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30")
   create_thumb
 }
 
 FileUtils.chdir("./sal"){
-  create_horizontalfig(SAL_NCFILES, "s_an", "salinity", SAL_RANGE, SAL_INT, SAL_TIMES)
+#  create_horizontalfig(SAL_NCFILES, "s_an", "salinity", SAL_RANGE, SAL_INT, SAL_TIMES)
   create_meriodinalfig(SAL_NCFILES, "s_an", "salinity", SAL_RANGE, 0.5, SAL_TIMES, "33,34,34.2,34.6,34.7,34.75,34.8,34.9,35,35.2,35.6")
   create_meriodinalupperfig(SAL_NCFILES, "s_an", "salinity", SAL_RANGE, 0.5, SAL_TIMES, "33,34,34.2,34.6,34.8,34.9,35,35.2,35.6")
   create_thumb
 }
 
-FileUtils.chdir("./oxy"){
-  create_horizontalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES)
-  create_meriodinalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES, "", true)
+# FileUtils.chdir("./oxy"){
+#   create_horizontalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES)
+#   create_meriodinalfig(OXY_NCFILES, "o_an", "dissolved oxygen", OXY_RANGE, OXY_INT, OXY_TIMES, "", true)
 
-  create_horizontalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES)
-  create_meriodinalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES, "", true)
+#   create_horizontalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES)
+#   create_meriodinalfig(SATOXY_NCFILES, "O_an", "oxygen saturation", SATOXY_RANGE, SATOXY_INT, SATOXY_TIMES, "", true)
 
-  create_thumb
-}
+#   create_thumb
+#}
 
