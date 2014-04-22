@@ -2,7 +2,7 @@
 #+AUTHOR: KAWAI Yuta
 #+LANGUAGE: ja
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./org.css" />
-#+OPTIONS: H:2
+#+OPTIONS: H:2 ^:{}
 #+LaTeX_HEADER: \usepackage[round]{natbib}
  
 #+NAME: create_horifig
@@ -53,7 +53,8 @@
 ** 図の作成に用いた道具
 - gpview[fn:gpview]: ビューア
 - dcmodel-thumb.rb[fn:dcmodel-thumb]: サムネイル生成スクリプト
-- [[file:./fig/mkgraph.rb][mkgraph.rb]]: gpview と dcmodel-thumb を使ってNetCDF データから図を生成するスクリプト
+- [[file:fig/mkgraph.rb][mkgraph.rb]]: gpview と dcmodel-thumb を使ってNetCDF データから図を生成するスクリプト
+- [[file:fig/lonAxis_replace.rb][lonAxis_replace.rb]]: 海水温度, 塩分の NetCDF データに対して, 経度方向のデータの並びを変更するスクリプト
 
 [fn:gpview] [[http://ruby.gfd-dennou.org/products/gphys/][GPhys]]が提供するコマンド群の一つ
 [fn:dcmodel-thumb] [[http://www.gfd-dennou.org/arch/dcmodel/doc/dcmodel-tools/dcmodel-thum-rdoc/files/dcmodel-tools/dcmodel-thum_rb.html][dcmodel 用お絵描きサムネイル作成スクリプト]]
