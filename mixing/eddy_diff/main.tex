@@ -1,6 +1,6 @@
 %#BIBTEX jbibtex dynamics_description
 %
-%  海洋大循環の問題の定式化
+%  水惑星設定における風成循環
 %
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,10 +31,10 @@
 %%  [ ] はヘッダに書き出される.
 %%  { } は表題 (\maketitle) に書き出される.
 
-\Dtitle{海洋大循環を記述するための方程式系}   % 変更不可
+\Dtitle{海洋における渦拡散}   % 変更不可
 \Dauthor{河合 佑太}            % ゼミ担当者の名前
 \Ddate{\the\year/\the\month/\the\day}        % ゼミの日時 (毎回変更すること)
-\Dfile{}
+\Dfile{main.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%   Set Counter (chapter, section etc. ) %%%%%%%%
@@ -76,10 +76,13 @@
 
 \tableofcontents
 
-\input{intro}
-%%
-\input{system_desc}
-%%
+\chapter{海洋における渦混合}
+\input{preliminary}
+\input{GM_scheme}
+\newpage
+
+
+
 %%
 
 %% 参考文献
@@ -89,4 +92,3 @@
 \end{document}
 %%%%%%%%              Text End                  %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-

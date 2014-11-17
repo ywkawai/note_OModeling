@@ -1,0 +1,181 @@
+\section{準備}
+今, 
+%%
+\begin{equation}
+  \DD{\phi}{t} = \nabla \cdot (\kappa_m \nabla \phi)
+\end{equation}
+%%
+なる方程式に従う, トレサー$\phi$を考える. 
+ここで, $\kappa_m$は分子拡散係数である. 
+もし移流速度が非発散であるならば, アンサンブル平均した方程式は, 
+分子拡散を無視するとき, 
+%%
+\begin{equation}
+  \DD{\overline{\phi}}{t} = - \nabla \cdot \overline{\Dvect{v}' \phi'}
+\end{equation}
+%%
+となる. 
+渦輸送を拡散によってパラメータ化するならば, そのとき, 
+%%
+\begin{equation}
+  \Dvect{F} = \overline{\Dvect{v}' \phi'}
+            = - \Dvect{K} \nabla \phi
+\end{equation}
+%%
+と書ける. 
+ここで, $\Dvect{K}$は一般に二階テンソルである. 
+もし渦による項を拡散によってパラメータ化するならば, 
+生じる問題は次の二点である. 
+\begin{itemize}
+ \item 渦拡散係数の\textbf{大きさ}. 可能性としては, 平均流の関数である. 
+ \item 拡散係数テンソルの\textbf{構造}. 特に, 拡散テンソルの対称部分と反対称部分の分離構造. 
+\end{itemize}
+%%
+
+\section{渦拡散係数の大きさ}
+
+\section{拡散係数テンソルの構造: 対称輸送テンソル}
+勾配方向に沿った拡散は, 対称輸送テンソルによる輸送である. 
+今, 東西に一様な渦の統計的性質をもつ, 周期的なチャネルにおける輸送を考えよう. 
+よって, 平均操作は東西平均である. 
+このとき, トレサーの南北輸送, 鉛直輸送の両方に関心がある. 
+%%
+\begin{equation}
+  \overline{v' \phi'} = - \kappa^{vy} \DP{\overline{\phi}}{y}
+                        - \kappa^{vz} \DP{\overline{\phi}}{z}, 
+\end{equation}
+\begin{equation}
+  \overline{w' \phi'} = - \kappa^{wy} \DP{\overline{\phi}}{y}
+                        - \kappa^{wz} \DP{\overline{\phi}}{z}. 
+\end{equation}
+%%
+ここで, 対称テンソルの仮定により$\kappa^{wy} = \kappa^{vz}$である. 
+さまざまな輸送係数の関係は, 等密度面あるいは等エントロピー面の傾斜や
+等エントロピー面に対する渦の軌跡の関係の両方によって影響を受けるだろう. 
+カーテシアン座標($y-z$座標)において, 輸送テンソルは対角テンソルである必要はないが, 
+局所的には拡散係数テンソルが対角テンソルとなる自然座標系が必ず存在する. 
+そのような座標系において, 拡散係数テンソル$\Dvect{S'}$は, 
+%%
+\begin{equation}
+  \Dvect{S}' = \kappa_s
+\begin{pmatrix}
+    1 &0  \\
+    0 &\alpha
+  \end{pmatrix}
+\end{equation}
+%%
+と書ける. 
+ここで, $\kappa_S$は全体の大きさを決定する. 
+また, $\alpha$は直交する二方向の輸送係数の比である. 
+大規模な傾圧渦における流体の変位はほとんど水平であるが, 厳密には水平ではない. 
+例えば, 変位は等密度面に沿うか, あるいは水平面と等密度面の間の角度にある. 
+拡散係数テンソルが対角テンソルである座標系は, 流体の変位が生じる方向に
+沿った面によって定義される座標系であると言っても良い. 
+流体の経路に沿う方向の輸送と垂直な方向の輸送はそれぞれ異なる物理現象の結果であるため, 
+この主張は賢明である. 
+したがって, 輸送テンソルがこの座標系において対角テンソルであることを期待してよい. 
+
+渦による変位は主に水平方向であるので, この座標系の傾斜は水平面に対して小さな角度で傾斜している. 
+すなわち, $s = \tan \theta \approx \theta \ll 1$. 
+さらに, パラメータ$\alpha$は小さい($\alpha \ll 1$)と思ってよい. 
+なぜならば, $\alpha$は渦による流体の運動と垂直な方向の輸送を表現するからである. 
+今, $y-z$座標系に変換するために, テンソル$\Dvect{S}$を角度$\theta$だけ回転させる. 
+つまり, 
+%%
+\begin{eqnarray}
+  \Dvect{S} &=& \kappa_S
+\begin{pmatrix}
+  \cos\theta &-\sin\theta \\
+  \sin\theta &\cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+  1 &0 \\
+  0 &\alpha
+\end{pmatrix}
+\begin{pmatrix}
+  \cos\theta &\sin\theta \\
+  -\sin\theta &\cos\theta
+\end{pmatrix}
+\\
+ &\approx& \kappa_S
+\begin{pmatrix}
+ 1+s^2 \alpha &s(1-\alpha) \\
+ s(1-\alpha)  &s^2 + \alpha
+\end{pmatrix} 
+\\
+ &\approx& \kappa_S
+\begin{pmatrix}
+  1 &s \\
+  s &s^2+\alpha
+\end{pmatrix}
+\end{eqnarray}%
+%
+を得る. 
+ただし, 二段目において$s \ll 1$であること, 
+三段目においてさらに$\alpha \ll 1$であることを用いて近似を行った. 
+三次元においても同様の方法をとればよい. 
+もし渦輸送が渦による変位の面において等方的であれば, 三次元の輸送テンソルは, 
+%%
+\begin{equation}
+  \Dvect{S}' = \kappa_s
+\begin{pmatrix}
+    1 &0 &0 \\
+    0 &1 &0 \\
+    0 &0 &\alpha 
+  \end{pmatrix}
+\end{equation}
+%%
+である. 
+運動の傾斜は二次元ベクトル$\Dvect{s} = (s_x,s_y)$である. 
+輸送テンソルを物理空間へと回転させれば, 二次元の場合と同様に, 
+%%
+\begin{eqnarray}
+\Dvect{S} &=& \kappa_S 
+\begin{pmatrix}
+  1+s_y^2 + \alpha s_x^2 &(\alpha-1) s_x s_y   &(1-\alpha)s_x \\
+  (\alpha-1) s_x s_y     &1+s_x^2+\alpha s_y^2 &(1-\alpha)s_y \\
+  (1-\alpha)s_x          &(1-\alpha)s_y        &a + s^2
+\end{pmatrix} 
+\\
+ &\approx& \kappa_S
+\begin{pmatrix}
+  1     &0       &s_x \\
+  0     &1       &s_y \\
+  s_x   &s_y     &a + s^2
+\end{pmatrix} 
+\end{eqnarray}
+を得る. 
+ここで, 二段目において$s,\alpha \ll 1$であることを用いて近似を行った. 
+また, $s=s_x^2 + s_y^2$である. 
+
+
+\section{拡散係数テンソルの構造: 反対称輸送テンソル}
+反対称輸送テンソルはスキューフラックス(勾配ベクトルの垂直方向のフラックス)あるいは
+偽の移流を発生させる. 
+二次元(水平-鉛直面)において, 反対称輸送テンソルは, 速やかに, 
+%%
+\begin{equation}
+  \Dvect{A} =
+\begin{pmatrix}
+  0 &-\kappa'_a \\
+  \kappa'_a &0
+\end{pmatrix}
+\end{equation}
+と書ける. 
+ここで, $\kappa'_a$は空間・時間的に変化して良く, 流れ自体に依存する. 
+また, 輸送の全体的な強さを決定する. 
+推測により, 三次元においては, 
+%%
+\begin{equation}
+  \Dvect{A} =
+\begin{pmatrix}
+  0 &0 &-\kappa_a^{'x} \\
+  0 &0 &-\kappa_a^{'y} \\
+  \kappa_a^{'x} &\kappa_a^{'y} &0
+\end{pmatrix}
+\end{equation}
+と書ける. 
+ここで, 上付き添字は成分を表す. 
+今, 都合上ゲージを選択し, $A_{21}=-A_{12}=0$とした. 
+残る選択は, 輸送係数の符号と大きさを決定することである. 
+

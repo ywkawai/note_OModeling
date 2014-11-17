@@ -1,0 +1,118 @@
+\subsection*{断熱的かつポテンシャルエネルギーを減少する渦輸送スキーム}
+Gent と McWilliams は, 傾圧渦のフラックスによるトレサーの輸送のための, 
+海洋モデルにおけるパラメタリゼーションを示した. 
+これは, GM スキームとして知られる. 
+以下の二つの性質の保持が, 彼らのスキームの基礎である. 
+%%
+\begin{itemize}
+ \item トレーサのモーメントは保存されなければならない. 特に, 等密度面間の流体の量は保存されなければならない. これは, スキームが密度の勾配を横切って浮力を拡散させないことを示唆する. 
+ \item 流れの有効位置エネルギーの量は減少しなければならない. この意味に置いて, このパラメタリゼーションは, 有効位置エネルギーを運動エネルギーに輸送する傾圧不安定の効果を模倣する. 
+\end{itemize}
+%%
+一番目は, 反対称拡散係数テンソルを使うことによって自動的に満たされる. 
+二つ目の性質は, 輸送係数を等密度面の傾斜に比例するように選択することによって満たされる. 
+その場合には, 
+%%
+\begin{equation}
+  \Dvect{A} = \kappa_a
+\begin{pmatrix}
+ 0 &0 &-s_x \\
+ 0 &0 &-s_y \\
+ s_x &s_y &0
+\end{pmatrix}
+\label{eq:GM90_AntiSymTensor}
+\end{equation}
+と書ける. 
+ここで, $\Dvect{s}=(s_x, s_y)=\nabla_\rho z=- \nabla_z \rho/(\partial \rho/\partial z)$
+は等密度面の傾斜である. 
+温度場と塩分場を別々にもつ海洋モデルでは, \eqref{eq:GM90_AntiSymTensor}はそれらそれぞれに適用されるだろう. 
+そのとき, 等密度面の傾斜は, 状態方程式を使って決定される. 
+この輸送によって示唆される特徴が何かをより簡単に見るために, 塩分のない特別な場合を考えることにしよう. 
+このとき, 浮力$b$は熱力学変数のみに依存する. 
+等密度面の傾斜は$s=-(b_x/b_z, b_y/b_z)$, 水平渦輸送$\Dvect{F}_h=(F_x, F_y)$は, 
+%%
+\begin{equation}
+ \Dvect{F}_h = -\left(-\kappa_a \Dvect{s} \DP{b}{z} \right)
+             = - \kappa \nabla_z b
+\end{equation}
+%%
+によって与えられる. 
+正の$\kappa_a$に対して, これは従来の勾配を下る(downgradient)拡散である. 
+
+一方, 鉛直方向の輸送は, 
+%%
+\begin{equation}
+  F_z = - \kappa_a \left(s_x\DP{b}{x} + s_y\DP{b}{y}\right)
+      = \kappa_a s^2 \DP{b}{z} 
+\end{equation}
+%%
+によって与えられる. 
+ここで, $s^2=\Dvect{s}\cdot\Dvect{s}$. 
+このフラックスは勾配を上る向きである(upgradient). 
+しかしながら, 合計のスキューフラックスは勾配を下る向きでも上る向きでもない. 
+
+勾配を下る向きの水平フラックスと勾配を上る方向の鉛直フラックスの組み合わせは, 
+それぞれの密度間隔内の流体の体積を保存すると同時に, 流れの位置エネルギーを減少させるように
+作用する. 
+鉛直方向の勾配上向きフラックスは, 有効位置エネルギーを減少させるための必要性の結果である. 
+暖かく軽い流体が冷たく重い流体の上に乗っている, 静的安定な状況を考えると, 
+勾配下向きの鉛直拡散は流体の重心を上昇させる. 結果, ポテンシャルエネルギーは増加する. 
+これは, 傾圧不安定の作用と逆である. 
+よって, 鉛直拡散の符号は負でなければならず, 
+\eqref{eq:GM90_AntiSymTensor}の構造(よって正の水平拡散係数)と共にこのことは, 
+上述した二つの性質の両方を満たすことを可能にする. 
+このパラメタリゼーションは, 全エネルギーを保存しない. 
+すなわち, ポテンシャルエネルギーは対応する運動エネルギーの増加によってバランスされない. 
+むしろ, 散逸によって失われることが仮定される. 
+最後に, (スキュー)渦拡散係数の大きさは, 前述の現象論的推定によって決定される. 
+
+\subsection*{渦輸送速度}
+%%
+よって, 渦輸送速度は, 
+\begin{equation}
+ \begin{split}
+   \Dvect{\tilde{u}} &= - \DP{}{z} (\kappa_a \Dvect{s}), \\
+   \tilde{w} &= \nabla_z \cdot (\kappa_a \Dvect{s})
+ \end{split}
+\end{equation}
+%%
+と与えられる%
+\footnote{
+スキュー速度$\Dvect{\tilde{v}}$と反対称拡散係数テンソル$\Dvect{A}$の関係は, 
+%%
+\begin{equation*}
+  \tilde{v}_n = - \nabla_m A_{mn}
+\end{equation*}
+%%
+によって与えられる. 
+}. 
+また, $\Dvect{A}$と関係する流線関数は, 
+%%
+\begin{equation}
+  \Dvect{\psi} = (-\kappa_a s_y, \kappa_a s_x, 0) = \Dvect{k} \times \kappa_a \Dvect{s}
+\end{equation}
+%%
+によって与えられる%
+\footnote{
+流線関数と反対称拡散係数テンソル$\Dvect{A}$の関係は, 
+$\tilde{v}_n = \epsilon_{lmn}\nabla_l \psi_m$および$\tilde{v}_n = - \nabla_m A_{mn}$より, 
+$$
+A_{mn} = \epsilon_{mnp} \psi_p
+$$
+と与えられる. 
+}. 
+
+Gent-McWilliams のパラメタリゼーションの実装には, 二つの等価な方法があり, 
+一つはスキューフラックスを用い, もう一方は渦輸送速度による移流を使う. 
+前者は, 渦フラックスを
+\begin{equation}
+  \Dvect{F}_{\rm sk} = - \nabla b \times \Dvect{\psi}
+\end{equation}
+と書く. 
+一方, 後者は, 
+\begin{equation}
+  \Dvect{F}_{\rm ad} = - b \nabla \times \Dvect{\psi}
+\end{equation}
+と書く. 
+発散をとれば, 両者は等価な表現となることに注意されたい. 
+

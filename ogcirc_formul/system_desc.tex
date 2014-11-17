@@ -17,7 +17,7 @@
     \DP{p_*}{z_*} &= - \rho_* g, \\
     \dfrac{1}{a \cos \theta} \left( \DP{u_*}{\lambda} + \DP{ (v_* \cos{\theta})}{\theta} \right)  + \DP{w_*}{z_*} &= 0, \\
     \DD{}{t_*} (\Theta_*, S_*) &= (\mathscr{F}_{\Theta_*}, \mathscr{F}_{S_*}), \\
-    \rho_* &= \rho_* (\theta_*, S_*). 
+    \rho_* &= \rho_* (\Theta_*, S_*). 
   \end{align}
   \label{eq:basic_system}
 \end{subequations}
@@ -52,7 +52,7 @@ $a$は地球半径である.
   & z_*=Dz, \;\;\;\;  t_* = (L/U)t, \;\;\;\; f_* = f_0 f, \\
   & (u_*,v_*) = U (u, v), \;\;\;\; w_* = (D/L)U \; w \\
   & p_* = - \rho_0 g z_* + p_{s*}(z_*) +  (\rho_0 f_0 U L) p, \;\;\;\;
-   \rho = \rho_0 + \rho_{s*}(z_*) + (\rho_0 \dfrac{f_0 UL}{gD}) \rho. 
+   \rho_* = \rho_0 + \rho_{s*}(z_*) + (\rho_0 \dfrac{f_0 UL}{gD}) \rho. 
 \end{align*}
 %%
 ここで, $L, D$はそれぞれ水平, 鉛直スケールである. 
@@ -91,7 +91,7 @@ $$
 %%
 である. 
 一方, 密度を用いて書かれた熱力学方程式は, 
-内部変形半径$L_d(=NH/f_0)$を用いて, 
+内部変形半径$L_d(=ND/f_0)$を用いて, 
 %%
 \begin{align}
    R_o \DD{\rho}{t} + (L_d/L)^2 w = 0
@@ -99,7 +99,7 @@ $$
 \end{align}
 %%
 と無次元化される. 
-ここで, $N=g/\rho_0 (d\rho_{s*}/dz_*)$は静的安定度である. 
+ここで, $N^2 = g/\rho_0 (d\rho_{s*}/dz_*)$は静的安定度である. 
 
 
 \section{惑星地衡流方程式(PGE: Planetary Geostrophic Equation)}
