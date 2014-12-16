@@ -1,0 +1,298 @@
+%%
+分子拡散の効果を除いて自由に時間発展するトレサーは, 
+%%
+\begin{equation}
+  \DD{\phi}{t} = \nabla \cdot (\kappa_m \nabla \phi))
+\label{eq:tracer_eq_molecular_diff}
+\end{equation}
+%%
+に従う. 
+ここで, $\kappa_m$は分子拡散係数であり, 正のスカラー量である. 
+より一般的には, 
+%%
+\begin{equation}
+  \DD{\phi}{t} = - \nabla \cdot \Dvect{F} = \nabla \cdot \Dvect{K} \nabla \phi
+\label{eq:tracer_eq_general_diff}
+\end{equation}
+%%
+と書かれる. 
+ここで, $\Dvect{K}$は($\phi$がスカラーであれば)2階テンソルであり, 
+$\Dvect{F}=-\Dvect{K}\nabla \phi$は$\phi$の拡散フラックスである. 
+そのフラックスは, $\phi$の等値面を横切る成分(拡散フラックスと呼ばれる)と, 
+沿う成分(スキューフラックスと呼ばれる)をもつ. 
+これらのフラックスはそれぞれ, 拡散係数フラックスの対称成分$\Dvect{K}$と反対称成分$\Dvect{A}$に関係している. 
+ここで, 
+%%
+\begin{equation}
+  \Dvect{K} = \Dvect{S} + \Dvect{A}
+\end{equation}
+%%
+であり, 成分表示を用いて, 
+%%
+\begin{equation}
+ S_{mn} = \dfrac{1}{2} (K_{mn} + K_{nm}), \;\;\;
+ A_{mn} = \dfrac{1}{2} (K_{mn} - K_{nm}) 
+\end{equation}
+%% 
+である. 
+反対称テンソルの対角要素は, ゼロである. 
+これらの二種類のテンソルによってもたらされる輸送は, 異なる物理的特徴をもつことを以下で述べる. 
+
+\subsection{対称テンソルによる輸送(拡散)}
+
+\subsubsection*{最も簡単な例}
+最も簡単な場合は媒質が等方的な場合であり, このとき$\Dvect{K}$は対角的かつ要素の値は同じである. 
+すなわち, 
+%%
+\begin{equation}
+  \Dvect{K} = \Dvect{S}
+\begin{pmatrix}
+ \kappa &0 &0 \\
+ 0 &\kappa &0 \\
+ 0 &0 &\kappa
+\end{pmatrix}
+\end{equation}
+%%
+と書かれ, よく知られた$\Dvect{F}=-\kappa\nabla \phi$を得る. 
+したがって, \eqref{eq:tracer_eq_general_diff}は\eqref{eq:tracer_eq_molecular_diff}と同じ形式をもつ. 
+もし$\kappa$が正ならば, そのときフラックスはたとえ$\kappa$が空間非一様であっても, 
+\textbf{勾配下向き}(downgradient)である. すなわち, 
+%%
+\begin{equation}
+  \Dvect{F} \cdot \nabla \phi \le 0. 
+\end{equation}
+%%
+さらに, そのような拡散は分散が散逸する. 
+それを確かめるために, 運動方程式
+%%
+\begin{equation}
+ \DP{\phi}{t} = \nabla \cdot (\kappa \nabla \phi)
+\end{equation}
+%%
+を考えよう. 
+両辺に$\phi$を掛けて領域$V$に渡って積分し, 部分積分を実行すると, 
+%%
+\begin{equation}
+   \dfrac{1}{2} \DD{}{t} \int_V \phi^2 \Dd{V}
+ = \int_V \int_{V} \Dvect{F} \cdot \nabla \phi \Dd{V}
+ = - \kappa (\nabla \phi)^2 \le 0
+\end{equation}
+%%
+を得る. 
+ここで, $\phi$物質の境界を横切るフラックスは存在しないことを仮定した. 
+しかし, 拡散は場の一次モーメントを保存する. 
+すなわち, 
+%%
+\begin{equation}
+  \DD{}{t} \int \phi \Dd{V} = \int_V \nabla \cdot (\kappa \nabla \phi) \Dd{V} = 0 
+\end{equation}
+%%
+である. 
+ここで, 再び境界を横切るフラックスはゼロであることを仮定した. 
+
+\subsubsection*{一般化}
+対称な拡散係数テンソルがもたらす輸送は, 拡散フラックス
+%%
+\begin{equation}
+  \Dvect{F}_d = - \Dvect{S} \nabla \phi
+  = -S_{mn} \partial_n \phi
+\end{equation}
+%%
+である. 
+ここで, 添え字に対してアインシュタイン縮約規則を適用するものとする. 
+一般的に, フラックス$\Dvect{F}_d$はトレサーの勾配と平行な成分をもつ. 
+簡単化のために, 
+%%
+\begin{equation}
+ \DP{\phi}{t} = - \nabla \cdot \Dvect{F}_d 
+     = \nabla \cdot (\Dvect{S} \nabla \phi)
+\end{equation}
+%%
+なる運動方程式を考えよう. 
+この方程式は, 境界を横切るフラックスが存在しなければ, $\phi$の一次モーメントを保存する. 
+トレサーの分散は, 
+%%
+\begin{equation}
+   \dfrac{1}{2} \DD{}{t} \int_V \phi^2 \Dd{V}
+ = \int_{V} \phi \nabla \cdot ( \Dvect{S} \nabla \phi) \Dd{V}
+ = - \int_V (\Dvect{S}\nabla \phi) \cdot \nabla \phi \Dd{V}
+\end{equation}
+%%
+によって時間発展する. 
+これは, $\Dvect{S}$が半正定値, すなわち
+%%
+\begin{equation}
+  \nabla \phi \Dvect{S} \nabla \phi = \partial_m \phi S_{mn} \partial_n \phi \ge 0
+\end{equation}
+%%
+であるならば, 右辺は負もしくはゼロであることが示される. 
+またこのとき, そのような拡散がもたらすフラックスは, 
+%%
+\begin{equation}
+  \Dvect{F}_d \cdot \nabla \phi = -\Dvect{S}\nabla\phi \cdot \nabla \phi \le 0
+\end{equation}
+という意味で勾配下向きである. 
+
+\subsection{スキューフラックスによる輸送}
+反対称テンソルと関係した輸送は, $\phi$の勾配と直交する. 
+すなわち, 勾配上向きでも勾配下向きでもない. 
+そのフラックスは, 
+%%
+\begin{equation}
+  \Dvect{F}_{sk} = - \Dvect{A} \nabla \phi
+  = - A_{mn} \partial_n \phi
+\label{eq:skew_flux1}
+\end{equation}
+%%
+であり, 
+よって, 
+%%
+\begin{equation}
+  \Dvect{F}_{sk} \cdot \nabla \phi
+  = - \Dvect{A} \nabla \phi \cdot \nabla \phi = - A_{mn} \partial_n \phi \partial_m \phi = 0
+\end{equation}
+%%
+である. 
+ここで, 最後の等号において, $\Dvect{A}$の反対称性(対称テンソルと反対称テンソルの縮約はゼロ)を用いた%
+\footnote{
+$A_{mn} (\partial_n \phi \partial_m)$において, カッコ内が対称テンソルであることに注意して$S_{mn}$とおけば, 
+$$
+A_{mn} S_{mn} = - A_{nm} S_{nm} = - A_{mn} S_{mn}
+$$
+となり, $A_{mn} S_{mn}=0$を得る. 
+}.
+この理由により, 反対称テンソルと関係した輸送は, スキュー\textbf{フラックス}やスキュー\textbf{拡散}と呼ばれる. 
+前者はトレサーの勾配に垂直なフラックスに一般的に用いられる用語であり, 
+後者はスキューフラックスが反対称的な拡散係数を用いてパラメータ化されるときに用いられる用語である. 
+このことから, 今トレサーが
+%%
+\begin{equation}
+  \DP{\phi}{t} = \nabla \cdot (\Dvect{A} \nabla \phi)
+\end{equation}
+%%
+に従うならば, 両辺に$\phi$を掛け部分積分を実行すれば, トレサーの分散が保存することが示される. 
+ただし, 境界でフラックスがゼロであることを仮定した. 
+つまり, \textbf{スキュー拡散は変数の分散に影響を及ぼさない}. 
+非発散流による移流は, この性質を同じようにもつ物理的過程である. 
+スキュー拡散はそのような移流と物理的に等価であり, そ
+こではスキュー拡散フラックスの発散は, 適切に選択された移流フラックスの発散と同じである. 
+そのことを以下で述べる. 
+
+今, 
+%%
+\begin{equation}
+  \Dvect{F}_{ad} \equiv \tilde{\Dvect{v}} \phi
+\end{equation}
+%%
+なる形式のフラックスを, トレサー$\phi$の移流フラックスとして定義する. 
+ここで, $\tilde{\Dvect{v}}$は非発散なベクトル場である. 
+このフラックスの発散は, 単に, 
+%%
+\begin{equation}
+  \nabla \cdot \Dvect{F}_{ad} = \tilde{\Dvect{v}} \cdot \nabla \phi
+\end{equation}
+%%
+である. 
+場$\tilde{\Dvect{v}}$は\textbf{擬速度}あるいは\textbf{準速度}と呼ばれるだろう. 
+それは速度のように作用するが, どの流体粒子の速度である必要は無い. 
+$\tilde{\Dvect{v}}$は非発散であるので, 
+%%
+\begin{equation}
+ \tilde{\Dvect{v}} = \nabla \times \Dvect{\psi}
+\end{equation}
+%%
+となるような, ベクトルの流線関数$\Dvect{\psi}$を定義することができる. 
+場$\Dvect{\psi}$は一意ではない. 
+任意関数の勾配を$\Dvect{\psi}$に付け加えてもよい. 
+つまり, もし$\Dvect{\psi}' = \Dvect{\psi} + \nabla \gamma$であるならば, 
+このとき, $\tilde{\Dvect{v}}=\nabla \times \Dvect{\psi} = \nabla \times \Dvect{\psi}'$となるからである.
+スカラー場$\gamma$は\textbf{ゲージ}と呼ばれ, その選択の自由度はゲージの自由度である. 
+
+移流フラックス$\Dvect{F}_{ad}$は, スキューフラックス$\Dvect{F}_{sk}$と以下の式によって関係付けられる. 
+%%
+\begin{equation}
+  \phi \tilde{\Dvect{v}} 
+ = \phi \nabla \times \Dvect{\psi} 
+ = \nabla \times (\phi \Dvect{\psi}) - \nabla \phi \times \Dvect{\psi}, 
+\end{equation}
+%%
+もしくは, 
+%%
+\begin{equation}
+  \Dvect{F}_{ad} = \Dvect{F}_{r} +\Dvect{F}_{sk}. 
+\end{equation}
+%%
+ここで, $\Dvect{F}_r=\nabla \times (\phi \Dvect{\psi})$は, 発散を伴わない回転のフラックスである.  
+また, 
+%%
+\begin{equation}
+  \Dvect{F}_{sk} = - \nabla \phi \times \Dvect{\psi}
+\label{eq:skew_flux1}
+\end{equation}
+%%
+は, スキューフラックスである. 
+$\nabla \cdot \Dvect{F}_r=0$であるので, 
+%%
+\begin{equation}
+  \nabla \cdot \Dvect{F}_{ad} = \nabla \cdot \Dvect{F}_{sk}
+\end{equation}
+%%
+である. 
+スキューフラックス$-\nabla \phi \times \Dvect{\psi}$と移流フラックス$\phi \nabla \times \Dvect{\psi}$は, 
+一般的には異なる大きさや向きを持つことに注意する必要がある. 
+等しいのはそれらの発散のみである. 
+もし\eqref{eq:skew_flux1},\eqref{eq:skew_flux2}で与えられるスキューフラックスの発散が同じであるならば, 
+そのとき$\Dvect{\psi}$は反対称テンソル$\Dvect{A}$と関係付けられなければならない. 
+\eqref{eq:skew_flux1}を用いて, 
+%%
+\begin{equation}
+\begin{split}
+   \nabla \cdot \Dvect{F}_{sk} 
+   &= - \partial_m ( A_{mn} \partial_n \phi) \\
+   &= - (\partial_n \phi) (\partial_m A_{mn}) - [A_{mn} \partial_n \partial_m \phi] \\
+   &= - \partial_n (\phi \partial_m A_{mn}) + [\phi \partial_n \partial_m A_{mn}]
+\end{split}
+\end{equation}
+%%
+を得る. 
+ここで, 角括弧内の量は$\Dvect{A}$の反対称性によりゼロである. 
+しかし, スキューフラックスの発散は移流フラックスの発散と等しい. 
+すなわち, 
+%%
+\begin{equation}
+  \nabla \cdot \Dvect{F}_{sk} 
+ = \nabla \cdot \Dvect{F}_{ad} 
+ = \partial_n (\phi \tilde{v}_n)
+\end{equation}
+%%
+であるので, $\Dvect{A}$と関係するスキュー速度は, 
+%%
+\begin{equation}
+  \tilde{v}_n = - \partial_m A_{mn}
+\label{eq:pseudovel_AntiSymTensor_relation}
+\end{equation}
+%%
+によって与えられる. 
+この速度は, $\partial_n \partial_m A_{mn}=0$であるので, 非発散である. 
+%%
+\begin{equation}
+  \tilde{v}_n = \epsilon_{nlm} \partial_l \psi_m
+\end{equation}
+%%
+であることと\eqref{eq:pseudovel_AntiSymTensor_relation}を用いれば, 
+反対称テンソル$A_{mn}$とスキュー速度$\tilde{\Dvect{v}}$の流線関数の間の関係は, 
+%%
+\begin{equation}
+  A_{mn} = \epsilon_{mnp} \psi_p =
+\begin{pmatrix}
+ 0 &\psi_3 &-\psi_2 \\
+ -\psi_3 &0 &\psi_1 \\
+ \psi_2  &-\psi_1 &0
+\end{pmatrix}
+\label{eq:AntiSymTensor_Psi_relation}
+\end{equation}
+%%
+と得られる. 
+
+\subsection{本節のまとめ}
+

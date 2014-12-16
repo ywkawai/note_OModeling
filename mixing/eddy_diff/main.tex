@@ -1,4 +1,4 @@
-%#BIBTEX jbibtex dynamics_description
+%#BIBTEX bibtex main
 %
 %  水惑星設定における風成循環
 %
@@ -31,7 +31,7 @@
 %%  [ ] はヘッダに書き出される.
 %%  { } は表題 (\maketitle) に書き出される.
 
-\Dtitle{海洋における渦拡散}   % 変更不可
+\Dtitle{海洋における傾圧渦の輸送の表現}   % 変更不可
 \Dauthor{河合 佑太}            % ゼミ担当者の名前
 \Ddate{\the\year/\the\month/\the\day}        % ゼミの日時 (毎回変更すること)
 \Dfile{main.tex}
@@ -76,18 +76,26 @@
 
 \tableofcontents
 
-\chapter{海洋における渦混合}
+\chapter{海洋における傾圧渦の輸送の表現}
+
+%%%%%%%%%%
+\input{introduction}
+\section{拡散係数テンソル}
+\input{diff_tensor}
+
+%%%%%%%%%%%
+\section{海洋における渦拡散}
 \input{preliminary}
 \input{GM_scheme}
 \newpage
-
 
 
 %%
 
 %% 参考文献
 \bibliographystyle{plainnat}
-\bibliography{./../../Dennou-OGCM_reflist}
+\bibliography{./../../reflist/Dennou-OGCM_reflist}
+
 
 \end{document}
 %%%%%%%%              Text End                  %%%%%%%%
