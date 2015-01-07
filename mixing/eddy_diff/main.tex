@@ -10,10 +10,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%             Package Include            %%%%%%%%
+\usepackage[dvipdfmx]{graphicx}
 \usepackage{Dennou6}		% 電脳スタイル ver 6
 \usepackage{ascmac}
 \usepackage{tabularx}
-\usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathrsfs}
@@ -85,17 +85,18 @@
 
 %%%%%%%%%%%
 \section{海洋における渦拡散}
-\input{preliminary}
+\input{eddyDiff_preliminary}
+\input{eddyDiff_magnitude}
+\input{eddyDiff_tensorStructure}
 \input{GM_scheme}
+
 \newpage
-
-
 %%
 
 %% 参考文献
 \bibliographystyle{plainnat}
 \bibliography{./../../reflist/Dennou-OGCM_reflist}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
 %%%%%%%%              Text End                  %%%%%%%%

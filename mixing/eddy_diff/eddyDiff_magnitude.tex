@@ -1,0 +1,155 @@
+\subsection{渦拡散係数の大きさ}
+今, トレサーの性質の南北輸送によるモーメントに注意を限定する. 
+ %%
+\begin{equation}
+ \overline{v' \phi'}
+ = - \kappa^{vy} \DP{\bar{\phi}}{y} - \kappa^{vz} \DP{\bar{\phi}}{z}. 
+\end{equation}
+%%
+ここで, $\kappa^{vy}, \kappa^{vz}$は渦拡散係数テンソルの成分である.
+これらの成分は, 長さ$\times$速度の次元をもつ. 
+拡散が渦の運動を表現する限り, $\kappa^{vy}$の近似的な大きさは,
+%%
+\begin{equation}
+  \kappa \sim v' l'
+\end{equation}
+%%
+であることが期待される.
+ここで, $v'$は渦の水平速度の典型的な大きさである.
+また, $l'$は渦の\textbf{混合長}であり, 一般的に渦の典型的な長さスケールが取られる.
+スケールが大きい渦ほど, また大きなエネルギーをもつ渦ほど, 平均流により大きな影響を与える.
+$v', l'$は, 流れの条件に依存した, 多くの適切な方法により推定できる.
+以下に, その推定方法の例を挙げる.
+このとき, 成分$\kappa^{vz}$の大きさは, パーセルの変位の平面を選択することによって推定できる.
+
+おそらく, 置かれるで最も簡単な仮定は, 渦は傾圧不安定の結果であると事実による.
+よって, 渦の長さスケールは不安定のスケール, すなわち第一変形半径と考えて良い.
+また, 渦の速度は平均流$\bar{u}$と同程度の近似的な大きさを持つと考えて良く,
+よって,
+%%
+\begin{equation}
+ \kappa^{vy} \sim L_d \bar{u} = \dfrac{NH \bar{u}}{f}
+ \label{eq:eddyDiff_y_SimpleForm1}
+\end{equation}
+%%
+を与える.
+あるいは, 特徴的な渦の時間スケールを$T_e$とするとき, $\kappa^{vy} \sim l^2/T_e$において,
+$T_e \sim L_d/\bar{u}, \; l' \sim L_d$と取るならば, 上の結果を導くことができる. 
+\eqref{eq:eddyDiff_y_SimpleForm1}はまた,
+%%
+\begin{equation}
+ \kappa^{vy} \sim L_d \bar{u} \sim \dfrac{L_d^2 f}{\sqrt{Ri}}
+             \sim L_d^2 F_r f
+\end{equation}
+%%
+と書かれることに注意が必要である. 
+ここで, $R_i \equiv N^2/\Lambda^2 = N^2 H^2/\bar{u}^2$, $F_r\equiv U/(NH)$はそれぞれ,
+本問題に対するリチャードソン数とフルード数である.
+
+少しだけより一般的には, もしより大きなスケールへのカスケードが存在するならば,
+そのとき渦のスケール$L_e$は変形半径よりも大きくなるだろう.
+状況に応じて, $L_e$は, (渦が領域サイズまで成長するならば)領域のスケール,
+($\beta$効果がカスケードを止めるならば)$\beta$スケール,
+(もしかすると$\beta$と共に)摩擦の効果によって決定されるいくつかのスケールかもしれない. 
+しかしながら, \citet{vallis2006atmospheric}の9.3節の議論は,
+全ての場合で渦の時間スケールはEadyの時間スケールであることを示唆する.
+故に,
+%%
+\begin{subequations} %12:00の式群
+ \begin{equation}
+   \textrm{渦の長さスケール:} \sim L_e
+ \end{equation}
+ \begin{equation}
+   \textrm{渦の時間スケール:} \sim T_e \sim L_d/\bar{u}
+ \end{equation}
+ \begin{equation}
+   \textrm{渦の速度スケール} U_e \sim \bar{u} (L_e/L_d)
+ \end{equation}
+ \label{eq:scaling_eddy_basedEadyTime}
+\end{subequations}
+%%
+と取る.
+これらは, 水平拡散係数の一般的な推定として,
+%%
+\begin{equation}
+ \boxed{
+  \kappa^{vy} \sim \bar{u} \left(\dfrac{L_e^2}{L_d}\right)
+  }
+ \label{eq:eddyDiff_y_SimpleForm2}
+\end{equation}
+%%
+を与える.
+\eqref{eq:eddyDiff_y_SimpleForm1}で与えられる推定は,
+$L_e=L_d$としたときの上式による推定の特別な場合である.
+よって, 渦のスケールが変形半径よりはるかに大きければ, 二種類の推定は異なるだろう.
+
+逆カスケードがロスビー波によって修正される場合には, 摩擦の効果を無視すれば, 
+渦のスケールは$\beta$スケールであると考える.
+このとき, 渦のスケールは, \eqref{eq:scaling_eddy_basedEadyTime}の三式目を用いて, 
+%%
+\begin{equation}
+ L_e \sim L_\beta = \left(\dfrac{U_e}{\beta}\right)^{1/2}
+  = \dfrac{\bar{u}}{\beta L_d}
+  \label{eq:eddyScale_SimpleForm2}
+\end{equation}
+%%
+と取られる. 
+渦の速度スケールは, \eqref{eq:scaling_eddy_basedEadyTime}の二式目を用いて,
+%%
+\begin{equation}
+ U_e \sim \bar{u}\dfrac{L_e}{L_d} = \dfrac{\bar{u}^2}{\beta L_d^2}
+  \label{eq:eddyVelScale_SimpleForm2}
+\end{equation}
+%%
+である.
+また, \eqref{eq:eddyScale_SimpleForm2}, \eqref{eq:eddyVelScale_SimpleForm2}を組み合わせれば,
+渦拡散係数の推定として,
+%%
+\begin{equation}
+ \kappa^{vy} \sim \dfrac{\bar{u}^3}{\beta^2 L_d^3}
+ \label{eq:eddyDiffCoef_y_betaScale}
+\end{equation}
+%%
+を与える.
+エネルギーの逆カスケード率$\varepsilon$を使った同様の推定は, 
+%%
+\begin{equation}
+  \kappa^{vy} \sim \left(\dfrac{\varepsilon^3}{\beta^4}\right)^{1/5}
+\end{equation}
+%%
+と得られる. 
+この表現は, $\kappa$を決定する唯一の要素が$\varepsilon$と$\beta$であると仮定するならば,
+次元解析によって純粋に得られるだろう%
+\footnote{
+エネルギーの逆カスケード率の単位は, [J/(s$\cdot$kg)] である. 
+}.
+(例えば大気のエネルギー流量を計算することによって)もし$\varepsilon$が独立に既知であれば, この推定は役に立つ. 
+
+\subsubsection*{まとめ}
+渦拡散係数の大きさは, 渦の速度スケールとエネルギーを保持する長さスケールの積として推定される.
+もし渦の時間スケールが Eady の時間スケールであることを仮定するならば, \eqref{eq:eddyDiff_y_SimpleForm2}を得る.
+ここで, $L_e$は未決定である.
+もし渦のスケールが$\beta$スケールであるならば, \eqref{eq:eddyDiff_y_SimpleForm2}は,
+\eqref{eq:eddyDiffCoef_y_betaScale}となる.
+しかし, 大気と海洋のどちらにおいても, $\beta$スケールは変形半径よりはるかに大きい(約10倍ほど)が,
+問題を複雑にすることに逆カスケードは$\beta$スケールで止まる必要は無い%
+\footnote{
+簡単のために, 順圧渦度方程式
+$$
+\DP{\zeta}{t} + J(\psi, \zeta) + \beta \DP{\psi}{x} = F - r \zeta + \nu \nabla^2 \zeta
+$$
+を使って考えよう.
+ここで, 粘性$\nu$は小さく, 小さなスケールにおいてエンストロフィーを取り除くためだけに働き,
+エネルギーは取り除かない.
+また, 強制$F$は系にエネルギーを注入する.
+そのエネルギーは大スケールへとカスケードし, 線形の摩擦項$-r\zeta$によって取り除かれる.
+もし摩擦項が十分に大きければ, エネルギーは$\beta$効果を感じる前に取り除かれるだろう. 
+}
+観測によれば, 海洋のいくつかの領域では, 逆カスケードに対する-5/3 べき乗則の事実がいくつか存在するが,
+大気には存在しない.
+他の海洋の領域では, 逆カスケードが組織化され得る前に, 渦は互いから離れ, 不安定領域から離れるように移流されるか, 
+あるいはロスビー波によって分散される.
+その場合, エネルギーは変形スケールに留まり続けるだろう.
+これらの議論は, 実用的な推定は可能であるが,
+大気海洋の両方において, 渦拡散係数の大きさを確信を持って決定できないことを示唆する. 
+

@@ -1,11 +1,11 @@
-\subsubsection*{断熱的かつポテンシャルエネルギーを減少する渦輸送スキーム}
+\subsection{海洋の傾圧渦による輸送のパラメタリゼーション(GM スキーム)}
 Gent と McWilliams は, 傾圧渦のフラックスによるトレサーの輸送のための, 
 海洋モデルにおけるパラメタリゼーションを示した. 
 これは, GM スキームとして知られる. 
 以下の二つの性質の保持が, 彼らのスキームの基礎である. 
 %%
 \begin{itemize}
- \item トレーサのモーメントは保存されなければならない. 特に, 等密度面間の流体の量は保存されなければならない. これは, スキームが密度の勾配を横切って浮力を拡散させないことを示唆する. 
+ \item トレーサの(一次,二次)モーメントは保存されなければならない. 特に, 二つの等密度面の間にある流体の量(体積)は保存されなければならない. これは, スキームが等密度面を横切って浮力を拡散させないことを示唆する. 
  \item 流れの有効位置エネルギーの量は減少しなければならない. この意味に置いて, このパラメタリゼーションは, 有効位置エネルギーを運動エネルギーに輸送する傾圧不安定の効果を模倣する. 
 \end{itemize}
 %%
@@ -33,7 +33,8 @@ Gent と McWilliams は, 傾圧渦のフラックスによるトレサーの輸�
 %%
 \begin{equation}
  \Dvect{F}_h = -\left(-\kappa_a \Dvect{s} \DP{b}{z} \right)
-             = - \kappa_a \nabla_z b
+  = - \kappa_a \nabla_z b
+  \label{eq:F_skew_horizontal}
 \end{equation}
 %%
 によって与えられる. 
@@ -44,6 +45,7 @@ Gent と McWilliams は, 傾圧渦のフラックスによるトレサーの輸�
 \begin{equation}
   F_z = - \kappa_a \left(s_x\DP{b}{x} + s_y\DP{b}{y}\right)
       = \kappa_a s^2 \DP{b}{z} 
+  \label{eq:F_skew_vertical}
 \end{equation}
 %%
 によって与えられる. 
@@ -66,14 +68,18 @@ Gent と McWilliams は, 傾圧渦のフラックスによるトレサーの輸�
 むしろ, 散逸によって失われることが仮定される. 
 最後に, (スキュー)渦拡散係数の大きさは, 前述の現象論的推定によって決定される.
 
-\subsection*{渦輸送速度}
+\subsubsection*{渦輸送速度}
 %%
-よって, 渦輸送速度は, 
+よって, 渦輸送速度は,
+%%
 \begin{equation}
- \begin{split}
+ \boxed{
+   \begin{split}
    \Dvect{\tilde{u}} &= - \DP{}{z} (\kappa_a \Dvect{s}), \\
-   \tilde{w} &= \nabla_z \cdot (\kappa_a \Dvect{s})
- \end{split}
+    \tilde{w} &= \nabla_z \cdot (\kappa_a \Dvect{s})
+   \end{split}
+   }
+   \label{eq:GM_eddyInduceVel}
 \end{equation}
 %%
 と与えられる%
@@ -103,16 +109,55 @@ $$
 }. 
 
 Gent-McWilliams のパラメタリゼーションの実装には, 二つの等価な方法があり, 
-一つはスキューフラックスを用い, もう一方は渦輸送速度による移流を使う. 
+一つはスキューフラックスを用い, もう一方は擬速度による移流を使う. 
+境界において擬速度の法線方向成分がゼロであることは, 境界でフラックスの法線方向成分がゼロであることと等価であり,
+スキームがトレサーのモーメントを保存することを保証する. 
 前者は, 渦フラックスを
 \begin{equation}
-  \Dvect{F}_{\rm sk} = - \nabla b \times \Dvect{\psi}
+ \Dvect{F}_{\rm sk}
+  = - \nabla b \times \Dvect{\psi}
+  = - \nabla b \times (\Dvect{k} \times \kappa_a \Dvect{s}) 
 \end{equation}
 と書く. 
 一方, 後者は, 
 \begin{equation}
-  \Dvect{F}_{\rm ad} = - b \nabla \times \Dvect{\psi}
+ \Dvect{F}_{\rm ad}
+  = b \nabla \times \Dvect{\psi}
+  = b \nabla \times (\Dvect{k} \times \kappa_a \Dvect{s}) 
 \end{equation}
 と書く. 
 発散をとれば, 両者は等価な表現となることに注意されたい. 
 
+\subsection{GM スキームの定性的な理解}
+GM スキームによって計算される渦フラックスあるいは渦生成速度,
+結果として生じるポテンシャルエネルギーの解放を定性的な理解するために,
+図\ref{fig:GM_Fsk}, 図\ref{fig:GM_pseudoVelAdv}に示されるような温位場を考える.
+今, 簡単化のために密度は温度だけで決定され, また$\kappa_a$は定数であると仮定する.
+
+最初に, スキューフラックス$\Dvect{F}_{sk}$を通して GM スキームの効果を考えてみる.
+図のような温位分布に対して, $\Dvect{F}_{sk}$の分布は\eqref{eq:F_skew_horizontal},\eqref{eq:F_skew_vertical}
+を使って求められ, 図\ref{fig:GM_Fsk}のような渦フラックスの分布を得る.
+したがって, 温位偏差が正の場所ではフラックスの発散は正となり, 温位は減少する($\theta_2$の等値線は上昇する).
+一方, 温位偏差が負の場所ではフラックスの発散は負となり, 温位は増加する($\theta_2$の等値線は下降する).
+結果, ポテンシャルエネルギーが解放されることが分かる. 
+%%
+ \begin{figure}[t]
+  \begin{center}
+  \includegraphics[width=13cm]{GM_Fsk.jpg}
+  \caption{スキューフラックスによって GM スキームのはたらきを定性的に説明する模式図. Vallis(2006)の図10.7を元に作成.}  
+  \end{center}
+  \label{fig:GM_Fsk}
+ \end{figure}
+ \begin{figure}
+  \begin{center}
+ \includegraphics[width=13cm]{GM_pseudoVelAdv.jpg}
+ \caption{渦生成速度によって GM スキームのはたらきを定性的に説明する模式図. Vallis(2006)の図10.7を引用.}   
+  \end{center}
+  \label{fig:GM_pseudoVelAdv}
+ \end{figure}
+
+次に, 渦生成速度$\tilde{\Dvect{v}}$を通して GM スキームの効果を考えてみる.
+図のような温位分布に対して, $\tilde{\Dvect{v}}$の分布は\eqref{eq:GM_eddyInduceVel}を使って求められ,
+図\ref{fig:GM_pseudoVelAdv}のような渦生成速度の分布を得る.
+この渦生成速度による移流は, $\theta_2$の等値線を平坦化し,
+結果ポテンシャルエネルギーを解放することが分かる. 
